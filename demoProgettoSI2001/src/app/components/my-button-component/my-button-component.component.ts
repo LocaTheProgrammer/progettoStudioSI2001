@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 export interface MyButtonConfig{
-  customCssClass : string ;
-  text : string ;
-  icon : string ;
+  customCssClass :string ;
+  text : string;
+  icon :string ;
 }
 
 
