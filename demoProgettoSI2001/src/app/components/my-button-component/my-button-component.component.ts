@@ -1,9 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 export interface MyButtonConfig{
   customCssClass :string ;
   text : string;
   icon :string ;
+  customCssId: string;
 }
 
 
@@ -14,10 +15,15 @@ export interface MyButtonConfig{
 })
 export class MyButtonComponentComponent implements OnInit{
   @Input () buttonConfig !: MyButtonConfig;
+  @Output() newItemEvent = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  emitBtnFunct(value:string){
+    console.log(value);
+    this.newItemEvent.emit(value);
+  }
 
 }

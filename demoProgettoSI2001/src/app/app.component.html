@@ -11,15 +11,9 @@
       </li>
       <li class="nav-item dropdown">
         <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-outline-primary" id="dropdownMenuButton" ngbDropdownToggle><span class="labelProfilo">Profilo</span></button>
-          <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
-            <button ngbDropdownItem>My Profile</button>
-            <button ngbDropdownItem>Logout</button>
-          </div>
+          <app-my-button-component  (newItemEvent)="funzionePadreEmitter()" [buttonConfig]="buttonConfig" ></app-my-button-component>
         </div>
       </li>
     </ul>
   </div>
 </nav>
-
-<app-my-button-component [buttonConfig]="buttonConfig" ></app-my-button-component>

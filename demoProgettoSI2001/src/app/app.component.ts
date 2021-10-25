@@ -15,7 +15,13 @@ export class AppComponent {
   buttonConfig: MyButtonConfig={
     customCssClass : "btn btn-outline-primary" ,
     text : "testoProva",
-    icon :""
+    icon :"",
+    customCssId : "dropdownMenuButton"
   };
+
+
+  funzionePadreEmitter(){
+    console.log("padre");
+  }
 
 }
