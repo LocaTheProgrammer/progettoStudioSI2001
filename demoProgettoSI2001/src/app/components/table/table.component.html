@@ -1,16 +1,61 @@
-<table class="table table-dark">
+
+<form novalidate
+      #form="ngForm">
+  <div class="form-group">
+    <strong>nome</strong>
+    <select class="form-control"
+            name="nomeForm"
+            [(ngModel)]="nomeForm">
+      <option></option>
+      <option value="pietro">pietro</option>
+      <option value="mario">mario</option>
+      <option value="luca">luca</option>
+    </select>
+  </div>
+
+
+
+  <form novalidate
+      #form="ngForm">
+  <div class="form-group">
+    <strong>cognome</strong>
+    <select class="form-control"
+            name="cognomeForm"
+            [(ngModel)]="cognomeForm">
+      <option></option>
+      <option value="locatelli">locatelli</option>
+      <option value="rossi">rossi</option>
+      <option value="verdi">verdi</option>
+    </select>
+  </div>
+
+  <form novalidate
+      #form="ngForm">
+  <div class="form-group">
+    <strong>eta</strong>
+    <select class="form-control"
+            name="etaForm"
+            [(ngModel)]="etaForm">
+      <option></option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+    </select>
+  </div>
+
+  <table class="table table-dark">
   <thead>
     <tr>
       <th *ngFor="let header of tableConfig.headers">
         {{header.label}}
-        <div *ngIf="showButtonAsc"> <app-my-button-component (newItemEvent)="ordinaAsc(header.label)" [buttonConfig]="buttonConfigAsc"> <i class="material-icons arrow_drop_up"></i> </app-my-button-component> </div>
-        <div *ngIf="showButtonDesc"> <app-my-button-component (newItemEvent)="ordinaDesc(header.label)" [buttonConfig]="buttonConfigDesc"></app-my-button-component> </div>
+        <div *ngIf="showButtonAsc"> <app-my-button-component (newItemEvent)="ordinaAsc(header.key)" [buttonConfig]="buttonConfigAsc"> </app-my-button-component> </div>
+        <div *ngIf="showButtonDesc"> <app-my-button-component (newItemEvent)="ordinaDesc(header.key)" [buttonConfig]="buttonConfigDesc"></app-my-button-component> </div>
       </th>
 
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let record of data | sort : sortedColumn">
+  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: form.value">
     <td *ngFor="let header of tableConfig.headers;" >
       {{record[header.key]}}
     </td>

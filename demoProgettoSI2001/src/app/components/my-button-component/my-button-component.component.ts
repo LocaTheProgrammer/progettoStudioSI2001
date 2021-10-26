@@ -23,7 +23,6 @@ export class MyButtonComponentComponent implements OnInit{
   }
 
   emitBtnFunct(value:string){
-    console.log(value);
     this.newItemEvent.emit(value);
   }
 

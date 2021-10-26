@@ -8,6 +8,10 @@ import { LoginComponent } from './components/login/login.component';
 import { MyButtonComponentComponent } from './components/my-button-component/my-button-component.component';
 import { TableComponent } from './components/table/table.component';
 import {SortPipe} from "./shared/pipes/sort.pipe";
+import {MatIconModule} from "@angular/material/icon";
+import {FilteringPipe} from "./shared/pipes/filtering.pipe";
+import {FormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -15,7 +19,8 @@ import {SortPipe} from "./shared/pipes/sort.pipe";
     LoginComponent,
     MyButtonComponentComponent,
     TableComponent,
-    SortPipe
+    SortPipe,
+    FilteringPipe
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,10 @@ import {SortPipe} from "./shared/pipes/sort.pipe";
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
-    CommonModule
+    CommonModule,
+    MatIconModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,5 @@
-<button (click)="emitBtnFunct('value btn component')" [ngClass]="buttonConfig.customCssClass" [id]="buttonConfig.customCssId">
+<button (click)="emitBtnFunct('value btn component')" [ngClass]="buttonConfig.customCssClass"
+        [id]="buttonConfig.customCssId">
   {{buttonConfig.text}}
+  <mat-icon aria-hidden="false">{{buttonConfig.icon}}</mat-icon>
 </button>
