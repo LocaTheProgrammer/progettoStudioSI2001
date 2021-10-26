@@ -22,7 +22,7 @@ export class FilteringPipe implements PipeTransform {
         break;
       case 'eta':
         this.returnString= dataList.filter(dataList =>
-          dataList.age.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+          dataList.age.toString().toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
         break;
     }
 
