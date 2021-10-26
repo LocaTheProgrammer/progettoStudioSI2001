@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+// @ts-ignore
+import Data from './data.json';
 
 export interface MyTableConfig {
   headers : MyHeaders [];
@@ -19,24 +21,15 @@ export class TableComponent implements OnInit {
 
   @Input () tableConfig !: MyTableConfig ;
   @Input () data !: any [];
+
+
+
   constructor() { }
 
   ngOnInit(): void {
-    this.data[0]={
-      "name": "pietro",
-      "surname":"locatelli",
-      "age": "21"
-    }
-    this.data[1]={
-      "name": "mario",
-      "surname":"rossi",
-      "age": "22"
-    }
-    this.data[1]={
-      "name": "luca",
-      "surname":"verdi",
-      "age": "23"
-    }
+    // @ts-ignore
+    this.data=Data;
+    console.log(this.data)
 
 
   }
