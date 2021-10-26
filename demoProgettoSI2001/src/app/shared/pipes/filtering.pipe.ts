@@ -5,13 +5,29 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure:true
 })
 export class FilteringPipe implements PipeTransform {
-
-  transform(dataList: any[], searchTerm: string) {
+ returnString : any[] = []
+  transform(dataList: any[], searchTerm: string, serchField:string) {
     if(!dataList || !searchTerm){
       return dataList;
     }
-    return dataList.filter(dataList =>
-      dataList.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+
+    switch (serchField){
+      case 'nome':
+        this.returnString= dataList.filter(dataList =>
+          dataList.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+        break;
+      case 'cognome':
+        this.returnString= dataList.filter(dataList =>
+          dataList.surname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+        break;
+      case 'eta':
+        this.returnString= dataList.filter(dataList =>
+          dataList.age.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+        break;
+    }
+
+
+    return this.returnString;
 
   }
 

@@ -34,6 +34,7 @@ export class TableComponent implements OnInit {
   searchTerm: string ="";
   sortedColumn : string ="";
   columnOrder : string ="";
+  searchField : string = "";
   @Input () tableConfig !: MyTableConfig;
   @Input () data !: any [];
 
@@ -51,6 +52,9 @@ export class TableComponent implements OnInit {
     icon :"import_export",
     customCssId : "",
   };
+  nome: string="nome"
+  cognome: string="cognome"
+  eta!: string
 
 
 
