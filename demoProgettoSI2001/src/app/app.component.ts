@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     customCssClass : "btn btn-outline-primary" ,
     text : "testoProva",
     icon :"",
-    customCssId : "dropdownMenuButton"
+    customCssId : "dropdownMenuButton",
   };
 
   dataMock=dataMock;

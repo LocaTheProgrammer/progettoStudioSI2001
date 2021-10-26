@@ -15,6 +15,7 @@ export interface MyButtonConfig{
 })
 export class MyButtonComponentComponent implements OnInit{
   @Input () buttonConfig !: MyButtonConfig;
+
   @Output() newItemEvent = new EventEmitter<string>();
   constructor() { }
 

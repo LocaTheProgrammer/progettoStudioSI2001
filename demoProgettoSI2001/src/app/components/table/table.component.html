@@ -1,11 +1,16 @@
 <table class="table table-dark">
   <thead>
     <tr>
-      <th *ngFor="let header of tableConfig.headers">{{header.label}}</th>
+      <th *ngFor="let header of tableConfig.headers">
+        {{header.label}}
+        <div *ngIf="showButtonAsc"> <app-my-button-component (newItemEvent)="ordinaAsc(header.label)" [buttonConfig]="buttonConfigAsc"> <i class="material-icons arrow_drop_up"></i> </app-my-button-component> </div>
+        <div *ngIf="showButtonDesc"> <app-my-button-component (newItemEvent)="ordinaDesc(header.label)" [buttonConfig]="buttonConfigDesc"></app-my-button-component> </div>
+      </th>
+
     </tr>
   </thead>
   <tbody>
-  <tr  *ngFor="let record of data">
+  <tr *ngFor="let record of data | sort : sortedColumn">
     <td *ngFor="let header of tableConfig.headers;" >
       {{record[header.key]}}
     </td>
