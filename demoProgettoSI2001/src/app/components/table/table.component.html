@@ -1,19 +1,7 @@
 
-<form novalidate
-      #form="ngForm">
-  <div class="form-group">
-    <strong>nome</strong>
-    <select class="form-control"
-            name="nomeForm"
-            [(ngModel)]="nomeForm">
-      <option></option>
-      <option value="pietro">pietro</option>
-      <option value="mario">mario</option>
-      <option value="luca">luca</option>
-    </select>
-  </div>
-
-
+<div>
+  <input type="text" placeholder="cerca utente" [(ngModel)]="searchTerm">
+</div>
 
 
 
@@ -29,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: form.value">
+  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: searchTerm">
     <td *ngFor="let header of tableConfig.headers;" >
       {{record[header.key]}}
     </td>

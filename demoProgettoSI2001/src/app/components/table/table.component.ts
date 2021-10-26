@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MyButtonConfig} from "../my-button-component/my-button-component.component";
-import {MatSort} from "@angular/material/sort";
+
 
 export interface MySearch {
   columns : string [];
@@ -31,15 +31,12 @@ export interface MyOrder {
 export class TableComponent implements OnInit {
   showButtonAsc:boolean=true;
   showButtonDesc:boolean=false;
-
+  searchTerm: string ="";
   sortedColumn : string ="";
   columnOrder : string ="";
   @Input () tableConfig !: MyTableConfig;
   @Input () data !: any [];
 
-  nomeForm:string = "";
-  cognomeForm:string ="";
-  etaForm!:number;
 
   buttonConfigAsc: MyButtonConfig={
     customCssClass : "btn btn-outline-primary" ,

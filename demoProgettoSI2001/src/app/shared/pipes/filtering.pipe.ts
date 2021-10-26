@@ -6,13 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilteringPipe implements PipeTransform {
 
-  transform(list: any[], filters: Object) {
-    // @ts-ignore
-    const keys = Object.keys(filters).filter(key => filters[key]);
-    // @ts-ignore
-    const filterUser = user => keys.every(key => user[key] === filters[key]);
+  transform(dataList: any[], searchTerm: string) {
+    if(!dataList || !searchTerm){
+      return dataList;
+    }
+    return dataList.filter(dataList =>
+      dataList.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
 
-    return keys.length ? list.filter(filterUser) : list;
   }
 
 }
