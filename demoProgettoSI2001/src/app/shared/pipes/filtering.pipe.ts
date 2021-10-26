@@ -21,6 +21,7 @@ export class FilteringPipe implements PipeTransform {
           dataList.surname.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
         break;
       case 'eta':
+
         this.returnString= dataList.filter(dataList =>
           dataList.age.toString().toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
         break;
