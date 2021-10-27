@@ -8,8 +8,9 @@ export interface MySearch {
 
 export interface MyTableConfig {
   headers : MyHeaders [];
-  myOrder: MyOrder;
-  search:MySearch;
+  myOrder : MyOrder;
+  search : MySearch;
+  myPagination: MyPagination;
 }
 
 export interface MyHeaders {
@@ -20,6 +21,10 @@ export interface MyOrder {
   defaultColumn : string ;
   orderType : string ;
 }
+export interface MyPagination {
+  itemPerPage : number ;
+  itemPerPageOptions : number [];
+}
 
 
 
@@ -29,12 +34,15 @@ export interface MyOrder {
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
+
   showButtonAsc:boolean=true;
   showButtonDesc:boolean=false;
   searchTerm: string ="";
   sortedColumn : string ="";
   columnOrder : string ="";
   searchField : string = "";
+  visibleElements:string="";
+
   @Input () tableConfig !: MyTableConfig;
   @Input () data !: any [];
 
@@ -55,6 +63,9 @@ export class TableComponent implements OnInit {
   nome: string="nome"
   cognome: string="cognome"
   eta!: string
+
+
+
 
 
 

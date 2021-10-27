@@ -41,5 +41,12 @@ export const tableConfig: MyTableConfig = {
 
   search: {
     columns: []
+  },
+
+  myPagination:{
+    itemPerPage : 1 ,
+    itemPerPageOptions: []
+
   }
+
 }

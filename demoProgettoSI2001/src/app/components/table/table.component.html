@@ -7,6 +7,9 @@
 <div >
   <strong>campo</strong>
   <select class="form-control" name="country" [(ngModel)]="searchField">
+    <option>
+
+    </option>
     <option [value]="nome">
      nome
     </option>
@@ -18,7 +21,23 @@
     </option>
   </select>
 </div>
+<div >
+  <strong>paginazione</strong>
+  <select class="form-control" name="paginazione" [(ngModel)]="visibleElements">
+    <option>
 
+    </option>
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
   <table class="table table-dark">
   <thead>
     <tr>
@@ -31,10 +50,12 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: searchTerm : searchField">
+  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: searchTerm : searchField | pagination:visibleElements">
     <td *ngFor="let header of tableConfig.headers;" >
       {{record[header.key]}}
     </td>
   </tr>
   </tbody>
 </table>
+
+<br><br><br><br>

@@ -11,6 +11,8 @@ import {SortPipe} from "./shared/pipes/sort.pipe";
 import {MatIconModule} from "@angular/material/icon";
 import {FilteringPipe} from "./shared/pipes/filtering.pipe";
 import {FormsModule} from "@angular/forms";
+import { PaginationPipe } from './shared/pipes/pagination.pipe';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import {FormsModule} from "@angular/forms";
     MyButtonComponentComponent,
     TableComponent,
     SortPipe,
-    FilteringPipe
+    FilteringPipe,
+    PaginationPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
