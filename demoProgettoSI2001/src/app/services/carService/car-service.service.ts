@@ -10,6 +10,7 @@ export class CarServiceService {
   constructor(private HttpClient: HttpClient) { }
 
   getCars() : Observable<any>{
-    return this.HttpClient.get("http://localhost:3000/utenti")
+    console.log("getting cars from http://localhost:3000/cars");
+    return this.HttpClient.get("http://localhost:3000/cars")
   }
 }

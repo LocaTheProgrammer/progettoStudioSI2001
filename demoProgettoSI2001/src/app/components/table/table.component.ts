@@ -98,9 +98,12 @@ export class TableComponent implements OnInit {
     this.sortedColumn ="age";
     this.columnOrder  ="asc";
     this.carService.getCars().subscribe(result=>{
+      console.log("result: "+ result.result)
       if(result.result!=null){
         this.jsonDataCar=result.result;
         console.log("car data: "+this.jsonDataCar)
+      }else{
+        console.log("result.result is null or undefined:  "+result.result)
       }
     })
   }
