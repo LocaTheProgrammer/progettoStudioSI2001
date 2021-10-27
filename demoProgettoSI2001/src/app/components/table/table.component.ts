@@ -1,5 +1,8 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MyButtonConfig} from "../my-button-component/my-button-component.component";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {dataMock} from "../data";
+import {CarServiceService} from "../../services/carService/car-service.service";
 
 
 export interface MySearch {
@@ -42,6 +45,7 @@ export class TableComponent implements OnInit {
   columnOrder : string ="";
   searchField : string = "";
   visibleElements:string="";
+  jsonDataCar:any
 
   @Input () tableConfig !: MyTableConfig;
   @Input () data !: any [];
@@ -52,6 +56,7 @@ export class TableComponent implements OnInit {
     text : "",
     icon :"import_export",
     customCssId : "",
+    clickFunction:""
   };
 
   buttonConfigDesc: MyButtonConfig={
@@ -59,7 +64,25 @@ export class TableComponent implements OnInit {
     text : "",
     icon :"import_export",
     customCssId : "",
+    clickFunction:""
   };
+
+  buttonEdit: MyButtonConfig={
+    customCssClass : "btn btn-outline-primary" ,
+    text : "",
+    icon :"edit",
+    customCssId : "",
+    clickFunction:""
+  };
+
+  buttonDelete: MyButtonConfig={
+    customCssClass : "btn btn-outline-primary" ,
+    text : "",
+    icon :"delete",
+    customCssId : "",
+    clickFunction:""
+  };
+
   nome: string="nome"
   cognome: string="cognome"
   eta!: string
@@ -69,11 +92,17 @@ export class TableComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private carService:CarServiceService) { }
 
   ngOnInit(): void {
     this.sortedColumn ="age";
     this.columnOrder  ="asc";
+    this.carService.getCars().subscribe(result=>{
+      if(result.result!=null){
+        this.jsonDataCar=result.result;
+        console.log("car data: "+this.jsonDataCar)
+      }
+    })
   }
 
 
@@ -95,5 +124,14 @@ export class TableComponent implements OnInit {
     this.columnOrder="desc";
 
   }
+
+  modifica(name:string, surname:string){
+  console.log("modifica: "+name+" "+surname)
+  }
+  delete(name:string, surname:string){
+    console.log("delete: "+name+" "+surname)
+  }
+
+
 
 }

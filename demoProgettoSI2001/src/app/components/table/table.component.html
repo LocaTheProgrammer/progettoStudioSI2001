@@ -50,12 +50,12 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: searchTerm : searchField | pagination:visibleElements">
+  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: searchTerm : searchField | pagination:visibleElements; let i=index;">
     <td *ngFor="let header of tableConfig.headers;" >
       {{record[header.key]}}
     </td>
+    <app-my-button-component (newItemEvent)="modifica(data[i].name, data[i].surname)" [buttonConfig]="buttonEdit"></app-my-button-component>
+    <app-my-button-component (newItemEvent)="delete(data[i].surname, data[i].surname)" [buttonConfig]="buttonDelete"></app-my-button-component>
   </tr>
   </tbody>
 </table>
-
-<br><br><br><br>

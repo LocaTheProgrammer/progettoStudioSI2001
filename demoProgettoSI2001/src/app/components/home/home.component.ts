@@ -12,14 +12,11 @@ import {dataMock, tableConfig} from "../data";
 })
 export class HomeComponent implements OnInit {
 
-  buttonConfig: MyButtonConfig={
-    customCssClass : "btn btn-outline-primary" ,
-    text : "testoProva",
-    icon :"",
-    customCssId : "dropdownMenuButton",
-  };
-
+  constructor() {
+  }
   dataMock=dataMock;
+  jsonMock:string="";
+
 
   tableConfig!:MyTableConfig;
 

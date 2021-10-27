@@ -5,6 +5,7 @@ export interface MyButtonConfig{
   text : string;
   icon :string ;
   customCssId: string;
+  clickFunction:string;
 }
 
 

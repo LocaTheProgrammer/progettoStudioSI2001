@@ -4,6 +4,7 @@ import {MyButtonConfig} from "./components/my-button-component/my-button-compone
 
 import {MyTableConfig} from "./components/table/table.component";
 import {dataMock, tableConfig} from "./components/data";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,23 +14,21 @@ import {dataMock, tableConfig} from "./components/data";
 
 export class AppComponent implements OnInit {
   title = 'demoProgettoSI2001';
-
-  buttonConfig: MyButtonConfig={
+  buttonHome: MyButtonConfig={
     customCssClass : "btn btn-outline-primary" ,
-    text : "testoProva",
-    icon :"",
-    customCssId : "dropdownMenuButton",
+    text : "",
+    icon :"account_circle",
+    customCssId : "",
+    clickFunction:""
   };
 
-  dataMock=dataMock;
-
-  tableConfig!:MyTableConfig;
-
-  funzionePadreEmitter(){
-    console.log("padre");
+  constructor(private router: Router) {
   }
   ngOnInit(): void {
-  this.tableConfig=tableConfig;
-  }
 
+  }
+  redirectToProfilo(){
+    console.log("redirect to profile")
+    this.router.navigateByUrl("#");
+  }
 }

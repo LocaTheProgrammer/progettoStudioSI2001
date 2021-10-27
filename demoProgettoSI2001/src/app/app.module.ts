@@ -13,7 +13,8 @@ import {FilteringPipe} from "./shared/pipes/filtering.pipe";
 import {FormsModule} from "@angular/forms";
 import { PaginationPipe } from './shared/pipes/pagination.pipe';
 import { HomeComponent } from './components/home/home.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { HomeComponent } from './components/home/home.component';
     CommonModule,
     MatIconModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],
