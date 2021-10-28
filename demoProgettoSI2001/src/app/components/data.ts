@@ -1,7 +1,4 @@
-import {
-  MyTableActionEnum,
-  MyTableConfig
-} from "./table/table.component";
+import {MyTableActionEnum, MyTableConfig} from "./table/table.component";
 
 export const dataMock: any = [{
   "name": "pietro",
@@ -74,7 +71,8 @@ export const tableConfig: MyTableConfig = {
 
   },
   actions:[
-    MyTableActionEnum.DELETE
+    MyTableActionEnum.DELETE,
+    MyTableActionEnum.EDIT
   ]
 
 

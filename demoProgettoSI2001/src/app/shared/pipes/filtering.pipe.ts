@@ -15,13 +15,9 @@ export class FilteringPipe implements PipeTransform {
       return dataList;
     }
 
-      if(!isNaN(+searchTerm)){
-        console.log(this.logFIlteringPipe, "NUMBER")
-       return  dataList.filter(dataList =>
-          dataList[serchField].indexOf(+searchTerm) !== -1);
-      }
+
       return dataList.filter(dataList =>
-          dataList[serchField].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+          dataList[serchField].toLowerCase().indexOf(searchTerm.toLowerCase()) != -1);
 
 
 

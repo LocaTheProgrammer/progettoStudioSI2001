@@ -46,7 +46,7 @@
 
     <span *ngFor="let action of tableConfig.actions;">
 
-      <app-my-button-component (newItemEvent)="modifica(record.name, record.surname)" [buttonConfig]="{text: action, customCssClass:'', icon:''}"></app-my-button-component>
+      <app-my-button-component (newItemEvent)="modifica(action, record)" [buttonConfig]="{text: action, customCssClass:'btn btn-outline-primary', icon:''}"></app-my-button-component>
 
 
     </span>

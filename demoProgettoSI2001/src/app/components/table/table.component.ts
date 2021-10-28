@@ -64,14 +64,14 @@ export class TableComponent implements OnInit, OnChanges {
   buttonConfigAsc: MyButtonConfig={
     customCssClass : "btn btn-outline-primary" ,
     text : "",
-    icon :"import_export",
+    icon :"arrow_upward",
     customCssId : "",
   };
 
   buttonConfigDesc: MyButtonConfig={
     customCssClass : "btn btn-outline-primary" ,
     text : "",
-    icon :"import_export",
+    icon :"arrow_downward",
     customCssId : "",
   };
 
@@ -103,6 +103,8 @@ export class TableComponent implements OnInit, OnChanges {
 
   isDataUndefined:boolean=true;
   ngOnChanges() {
+
+
     if(this.data!=undefined&&this.data!=null&&this.data!=[]){
       this.isDataUndefined=false
       this.dataLength=this.data.length
@@ -130,8 +132,6 @@ export class TableComponent implements OnInit, OnChanges {
   headersLength!:number
 
   ngOnInit(): void {
-    this.sortedColumn =this.tableConfig.myOrder.defaultColumn;
-    this.columnOrder  =this.tableConfig.myOrder.orderType;
 
 
   }
@@ -156,8 +156,16 @@ export class TableComponent implements OnInit, OnChanges {
 
   }
 
-  modifica(name:string, surname:string){
-  console.log("modifica: "+name+" "+surname)
+  modifica(action:any, record:any){
+  switch (action){
+    case 'EDIT':
+      console.log(this.logTableComponent, "edit ", record);
+      break;
+    case 'DELETE':
+      console.log(this.logTableComponent, "delete ", record);
+      break;
+
+  }
   }
   delete(name:string, surname:string){
     console.log("delete: "+name+" "+surname)
