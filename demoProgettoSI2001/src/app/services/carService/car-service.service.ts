@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CarServiceService {
 
+  logCarService:string="[Car Service]"
   constructor(private HttpClient: HttpClient) { }
 
   getCars() : Observable<any>{

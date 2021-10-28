@@ -41,6 +41,9 @@ export enum MyTableActionEnum {
 })
 export class TableComponent implements OnInit, OnChanges {
 
+  logTableComponent:string="[Table Component] ";
+
+
   showButtonAsc:boolean=true;
   showButtonDesc:boolean=false;
   searchTerm: string ="";
@@ -105,11 +108,16 @@ export class TableComponent implements OnInit, OnChanges {
       this.dataLength=this.data.length
       this.headersLength=this.tableConfig.headers.length
       this.pageNumber=Math.ceil(this.dataLength/this.headersLength)
-      console.log("page number: "+this.pageNumber)
-
-        this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
-  console.log(this.numbers)
+      this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
     }
+
+    console.log(this.logTableComponent, "sorted column: ",this.tableConfig.myOrder.orderType)
+    console.log(this.logTableComponent, "sorted column order: ",this.tableConfig.myOrder.defaultColumn)
+
+
+
+
+
   }
 
   constructor(private carService:CarServiceService) {
@@ -120,11 +128,10 @@ export class TableComponent implements OnInit, OnChanges {
 
   dataLength!:number
   headersLength!:number
-  dataTempArr:any=[]
+
   ngOnInit(): void {
-    //todo sistemare
-    this.sortedColumn ="age";
-    this.columnOrder  ="asc";
+    this.sortedColumn =this.tableConfig.myOrder.defaultColumn;
+    this.columnOrder  =this.tableConfig.myOrder.orderType;
 
 
   }

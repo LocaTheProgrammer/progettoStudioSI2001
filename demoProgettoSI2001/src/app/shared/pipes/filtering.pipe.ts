@@ -7,13 +7,13 @@ import {setAnalyticsConfig} from "@angular/cli/models/analytics";
 })
 export class FilteringPipe implements PipeTransform {
  returnString : any[] = []
+  logFIlteringPipe:string="[Filtering Pipe] ";
   transform(dataList: any[], searchTerm: string, serchField:string) {
 
-   console.log("search field: ", searchTerm, " searchField: ", serchField)
+   console.log(this.logFIlteringPipe, "search field: ", searchTerm, " searchField: ", serchField)
     if(!dataList || !searchTerm){
       return dataList;
     }
-
 
         this.returnString= dataList.filter(dataList =>
           dataList.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);

@@ -4,9 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'pagination'
 })
 export class PaginationPipe implements PipeTransform {
-
+  logPaginationPipe:string="[Pagination Pipe] ";
     transform(dataList: any[], visibleElements: string, startPage:string) {
-    console.log("visible elements: "+visibleElements)
+    console.log(this.logPaginationPipe,"visible elements: "+visibleElements)
       if(dataList && (visibleElements=='0'||visibleElements==undefined||visibleElements=="")){
         visibleElements=dataList.length.toString();
       }

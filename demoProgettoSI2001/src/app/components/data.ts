@@ -60,7 +60,7 @@ export const tableConfig: MyTableConfig = {
     },
   ],
   myOrder: {
-    defaultColumn: "age",
+    defaultColumn: "Name",
     orderType: "asc"
   },
 
