@@ -75,12 +75,14 @@ export const tableConfig: MyTableConfig = {
     {
       action: MyTableActionEnum.DELETE,
       icon: "delete_forever",
-      customCssClass:"btn btn-danger"
+      customCssClass:"btn btn-danger",
+      customCssId:"idTable"
     },
     {
       action: MyTableActionEnum.EDIT,
       icon: "border_color",
-      customCssClass:"btn btn-primary"
+      customCssClass:"btn btn-primary",
+      customCssId:"idTable"
     }
 
   ]
