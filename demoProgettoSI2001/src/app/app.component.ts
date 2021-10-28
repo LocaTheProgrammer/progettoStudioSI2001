@@ -28,6 +28,6 @@ export class AppComponent implements OnInit {
   }
   redirectToProfilo(){
     console.log("redirect to profile")
-    this.router.navigateByUrl("#");
+    this.router.navigateByUrl("login");
   }
 }
