@@ -10,17 +10,22 @@ export class FilteringPipe implements PipeTransform {
   logFIlteringPipe:string="[Filtering Pipe] ";
   transform(dataList: any[], searchTerm: string, serchField:string) {
 
-   console.log(this.logFIlteringPipe, "search field: ", searchTerm, " searchField: ", serchField)
+   console.log(this.logFIlteringPipe, "search term: ", searchTerm, " searchField: ", serchField)
     if(!dataList || !searchTerm){
       return dataList;
     }
 
-        this.returnString= dataList.filter(dataList =>
-          dataList.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+      if(!isNaN(+searchTerm)){
+        console.log(this.logFIlteringPipe, "NUMBER")
+       return  dataList.filter(dataList =>
+          dataList[serchField].indexOf(+searchTerm) !== -1);
+      }
+      return dataList.filter(dataList =>
+          dataList[serchField].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
 
 
 
-    return this.returnString;
+
 
   }
 

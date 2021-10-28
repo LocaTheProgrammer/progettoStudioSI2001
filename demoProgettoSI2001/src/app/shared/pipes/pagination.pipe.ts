@@ -16,6 +16,9 @@ export class PaginationPipe implements PipeTransform {
       //lunghezza/numero elementi per pagina -> trovo quante pagine
       //risultati voluti = pagina di partenza+paginazione
       //punto di partenza slice =pagina di partenza*paginazione
+    const start=+startPage;
+      const v=+visibleElements;
+
 
     return dataList ? dataList.slice(+startPage*+visibleElements, (+startPage*+visibleElements)+(+visibleElements)) : [];
   }

@@ -39,7 +39,7 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: searchTerm : searchField | pagination:visibleElements:pageNumberModel">
+  <tr *ngFor="let record of data  | pagination:visibleElements:pageNumberModel | filtering: searchTerm : searchField | sort : sortedColumn: columnOrder">
     <td *ngFor="let header of tableConfig.headers;" >
       {{record[header.key]}}
     </td>

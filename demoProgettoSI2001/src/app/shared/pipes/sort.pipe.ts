@@ -16,7 +16,7 @@ export class SortPipe implements PipeTransform {
     if(list){
       switch (columnOrder){
         case 'asc':
-          list= list.sort((a,b)=>{
+        list.sort((a,b)=>{
             if(a[column]>b[column]){
               return 1;
             }
@@ -27,7 +27,7 @@ export class SortPipe implements PipeTransform {
           });
           break;
         case 'desc':
-          list= list.sort((a,b)=>{
+         list.sort((a,b)=>{
             if(a[column]<b[column]){
               return 1;
             }
@@ -40,7 +40,7 @@ export class SortPipe implements PipeTransform {
       }
 
     }
-  console.log(this.logSort,"list: ", list)
+
     return list;
   }
 
