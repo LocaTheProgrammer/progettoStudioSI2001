@@ -67,12 +67,22 @@ export const tableConfig: MyTableConfig = {
 
   myPagination:{
     itemPerPage : 5 ,
-    itemPerPageOptions: [5,10,15,20]
+    itemPerPageOptions: [5,10,15,20],
+    customCssClass:"form-select form-select-sm"
 
   },
   actions:[
-    MyTableActionEnum.DELETE,
-    MyTableActionEnum.EDIT
+    {
+      action: MyTableActionEnum.DELETE,
+      icon: "delete_forever",
+      customCssClass:"btn btn-danger"
+    },
+    {
+      action: MyTableActionEnum.EDIT,
+      icon: "border_color",
+      customCssClass:"btn btn-primary"
+    }
+
   ]
 
 

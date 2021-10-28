@@ -19,4 +19,4 @@
   </div>
 </nav>-->
 
-<app-table [data]="jsonDataCar" [tableConfig]="tableConfig"></app-table>
+<app-table [data]="jsonDataCar" [tableConfig]="tableConfig" (btnEmitter)="output($event)"></app-table>

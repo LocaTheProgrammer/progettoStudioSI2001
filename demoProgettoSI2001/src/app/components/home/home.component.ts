@@ -44,5 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-
+  output($event: any) {
+    console.log($event)
+  }
 }
