@@ -4,10 +4,12 @@ import {AppComponent} from "./app.component";
 import {LoginComponent} from "./components/login/login.component";
 import {TableComponent} from "./components/table/table.component";
 import {HomeComponent} from "./components/home/home.component";
+import {ParcoAutoComponent} from "./components/parco-auto/parco-auto.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'parco-auto', component: ParcoAutoComponent},
   { path: 'login', component: LoginComponent },
   { path: 'table', component: TableComponent },
 ];

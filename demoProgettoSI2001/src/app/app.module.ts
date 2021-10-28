@@ -14,7 +14,8 @@ import {FormsModule} from "@angular/forms";
 import { PaginationPipe } from './shared/pipes/pagination.pipe';
 import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ParcoAutoComponent } from './components/parco-auto/parco-auto.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http'
     SortPipe,
     FilteringPipe,
     PaginationPipe,
-    HomeComponent
+    HomeComponent,
+    ParcoAutoComponent
   ],
   imports: [
     BrowserModule,
