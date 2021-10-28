@@ -11,6 +11,6 @@ export class CarServiceService {
 
   getCars() : Observable<any>{
     console.log("getting cars from http://localhost:3000/cars");
-    return this.HttpClient.get("http://localhost:3000/cars")
+    return this.HttpClient.get('http://localhost:3000/cars')
   }
 }

@@ -10,29 +10,33 @@ export class SortPipe implements PipeTransform {
   transform(list : any[], column: string, columnOrder : string ): any [] {
     console.log("column order = "+columnOrder);
 
-    switch (columnOrder){
-      case 'asc':
-        this.sortedArray= list.sort((a,b)=>{
-          if(a[column]>b[column]){
-            return 1;
-          }
-          if(a[column]<b[column]){
-            return -1;
-          }
-          return 0; //se sono uguali
-        });
-        break;
-      case 'desc':
-        this.sortedArray= list.sort((a,b)=>{
-          if(a[column]<b[column]){
-            return 1;
-          }
-          if(a[column]>b[column]){
-            return -1;
-          }
-          return 0; //se sono uguali
-        });
-        break;
+
+    if(list){
+      switch (columnOrder){
+        case 'asc':
+          this.sortedArray= list.sort((a,b)=>{
+            if(a[column]>b[column]){
+              return 1;
+            }
+            if(a[column]<b[column]){
+              return -1;
+            }
+            return 0; //se sono uguali
+          });
+          break;
+        case 'desc':
+          this.sortedArray= list.sort((a,b)=>{
+            if(a[column]<b[column]){
+              return 1;
+            }
+            if(a[column]>b[column]){
+              return -1;
+            }
+            return 0; //se sono uguali
+          });
+          break;
+      }
+
     }
 
     return this.sortedArray;

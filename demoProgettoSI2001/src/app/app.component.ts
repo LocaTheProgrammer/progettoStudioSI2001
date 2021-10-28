@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
     text : "",
     icon :"account_circle",
     customCssId : "",
-    clickFunction:""
   };
 
   constructor(private router: Router) {

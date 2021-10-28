@@ -1,4 +1,5 @@
 import {
+  MyTableActionEnum,
   MyTableConfig
 } from "./table/table.component";
 
@@ -22,17 +23,41 @@ export const dataMock: any = [{
 
 export const tableConfig: MyTableConfig = {
   headers: [{
-    key: "name",
-    label: "nome"
+    key: "Name",
+    label: "Name"
   },
     {
-      key: "surname",
-      label: "cognome"
+      key: "Miles_per_Gallon",
+      label: "Miles_per_Gallon"
     },
     {
-      key: "age",
-      label: "eta"
-    }
+      key: "Cylinders",
+      label: "Cylinders"
+    },
+    {
+      key: "Displacement",
+      label: "Displacement"
+    },
+    {
+      key: "Horsepower",
+      label: "Horsepower"
+    },
+    {
+      key: "Weight_in_lbs",
+      label: "Weight_in_lbs"
+    },
+    {
+      key: "Acceleration",
+      label: "Acceleration"
+    },
+    {
+      key: "Year",
+      label: "Year"
+    },
+    {
+      key: "Origin",
+      label: "Origin"
+    },
   ],
   myOrder: {
     defaultColumn: "age",
@@ -44,9 +69,13 @@ export const tableConfig: MyTableConfig = {
   },
 
   myPagination:{
-    itemPerPage : 1 ,
-    itemPerPageOptions: []
+    itemPerPage : 5 ,
+    itemPerPageOptions: [5,10,15,20]
 
-  }
+  },
+  actions:[
+    MyTableActionEnum.DELETE
+  ]
+
 
 }

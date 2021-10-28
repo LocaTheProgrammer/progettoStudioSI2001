@@ -2,41 +2,30 @@
 <div>
   <input type="text" placeholder="cerca utente" [(ngModel)]="searchTerm">
 </div>
-
-
-<div >
-  <strong>campo</strong>
-  <select class="form-control" name="country" [(ngModel)]="searchField">
-    <option>
-
-    </option>
-    <option [value]="nome">
-     nome
-    </option>
-    <option [value]="cognome">
-      cognome
-    </option>
-    <option [value]="eta">
-      eta
+<div>
+  <strong>paginazione</strong>
+  <select class="form-control" [(ngModel)]="visibleElements">
+    <option></option>
+    <option *ngFor="let element of tableConfig.myPagination.itemPerPageOptions">
+  {{element}}
     </option>
   </select>
 </div>
-<div >
-  <strong>paginazione</strong>
-  <select class="form-control" name="paginazione" [(ngModel)]="visibleElements">
-    <option>
-
-    </option>
-    <option>
-      1
-    </option>
-    <option>
-      2
-    </option>
-    <option>
-      3
+<div>
+  <strong>campo</strong>
+  <select class="form-control"  [(ngModel)]="searchField">
+    <option></option>
+    <option *ngFor="let header of tableConfig.headers">
+      {{header.label}}
     </option>
   </select>
+  <table>
+    <tr>
+      <td *ngFor="let page of numbers; let i=index">
+        <app-my-button-component (newItemEvent)="setPageNumberModel(i+1)" [buttonConfig]="{text: (i+1).toString(), customCssClass:'btn btn-outline-primary', icon:''}"></app-my-button-component>
+      </td>
+      </tr>
+  </table>
 </div>
   <table class="table table-dark">
   <thead>
@@ -50,12 +39,18 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: searchTerm : searchField | pagination:visibleElements; let i=index;">
+  <tr *ngFor="let record of data | sort : sortedColumn: columnOrder | filtering: searchTerm : searchField | pagination:visibleElements:pageNumberModel">
     <td *ngFor="let header of tableConfig.headers;" >
       {{record[header.key]}}
     </td>
-    <app-my-button-component (newItemEvent)="modifica(data[i].name, data[i].surname)" [buttonConfig]="buttonEdit"></app-my-button-component>
-    <app-my-button-component (newItemEvent)="delete(data[i].surname, data[i].surname)" [buttonConfig]="buttonDelete"></app-my-button-component>
+
+    <span *ngFor="let action of tableConfig.actions;">
+
+      <app-my-button-component (newItemEvent)="modifica(record.name, record.surname)" [buttonConfig]="{text: action, customCssClass:'', icon:''}"></app-my-button-component>
+
+
+    </span>
+
   </tr>
   </tbody>
 </table>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, DoCheck, Input, OnChanges, OnInit, ViewChild} from '@angular/core';
 import {MyButtonConfig} from "../my-button-component/my-button-component.component";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {dataMock} from "../data";
@@ -14,6 +14,7 @@ export interface MyTableConfig {
   myOrder : MyOrder;
   search : MySearch;
   myPagination: MyPagination;
+  actions : MyTableActionEnum [];
 }
 
 export interface MyHeaders {
@@ -29,14 +30,16 @@ export interface MyPagination {
   itemPerPageOptions : number [];
 }
 
-
+export enum MyTableActionEnum {
+  NEW_ROW= 'NEW_ROW' , EDIT='EDIT' , DELETE ='DELETE'
+}
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, OnChanges {
 
   showButtonAsc:boolean=true;
   showButtonDesc:boolean=false;
@@ -45,10 +48,14 @@ export class TableComponent implements OnInit {
   columnOrder : string ="";
   searchField : string = "";
   visibleElements:string="";
-  jsonDataCar:any
+  pageNumberModel:string=""
+  pageNumber!:number
+  numbers!:number[]
+
+
 
   @Input () tableConfig !: MyTableConfig;
-  @Input () data !: any [];
+  @Input () data : any []= [];
 
 
   buttonConfigAsc: MyButtonConfig={
@@ -56,7 +63,6 @@ export class TableComponent implements OnInit {
     text : "",
     icon :"import_export",
     customCssId : "",
-    clickFunction:""
   };
 
   buttonConfigDesc: MyButtonConfig={
@@ -64,7 +70,6 @@ export class TableComponent implements OnInit {
     text : "",
     icon :"import_export",
     customCssId : "",
-    clickFunction:""
   };
 
   buttonEdit: MyButtonConfig={
@@ -72,7 +77,6 @@ export class TableComponent implements OnInit {
     text : "",
     icon :"edit",
     customCssId : "",
-    clickFunction:""
   };
 
   buttonDelete: MyButtonConfig={
@@ -80,7 +84,6 @@ export class TableComponent implements OnInit {
     text : "",
     icon :"delete",
     customCssId : "",
-    clickFunction:""
   };
 
   nome: string="nome"
@@ -90,22 +93,40 @@ export class TableComponent implements OnInit {
 
 
 
+  setPageNumberModel(page:any){
+    this.pageNumberModel=page;
+  }
 
 
-  constructor(private carService:CarServiceService) { }
+  isDataUndefined:boolean=true;
+  ngOnChanges() {
+    if(this.data!=undefined&&this.data!=null&&this.data!=[]){
+      this.isDataUndefined=false
+      this.dataLength=this.data.length
+      this.headersLength=this.tableConfig.headers.length
+      this.pageNumber=Math.ceil(this.dataLength/this.headersLength)
+      console.log("page number: "+this.pageNumber)
 
+        this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
+  console.log(this.numbers)
+    }
+  }
+
+  constructor(private carService:CarServiceService) {
+
+
+
+  }
+
+  dataLength!:number
+  headersLength!:number
+  dataTempArr:any=[]
   ngOnInit(): void {
+    //todo sistemare
     this.sortedColumn ="age";
     this.columnOrder  ="asc";
-    this.carService.getCars().subscribe(result=>{
-      console.log("result: "+ result.result)
-      if(result.result!=null){
-        this.jsonDataCar=result.result;
-        console.log("car data: "+this.jsonDataCar)
-      }else{
-        console.log("result.result is null or undefined:  "+result.result)
-      }
-    })
+
+
   }
 
 
