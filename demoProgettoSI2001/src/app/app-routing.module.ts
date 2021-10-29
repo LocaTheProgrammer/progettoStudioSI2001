@@ -8,6 +8,7 @@ import {ParcoAutoComponent} from "./components/parco-auto/parco-auto.component";
 import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
