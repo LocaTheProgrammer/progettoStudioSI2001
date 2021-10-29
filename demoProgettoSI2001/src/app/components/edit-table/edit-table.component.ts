@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormGroup} from "@angular/forms";
 
 
 export interface MySearch {
@@ -37,6 +38,7 @@ export interface MyPagination {
 })
 export class EditTableComponent implements OnInit {
 
+  editParcoAutoForm!: FormGroup
 
   @Input () tableConfig !: MyTableConfig;
   @Input () data : any []= [];
