@@ -24,19 +24,20 @@ export class UtentiService {
     return listaUtenti;
   }
 
-  loginUtente(username:any,password:any) {
-    
-    this.HttpClient.post<any>(`${this.host}`,{username,password}).subscribe(res => {
-     if(res.email === username  && res.password===password)
+  loginUtente(username:any,password:any) {let user:any
 
-        sessionStorage.setItem("utente", JSON.stringify(res.email))
+    this.HttpClient.get<any>(`${this.host}`).subscribe(res => {
+      user=res.find((a:any)=>{
 
-
+        sessionStorage.setItem("utente", JSON.stringify(a.email))
+        sessionStorage.setItem("ruolo", JSON.stringify(a.role))
         this.router.navigate(['/home'])
        
-       
+        return a.email === username && a.password===password;
       })
+    })
 
+   
     
   }
 }
