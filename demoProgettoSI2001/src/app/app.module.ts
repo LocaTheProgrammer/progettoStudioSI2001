@@ -15,7 +15,8 @@ import { PaginationPipe } from './shared/pipes/pagination.pipe';
 import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ParcoAutoComponent } from './components/parco-auto/parco-auto.component'
+import { ParcoAutoComponent } from './components/parco-auto/parco-auto.component';
+import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ParcoAutoComponent } from './components/parco-auto/parco-auto.component
     FilteringPipe,
     PaginationPipe,
     HomeComponent,
-    ParcoAutoComponent
+    ParcoAutoComponent,
+    EditParcoAutoComponent
   ],
   imports: [
     BrowserModule,

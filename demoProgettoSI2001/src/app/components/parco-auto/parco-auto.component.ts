@@ -5,6 +5,7 @@ import {MyTableConfig} from "../table/table.component";
 
 import {dataMock, tableConfig} from "../data";
 import {CarServiceService} from "../../services/carService/car-service.service";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ParcoAutoComponent implements OnInit {
 
   jsonDataCar!:any []
 
-  constructor(private carService:CarServiceService) {
+  constructor(private carService:CarServiceService, private router:Router) {
   }
 
   isContentLoaded:boolean=false;
@@ -37,6 +38,13 @@ export class ParcoAutoComponent implements OnInit {
   }
 
   output($event: any) {
-    console.log($event)
+    console.log($event.data)
+    switch($event.action.action){
+      case 'EDIT':
+        this.router.navigate(['/edit-parco-auto'], {queryParams: {data: $event.data}})
+        break;
+        case 'DELETE':
+        break;
+    }
   }
 }
