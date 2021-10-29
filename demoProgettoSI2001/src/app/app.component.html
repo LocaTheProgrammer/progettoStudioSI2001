@@ -6,11 +6,11 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/parco-auto">Parco Auto</a>
+        <a class="nav-link" (click)="redirectToParcoAuto()">Parco Auto</a>
       </li>
       <li class="nav-item dropdown">
         <div ngbDropdown class="d-inline-block">
-          <app-my-button-component  (newItemEvent)="redirectToProfilo()" [buttonConfig]="buttonHome" ></app-my-button-component>
+          <app-my-button-component  (newItemEvent)="redirectToProfilo()" [buttonConfig]="buttonHome"></app-my-button-component>
         </div>
       </li>
     </ul>

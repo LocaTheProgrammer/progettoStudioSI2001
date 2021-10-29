@@ -30,4 +30,8 @@ export class AppComponent implements OnInit {
     console.log("redirect to profile")
     this.router.navigateByUrl("login");
   }
+
+  redirectToParcoAuto(){
+    this.router.navigateByUrl("/parco-auto")
+  }
 }

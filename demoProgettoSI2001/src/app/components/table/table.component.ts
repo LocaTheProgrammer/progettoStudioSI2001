@@ -55,7 +55,7 @@ export class TableComponent implements OnInit, OnChanges {
   dataLength!:number
   headersLength!:number
   isDataUndefined:boolean=true;
-
+  role?:any=sessionStorage.getItem("ruolo")?.replace('"', '').replace('"','');
 
 
 

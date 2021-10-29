@@ -29,8 +29,9 @@ export class UtentiService {
     this.HttpClient.get<any>(`${this.host}`).subscribe(res => {
       user=res.find((a:any)=>{
 
-        sessionStorage.setItem("utente", JSON.stringify(a.email))
-        sessionStorage.setItem("ruolo", JSON.stringify(a.role))
+        sessionStorage.setItem("utente",a.email)
+        sessionStorage.setItem("ruolo", a.role)
+        console.log(a.role)
         this.router.navigate(['/home'])
        
         return a.email === username && a.password===password;
