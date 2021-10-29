@@ -11,7 +11,6 @@ import { UtentiService } from 'src/app/services/utenti/utenti.service';
 export class LoginComponent implements OnInit {
 
   loginUtenteForm!: FormGroup
-  recuperoForm!: FormGroup
 
   toggled = true
   passwordType = 'password'
@@ -27,10 +26,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
     })
 
-    this.recuperoForm = this.fb.group({
-      email: ['', Validators.required],
-      password: [''],
-    })
+
 
   }
 

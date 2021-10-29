@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormGroup} from "@angular/forms";
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 
 export interface MySearch {
@@ -36,19 +36,33 @@ export interface MyPagination {
   templateUrl: './edit-table.component.html',
   styleUrls: ['./edit-table.component.scss']
 })
-export class EditTableComponent implements OnInit {
+export class EditTableComponent implements OnChanges {
 
   editParcoAutoForm!: FormGroup
 
   @Input () tableConfig !: MyTableConfig;
   @Input () data : any []= [];
   @Output() btnEmitter = new EventEmitter<any>();
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    
+   }
 
 
-  ngOnInit(): void {
-
+  ngOnChanges(): void {
+    this.editParcoAutoForm = this.fb.group({
+      Name: ['', Validators.required],
+      Miles_per_Gallon: ['', Validators.required],
+      Cylinders: ['', Validators.required],
+      Displacement : ['', Validators.required],
+      Horsepower : ['', Validators.required],
+      Weight_in_lbs : ['', Validators.required],
+      Acceleration : ['', Validators.required],
+      Year : ['', Validators.required],
+      Origin : ['', Validators.required],
+    })
 
   }
+    
+
 
 }
