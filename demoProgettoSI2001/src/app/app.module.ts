@@ -16,7 +16,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ParcoAutoComponent } from './components/parco-auto/parco-auto.component';
-import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component'
+import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component';
+import { EditTableComponent } from './components/edit-table/edit-table.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-
     PaginationPipe,
     HomeComponent,
     ParcoAutoComponent,
-    EditParcoAutoComponent
+    EditParcoAutoComponent,
+    EditTableComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

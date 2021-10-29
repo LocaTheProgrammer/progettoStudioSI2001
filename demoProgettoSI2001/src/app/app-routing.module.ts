@@ -6,6 +6,7 @@ import {TableComponent} from "./components/table/table.component";
 import {HomeComponent} from "./components/home/home.component";
 import {ParcoAutoComponent} from "./components/parco-auto/parco-auto.component";
 import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'parco-auto', component: ParcoAutoComponent},
   { path: 'edit-parco-auto', component: EditParcoAutoComponent },
-  { path: 'table', component: TableComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

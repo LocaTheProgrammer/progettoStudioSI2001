@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import {MyTableConfig} from "../table/table.component";
 
 @Component({
   selector: 'app-edit-parco-auto',
@@ -12,6 +13,8 @@ export class EditParcoAutoComponent implements OnInit {
 
   itemToUpdate!:any
   data!:JSON
+  tableConfig!:MyTableConfig;
+
   ngOnInit(): void {
     console.log(this.route.snapshot.queryParamMap.get('data'))
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
