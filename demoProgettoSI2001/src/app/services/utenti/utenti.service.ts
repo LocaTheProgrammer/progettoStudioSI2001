@@ -24,21 +24,19 @@ export class UtentiService {
     return listaUtenti;
   }
 
-  loginUtente(username:any,password:any) {let user:any
-    console.log("login attempt")
-    this.HttpClient.get<any>(`${this.host}`).subscribe(res => {
-      user=res.find((a:any)=>{
+  loginUtente(username:any,password:any) {
+    
+    this.HttpClient.post<any>(`${this.host}`,{username,password}).subscribe(res => {
+     if(res.email === username  && res.password===password)
 
-        sessionStorage.setItem("utente", JSON.stringify(user))
+        sessionStorage.setItem("utente", JSON.stringify(res.email))
+
+
         this.router.navigate(['/home'])
-        console.log(a.email)
-        console.log(a.password)
        
-        return a.email === username && a.password===password;
+       
       })
-    })
 
-   
     
   }
 }

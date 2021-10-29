@@ -23,6 +23,71 @@
       "email": "ann@codingthesmartway.com",
       "password": "1234",
       "role": "admin"
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 6
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 7
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 8
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 9
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 10
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 11
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 12
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 13
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 14
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "1234",
+      "id": 15
+    },
+    {
+      "username": "sebastian@codingthesmartway.com",
+      "password": "12345",
+      "id": 16
     }
   ],
   "cars": [

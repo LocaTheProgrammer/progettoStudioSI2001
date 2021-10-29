@@ -48,8 +48,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.utentiService.loginUtente(this.loginUtenteForm.value.username, this.loginUtenteForm.value.password)
-    if(sessionStorage.getItem("user")!=null&&sessionStorage.getItem("user")!=undefined&&sessionStorage.getItem("user")!=""){
+    if(sessionStorage.getItem("utente")!=null&&sessionStorage.getItem("utente")!=undefined&&sessionStorage.getItem("utente")!=""){
       console.log("funziona")
+      console.log(sessionStorage.getItem("utente"))
     }
   }
 
