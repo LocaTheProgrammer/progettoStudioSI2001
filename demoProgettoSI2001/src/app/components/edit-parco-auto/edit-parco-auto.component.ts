@@ -11,13 +11,11 @@ export class EditParcoAutoComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   itemToUpdate!:any
-  
+  data!:JSON
   ngOnInit(): void {
-    
-    this.route.queryParams.subscribe(params => {
-      this.itemToUpdate = params['data'];
-  });
-    console.log(this.itemToUpdate.data)
+    console.log(this.route.snapshot.queryParamMap.get('data'))
+    this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
+    this.data=JSON.parse(this.itemToUpdate);
   }
 
 }
