@@ -1,4 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+
+
+export interface MySearch {
+  columns : string [];
+}
+
+export interface MyTableConfig {
+  headers : MyHeaders [];
+  myOrder : MyOrder;
+  search : MySearch;
+  myPagination: MyPagination;
+  actions : any ;
+}
+
+export interface MyHeaders {
+  key : string ;
+  label : string ;
+}
+export interface MyOrder {
+  defaultColumn : string ;
+  orderType : string ;
+}
+export interface MyPagination {
+  itemPerPage : number ;
+  itemPerPageOptions : number [];
+  customCssClass:string
+}
+
+
+
 
 @Component({
   selector: 'app-edit-table',
@@ -7,9 +37,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditTableComponent implements OnInit {
 
+
+  @Input () tableConfig !: MyTableConfig;
+  @Input () data : any []= [];
+  @Output() btnEmitter = new EventEmitter<any>();
   constructor() { }
 
+
   ngOnInit(): void {
+
+
   }
 
 }

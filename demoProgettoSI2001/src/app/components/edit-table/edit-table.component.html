@@ -1,1 +1,22 @@
-<p>edit-table works!</p>
+<form>
+
+  <div style="width:97%; margin: auto">
+    <table class="table table-dark">
+      <thead>
+      <tr>
+        <th *ngFor="let header of tableConfig.headers">
+          {{header.label}}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let record of data">
+        <td *ngFor="let header of tableConfig.headers;" >
+          {{record[header.key]}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</form>
