@@ -1,3 +1,4 @@
+
 <div class="tableEdit">
 <form style="width:5%;" [formGroup]="editParcoAutoForm"> 
 
@@ -12,7 +13,7 @@
       <tbody>
       <tr *ngFor="let record of data">
         <td *ngFor="let header of tableConfig.headers;" >
-          <input type="text" value="{{record[header.key]}}" formControlName="{{header.label}}">
+          <input type="text" [(ngModel)]="record[header.key]" formControlName="{{header.label}}" >
         </td>
       </tr>
       </tbody>
