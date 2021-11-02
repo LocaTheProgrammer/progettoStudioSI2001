@@ -1,8 +1,4 @@
 import {Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
-import {MyButtonConfig} from "../my-button-component/my-button-component.component";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {dataMock} from "../data";
-import {CarServiceService} from "../../services/carService/car-service.service";
 
 
 export interface MySearch {
