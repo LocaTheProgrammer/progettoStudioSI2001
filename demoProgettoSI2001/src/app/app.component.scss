@@ -1,4 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import '~mat-range-datepicker/theming';
+//@include mat-range-datepicker-theme($theme);
+//# material theme data structure https://material.angular.io/guide/theming#defining-a-custom-theme
+
 @media only screen and (min-width: 900px) {
 
 }

@@ -19,7 +19,8 @@ import { ParcoAutoComponent } from './components/parco-auto/parco-auto.component
 import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component';
 import { EditTableComponent } from './components/edit-table/edit-table.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { BookingCarComponent } from './components/booking-car/booking-car.component'
+import { BookCarComponent } from './components/book-car/book-car.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +36,10 @@ import { BookingCarComponent } from './components/booking-car/booking-car.compon
     EditParcoAutoComponent,
     EditTableComponent,
     PageNotFoundComponent,
-    BookingCarComponent
+    BookCarComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import { BookingCarComponent } from './components/booking-car/booking-car.compon
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+
 
   ],
   providers: [],

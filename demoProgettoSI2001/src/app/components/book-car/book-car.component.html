@@ -1,0 +1,28 @@
+<div class="datePicker">
+  <h1>Pick a date range to book the car</h1>
+  <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+  </ngb-datepicker>
+
+  <ng-template #t let-date let-focused="focused">
+  <span class="custom-day"
+        [class.focused]="focused"
+        [class.range]="isRange(date)"
+        [class.faded]="isHovered(date) || isInside(date)"
+        (mouseenter)="hoveredDate = date"
+        (mouseleave)="hoveredDate = null">
+    {{ date.day }}
+  </span>
+  </ng-template>
+
+</div>
+
+<div class="bookBtn">
+  <app-my-button-component [buttonConfig]="{text: 'Prenota', customCssClass:'btn btn-primary', icon:'collections_bookmark'}"></app-my-button-component>
+</div>
+
+
+<hr>
+<!--
+<pre>From: {{ fromDate | json }} </pre>
+<pre>To: {{ toDate | json }} </pre>
+-->

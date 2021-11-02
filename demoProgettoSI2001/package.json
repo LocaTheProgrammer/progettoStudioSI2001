@@ -2,11 +2,11 @@
   "name": "demo-progetto-si2001",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "ng": "../../altro/bup/node_modules/.bin/ng",
+    "start": "../../altro/bup/node_modules/.bin/ng serve",
+    "build": "../../altro/bup/node_modules/.bin/ng build",
+    "watch": "../../altro/bup/node_modules/.bin/ng build --watch --configuration development",
+    "test": "../../altro/bup/node_modules/.bin/ng test"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +22,13 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "@syncfusion/ej2": "^19.3.48",
+    "@syncfusion/ej2-angular-calendars": "^19.3.46",
+    "@syncfusion/ej2-angular-dropdowns": "^19.3.48",
+    "@syncfusion/ej2-angular-inputs": "^19.3.48",
     "bootstrap": "^4.6.0",
+    "mat-range-datepicker": "^1.0.5",
+    "ngx-daterangepicker-material": "^2.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -117,9 +117,6 @@ export class TableComponent implements OnInit, OnChanges {
 
   click(action:any, record:any){
   this.btnEmitter.emit({action:action, data:record})
-
-
-
   }
 
   setPageNumberModel(page:any){
