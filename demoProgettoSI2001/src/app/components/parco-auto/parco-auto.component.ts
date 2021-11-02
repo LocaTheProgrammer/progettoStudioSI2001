@@ -38,7 +38,6 @@ export class ParcoAutoComponent implements OnInit {
   }
 
   output($event: any) {
-    console.log($event.data)
     switch($event.action.action){
       case 'EDIT':
         this.router.navigate(['/edit-parco-auto'], {queryParams: {data: JSON.stringify($event.data)}})

@@ -41,7 +41,7 @@
 
       <span *ngFor="let action of tableConfig.actions;">
         <td *ngIf="role==='admin'" >
-          <app-my-button-component  (newItemEvent)="click(action, record)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
+          <app-my-button-component  (newItemEvent)="click(action, record.id)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
         </td>
         </span>
 
@@ -51,7 +51,6 @@
   <div>
     <span style="font-weight: lighter">Item per page</span>
     <select class="form-select form-select-sm" [(ngModel)]="visibleElements" (ngModelChange)="onInputChange($event)">
-      <option></option>
       <option *ngFor="let element of tableConfig.myPagination.itemPerPageOptions">
         {{element}}
       </option>
