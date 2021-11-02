@@ -16,23 +16,13 @@ export class EditParcoAutoComponent implements OnInit{
   itemToUpdate!:any
   data!:JSON[]
   tableConfig!:MyTableConfig;
-  car!:any
 
-  ngOnChanges(): void {
-
-
-
-
-
-
-  }
 
   ngOnInit() {
     this.tableConfig=tableConfig;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
     this.carService.getCarById(this.itemToUpdate).subscribe((result:any)=>{
       this.data=new Array(1).fill(result);
-      this.car=result;
       }
     );
   }

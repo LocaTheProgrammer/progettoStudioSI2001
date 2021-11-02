@@ -22,8 +22,10 @@ export class CarServiceService {
 
   }
 
-  updateCar(editParcoAutoForm:any) : Observable<any>{
-    return this.HttpClient.put(this.url, editParcoAutoForm);
+  updateCar(editParcoAutoForm:any, id:any) : Observable<any>{
+
+
+    return this.HttpClient.put(`${this.url}/${id}`, editParcoAutoForm);
 
   }
 }

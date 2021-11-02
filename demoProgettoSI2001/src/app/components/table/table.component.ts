@@ -68,6 +68,7 @@ export class TableComponent implements OnInit, OnChanges {
   ngOnChanges() {
   this.visibleElements=this.tableConfig.myPagination.itemPerPage.toString()
     if((this.data!=undefined&&this.data!=null&&this.data!=[])){
+
       this.isDataUndefined=false
       this.dataLength=this.data.length
       this.headersLength=this.tableConfig.headers.length

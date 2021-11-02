@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CarServiceService} from "../../services/carService/car-service.service";
+import {Router} from "@angular/router";
 
 
 export interface MySearch {
@@ -45,12 +46,13 @@ export class EditTableComponent implements OnChanges {
   @Input () tableConfig !: MyTableConfig;
   @Input () data : any []= [];
   @Output() btnEmitter = new EventEmitter<any>();
-  constructor(private fb: FormBuilder, private carService: CarServiceService) {
+  constructor(private fb: FormBuilder, private carService: CarServiceService, private router: Router) {
 
    }
 
 
   ngOnChanges(): void {
+
     this.editParcoAutoForm = this.fb.group({
       Name: ['', Validators.required],
       Miles_per_Gallon: ['', Validators.required],
@@ -66,8 +68,11 @@ export class EditTableComponent implements OnChanges {
   }
 
   update(){
-    console.log(this.editParcoAutoForm.value)
-    this.carService.updateCar(this.editParcoAutoForm)
+    this.carService.updateCar(this.editParcoAutoForm.value, this.data[0].id).subscribe()
+
+    this.router.navigate(["/parco-auto"]);
+
+
   }
 
 
