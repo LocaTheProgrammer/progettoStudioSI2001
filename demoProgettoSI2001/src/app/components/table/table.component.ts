@@ -55,6 +55,7 @@ export class TableComponent implements OnInit, OnChanges {
   dataLength!:number
   headersLength!:number
   isDataUndefined:boolean=true;
+  campoDiRiecerca : string ="";
   role?:any=sessionStorage.getItem("ruolo")?.replace('"', '').replace('"','');
 
 
@@ -70,18 +71,29 @@ export class TableComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
   this.visibleElements=this.tableConfig.myPagination.itemPerPage.toString()
-    if(this.data!=undefined&&this.data!=null&&this.data!=[]){
+    if((this.data!=undefined&&this.data!=null&&this.data!=[])){
       this.isDataUndefined=false
       this.dataLength=this.data.length
       this.headersLength=this.tableConfig.headers.length
-      this.pageNumber=Math.ceil(this.dataLength/this.headersLength)
+      this.pageNumber=Math.floor(this.dataLength/+this.visibleElements)
+
       this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
     }
-
-
   }
 
+
+
   ngOnInit(): void {}
+
+  onInputChange($event:any){
+   this.visibleElements=$event;
+    this.headersLength=this.tableConfig.headers.length
+    this.pageNumber=Math.floor(this.dataLength/+this.visibleElements)
+
+    this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
+  }
+
+
 
 
 

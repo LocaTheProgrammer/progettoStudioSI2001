@@ -15,6 +15,7 @@ export class EditParcoAutoComponent implements OnInit {
   data!:JSON[]
   tableConfig!:MyTableConfig;
 
+
   ngOnInit(): void {
     this.tableConfig=tableConfig;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');

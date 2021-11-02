@@ -6,7 +6,7 @@
       <td>
 
         <select class="form-control" style="width: 100%; margin-left: 2%; height: 85%"  [(ngModel)]="searchField">
-          <option disabled="true" selected disabled>select search field</option>
+          <option disabled="true" [ngValue]="campoDiRiecerca">select search field</option>
           <option *ngFor="let header of tableConfig.headers">
             {{header.label}}
           </option>
@@ -50,7 +50,7 @@
   </table>
   <div>
     <span style="font-weight: lighter">Item per page</span>
-    <select class="form-select form-select-sm" [(ngModel)]="visibleElements">
+    <select class="form-select form-select-sm" [(ngModel)]="visibleElements" (ngModelChange)="onInputChange($event)">
       <option></option>
       <option *ngFor="let element of tableConfig.myPagination.itemPerPageOptions">
         {{element}}

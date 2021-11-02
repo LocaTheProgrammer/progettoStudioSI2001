@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {CarServiceService} from "../../services/carService/car-service.service";
 
 
 export interface MySearch {
@@ -39,12 +40,13 @@ export interface MyPagination {
 export class EditTableComponent implements OnChanges {
 
   editParcoAutoForm!: FormGroup
+  txtSalva:string="Salva"
 
   @Input () tableConfig !: MyTableConfig;
   @Input () data : any []= [];
   @Output() btnEmitter = new EventEmitter<any>();
-  constructor(private fb: FormBuilder) {
-    
+  constructor(private fb: FormBuilder, private carService: CarServiceService) {
+
    }
 
 
@@ -62,7 +64,12 @@ export class EditTableComponent implements OnChanges {
     })
 
   }
-    
+
+  update(){
+    console.log(this.editParcoAutoForm.value)
+    this.carService.updateCar(this.editParcoAutoForm)
+  }
+
 
 
 }
