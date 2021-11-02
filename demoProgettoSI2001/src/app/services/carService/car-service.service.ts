@@ -16,16 +16,14 @@ export class CarServiceService {
   }
 
   getCarById(id:any):Observable<any>{
-
      return this.HttpClient.get<any>(`${this.url}/${id}`)
-
-
   }
 
   updateCar(editParcoAutoForm:any, id:any) : Observable<any>{
-
-
     return this.HttpClient.put(`${this.url}/${id}`, editParcoAutoForm);
+  }
 
+  deleteCar(id:any){
+    return this.HttpClient.delete(`${this.url}/${id}`).subscribe();
   }
 }

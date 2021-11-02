@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ParcoAutoComponent } from './components/parco-auto/parco-auto.component';
 import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component';
 import { EditTableComponent } from './components/edit-table/edit-table.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { BookingCarComponent } from './components/booking-car/booking-car.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ParcoAutoComponent,
     EditParcoAutoComponent,
     EditTableComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BookingCarComponent
   ],
   imports: [
     BrowserModule,

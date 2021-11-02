@@ -7,6 +7,7 @@ import {HomeComponent} from "./components/home/home.component";
 import {ParcoAutoComponent} from "./components/parco-auto/parco-auto.component";
 import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {BookingCarComponent} from "./components/booking-car/booking-car.component";
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'parco-auto', component: ParcoAutoComponent},
   { path: 'edit-parco-auto', component: EditParcoAutoComponent },
+  { path: 'booking-car', component: BookingCarComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

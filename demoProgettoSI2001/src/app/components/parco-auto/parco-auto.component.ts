@@ -20,7 +20,6 @@ export class ParcoAutoComponent implements OnInit {
   constructor(private carService:CarServiceService, private router:Router) {
   }
 
-  isContentLoaded:boolean=false;
 
   tableConfig!:MyTableConfig;
 
@@ -31,7 +30,6 @@ export class ParcoAutoComponent implements OnInit {
     this.carService.getCars().subscribe((result:any)=>{
       if(result!=null){
         this.jsonDataCar=result;
-        this.isContentLoaded=true;
       }
     })
 
@@ -43,6 +41,8 @@ export class ParcoAutoComponent implements OnInit {
         this.router.navigate(['/edit-parco-auto'], {queryParams: {data: JSON.stringify($event.data)}})
         break;
         case 'DELETE':
+          this.carService.deleteCar($event.data)
+          this.ngOnInit()
         break;
     }
   }
