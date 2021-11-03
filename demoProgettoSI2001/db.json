@@ -2,24 +2,24 @@
   "utenti": [
     {
       "id": 1,
-      "first_name": "Sebastian",
-      "last_name": "Eschweiler",
+      "firstName": "Sebastian",
+      "lastName": "Eschweiler",
       "email": "sebastian@codingthesmartway.com",
       "password": "1234",
       "role": "user"
     },
     {
       "id": 2,
-      "first_name": "Steve",
-      "last_name": "Palmer",
+      "firstName": "Steve",
+      "lastName": "Palmer",
       "email": "steve@codingthesmartway.com",
       "password": "1234",
       "role": "user"
     },
     {
       "id": 3,
-      "first_name": "Ann",
-      "last_name": "Smith",
+      "firstName": "Ann",
+      "lastName": "Smith",
       "email": "ann@codingthesmartway.com",
       "password": "1234",
       "role": "admin"
@@ -165,30 +165,6 @@
   ],
   "cars": [
     {
-      "id": 4,
-      "Name": "amc rebel sst",
-      "Miles_per_Gallon": 16,
-      "Cylinders": 8,
-      "Displacement": 304,
-      "Horsepower": 150,
-      "Weight_in_lbs": 3433,
-      "Acceleration": 12,
-      "Year": "1970-01-01",
-      "Origin": "USA"
-    },
-    {
-      "id": 5,
-      "Name": "ford torino",
-      "Miles_per_Gallon": 17,
-      "Cylinders": 8,
-      "Displacement": 302,
-      "Horsepower": 140,
-      "Weight_in_lbs": 3449,
-      "Acceleration": 10.5,
-      "Year": "1970-01-01",
-      "Origin": "USA"
-    },
-    {
       "id": 6,
       "Name": "ford galaxie 500",
       "Miles_per_Gallon": 15,
@@ -221,18 +197,6 @@
       "Horsepower": 215,
       "Weight_in_lbs": 4312,
       "Acceleration": 8.5,
-      "Year": "1970-01-01",
-      "Origin": "USA"
-    },
-    {
-      "id": 9,
-      "Name": "pontiac catalina",
-      "Miles_per_Gallon": 14,
-      "Cylinders": 8,
-      "Displacement": 455,
-      "Horsepower": 225,
-      "Weight_in_lbs": 4425,
-      "Acceleration": 10,
       "Year": "1970-01-01",
       "Origin": "USA"
     },

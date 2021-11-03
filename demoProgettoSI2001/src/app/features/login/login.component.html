@@ -35,20 +35,27 @@
 
 
 
-
-
-<div *ngIf="role==='user'">
-  <button (click)="logout()">Logout</button>
-  <app-table [data]="bookedCars" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-table>
-
+<div *ngIf="utente&&(role=='admin'||role=='user') " class="login-form">
+  <table class="table">
+    <tr>
+      <td>nome</td>
+      <td>{{utente.firstName}}</td>
+    </tr>
+    <tr>
+      <td>cognome</td>
+      <td>{{utente.lastName}}</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>{{utente.email}}</td>
+    </tr>
+  </table>
+</div>
+<div class="buttonPrenotazioni">
+  <app-my-button-component (click)="linkToReservation()" [buttonConfig]="{text: 'Prenotazioni', customCssClass:'btn btn-primary', icon:'collections_bookmark'}"></app-my-button-component>
 </div>
 
 
 
-<div *ngIf="role==='admin'">
-  <button (click)="logout()">Logout</button>
-  <app-table [data]="reservations" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-table>
-
-</div>
 
 

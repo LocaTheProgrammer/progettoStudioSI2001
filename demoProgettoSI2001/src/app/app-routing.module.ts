@@ -6,6 +6,7 @@ import {ParcoAutoComponent} from "./features/parco-auto/parco-auto.component";
 import { EditParcoAutoComponent } from './features/edit-parco-auto/edit-parco-auto.component';
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 import {BookCarComponent} from "./features/book-car/book-car.component";
+import {ReservationsComponent} from "./features/reservations/reservations.component";
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'parco-auto', component: ParcoAutoComponent},
   { path: 'edit-parco-auto', component: EditParcoAutoComponent },
   { path: 'booking-car', component: BookCarComponent},
+  { path: 'prenotazioni', component: ReservationsComponent},
   { path: '**', component: PageNotFoundComponent },
 ];
 
