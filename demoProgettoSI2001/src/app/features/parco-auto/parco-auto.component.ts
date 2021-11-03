@@ -3,7 +3,7 @@ import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@an
 import {MyTableConfig} from "../../components/table/table.component";
 
 
-import {dataMock, tableConfigAdmin, tableConfigUser} from "../../components/data";
+import {dataMock, tableConfigAdmin, tableConfigAdminParcoAuto, tableConfigUserParcoAuto} from "../../components/data";
 import {CarService} from "../../services/car/car.service";
 import { Router } from '@angular/router';
 
@@ -31,10 +31,10 @@ export class ParcoAutoComponent implements OnInit{
 
 
   onInitMethod():void{
-    if(sessionStorage.getItem("role")==='admin'){
-      this.tableConfig=tableConfigAdmin;
+    if(sessionStorage.getItem("ruolo")==='admin'){
+      this.tableConfig=tableConfigAdminParcoAuto;
     }else{
-      this.tableConfig=tableConfigUser;
+      this.tableConfig=tableConfigUserParcoAuto;
     }
 
     this.carService.getCars().subscribe((result:any)=>{

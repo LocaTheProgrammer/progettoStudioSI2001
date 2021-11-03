@@ -1,6 +1,5 @@
 
-<!--  Request me for a signup form or any type of help  -->
-<div class="login-form" id="start">
+<div class="login-form" id="start" *ngIf="role!=='admin'&&role!=='user'">
   <form [formGroup]="loginUtenteForm" >
     <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
     <h4 class="modal-title">Login to Your Account</h4>
@@ -34,5 +33,22 @@
 </div>
 
 
+
+
+
+
+<div *ngIf="role==='user'">
+  <button (click)="logout()">Logout</button>
+  <app-table [data]="bookedCars" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-table>
+
+</div>
+
+
+
+<div *ngIf="role==='admin'">
+  <button (click)="logout()">Logout</button>
+  <app-table [data]="reservations" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-table>
+
+</div>
 
 

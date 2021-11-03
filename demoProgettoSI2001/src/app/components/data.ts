@@ -17,8 +17,7 @@ export const dataMock: any = [{
   }
 ];
 
-
-export const tableConfigAdmin: MyTableConfig = {
+export const tableConfigAdminParcoAuto: MyTableConfig = {
   headers: [{
     key: "Name",
     label: "Name"
@@ -84,6 +83,66 @@ export const tableConfigAdmin: MyTableConfig = {
       customCssClass:"btn btn-primary",
       customCssId:"idTable"
     },
+
+  ]
+
+
+}
+export const tableConfigAdmin: MyTableConfig = {
+  headers: [{
+    key: "Name",
+    label: "Name"
+  },
+    {
+      key: "Miles_per_Gallon",
+      label: "Miles_per_Gallon"
+    },
+    {
+      key: "Cylinders",
+      label: "Cylinders"
+    },
+    {
+      key: "Displacement",
+      label: "Displacement"
+    },
+    {
+      key: "Horsepower",
+      label: "Horsepower"
+    },
+    {
+      key: "Weight_in_lbs",
+      label: "Weight_in_lbs"
+    },
+    {
+      key: "Acceleration",
+      label: "Acceleration"
+    },
+    {
+      key: "Year",
+      label: "Year"
+    },
+    {
+      key: "Origin",
+      label: "Origin"
+    },
+  ],
+  myOrder: {
+    defaultColumn: "Name",
+    orderType: "asc"
+  },
+
+  search: {
+    columns: []
+  },
+
+  myPagination:{
+    itemPerPage : 5 ,
+    itemPerPageOptions: [5,10,15,20],
+    customCssClass:"form-select form-select-sm"
+
+  },
+  actions:[
+
     {
       action: MyTableActionEnum.APPROVA,
       icon: "book",
@@ -95,7 +154,7 @@ export const tableConfigAdmin: MyTableConfig = {
 
 
 }
-export const tableConfigUser: MyTableConfig = {
+export const tableConfigUserParcoAuto: MyTableConfig = {
   headers: [{
     key: "Name",
     label: "Name"
@@ -157,6 +216,71 @@ export const tableConfigUser: MyTableConfig = {
       customCssId:"idTable"
     },
 
+  ]
+
+
+}
+
+export const tableConfigUserPrenotazioni: MyTableConfig = {
+  headers: [{
+    key: "Name",
+    label: "Name"
+  },
+    {
+      key: "Miles_per_Gallon",
+      label: "Miles_per_Gallon"
+    },
+    {
+      key: "Cylinders",
+      label: "Cylinders"
+    },
+    {
+      key: "Displacement",
+      label: "Displacement"
+    },
+    {
+      key: "Horsepower",
+      label: "Horsepower"
+    },
+    {
+      key: "Weight_in_lbs",
+      label: "Weight_in_lbs"
+    },
+    {
+      key: "Acceleration",
+      label: "Acceleration"
+    },
+    {
+      key: "Year",
+      label: "Year"
+    },
+    {
+      key: "Origin",
+      label: "Origin"
+    },
+  ],
+  myOrder: {
+    defaultColumn: "Name",
+    orderType: "asc"
+  },
+
+  search: {
+    columns: []
+  },
+
+  myPagination:{
+    itemPerPage : 5 ,
+    itemPerPageOptions: [5,10,15,20],
+    customCssClass:"form-select form-select-sm"
+
+  },
+  actions:[
+    {
+      action: MyTableActionEnum.DETTAGLI,
+      icon: "info",
+      customCssClass:"btn btn-primary",
+      customCssId:"idTable"
+    },
   ]
 
 

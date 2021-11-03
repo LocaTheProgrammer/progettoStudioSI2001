@@ -13,14 +13,14 @@ export class ReservationService {
 
   constructor(private HttpClient: HttpClient) { }
 
-  insertReservation(lastId:any, userId:any, carId:any, reservationDate:any){
-    console.log(userId, carId, reservationDate)
-
-  return this.HttpClient.post<any>(`${this.host}`, {lastId, userId, carId, reservationDate})
+  insertReservation(lastId:any, userId:any, car:any, reservationDate:any){
+    return this.HttpClient.post<any>(`${this.host}`, {lastId, userId, car, reservationDate})
   }
 
   getReservations():Observable<any>{
     return this.HttpClient.get<any>(`${this.host}`)
   }
+
+
 
 }

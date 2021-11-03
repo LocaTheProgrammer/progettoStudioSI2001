@@ -14,10 +14,8 @@ export class UtentiService {
 
 
   loginUtente() :Observable<any> {
-
-
     return this.HttpClient.get<any>(`${this.host}`)
-
-
   }
+
+
 }

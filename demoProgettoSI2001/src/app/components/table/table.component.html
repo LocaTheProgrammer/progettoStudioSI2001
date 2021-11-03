@@ -42,7 +42,7 @@
 
       <span *ngFor="let action of tableConfig.actions;">
        <!-- <td *ngIf="role==='admin'" >-->
-          <app-my-button-component  (newItemEvent)="click(action, record.id)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
+          <app-my-button-component  (newItemEvent)="click(action, record)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
        <!-- </td> -->
         </span>
 

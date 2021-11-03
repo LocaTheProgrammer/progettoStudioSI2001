@@ -25,9 +25,5 @@
 </div>
 
 <div *ngIf="isPrenotaClicked">
-  <app-table [data]="availableCars" [tableConfig]="tableConfig" (btnEmitter)="book($event)"></app-table> <!-- -->
+  <app-table [data]="availableCars" [tableConfig]="tableConfig" (btnEmitter)="book($event)"></app-table>
 </div>
-
-
-{{fromDate|json}}
-{{toDate|json}}

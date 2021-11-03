@@ -1,7 +1,7 @@
 import {Component, OnChanges, OnDestroy, OnInit} from '@angular/core';
-import {NgbCalendar, NgbDate} from "@ng-bootstrap/ng-bootstrap";
+import {ModalDismissReasons, NgbCalendar, NgbDate, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CarService} from "../../services/car/car.service";
-import {dataMock, tableConfigAdmin, tableConfigUser,} from "../../components/data";
+import {dataMock, tableConfigAdmin, tableConfigUserPrenotazioni,} from "../../components/data";
 import {MyTableConfig} from "../../components/table/table.component";
 import {ReservationService} from "../../services/reservation/reservation.service";
 
@@ -16,11 +16,11 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
 
   ngOnInit(): void {
 
-    if(sessionStorage.getItem("role")==='admin'){
+    if(sessionStorage.getItem("ruolo")==='admin'){
       this.tableConfig=tableConfigAdmin;
     }
     else{
-      this.tableConfig=tableConfigUser;
+      this.tableConfig=tableConfigUserPrenotazioni;
     }
 
 
@@ -40,10 +40,10 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   fromDate: NgbDate;
   toDate: NgbDate | null = null;
   isPrenotaClicked=false;
-
+  closeModal!: string
   availableCars!:any[]
 
-  constructor(calendar: NgbCalendar, private carService:CarService, private reservationService:ReservationService) {
+  constructor(calendar: NgbCalendar, private carService:CarService, private reservationService:ReservationService, private modalService: NgbModal) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
@@ -74,7 +74,7 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   book($event:any){
 
 
-    console.log($event,  this.fromDate, this.toDate)
+    console.log($event)
     let start=new Date(this.fromDate.year, this.fromDate.month-1, this.fromDate.day)
 
   console.log("start:   ",start)
@@ -114,4 +114,9 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
      this.availableCars=res;
    })
   }
+
+
+
+
+
 }
