@@ -1,9 +1,9 @@
 import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 
-import {MyTableConfig} from "../table/table.component";
+import {MyTableConfig} from "../../components/table/table.component";
 
 
-import {dataMock, tableConfigAdmin, tableConfigUser} from "../data";
+import {dataMock, tableConfigAdmin, tableConfigUser} from "../../components/data";
 import {CarService} from "../../services/car/car.service";
 import { Router } from '@angular/router';
 

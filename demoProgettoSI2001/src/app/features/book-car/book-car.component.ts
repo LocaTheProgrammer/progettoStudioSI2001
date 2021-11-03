@@ -1,8 +1,8 @@
 import {Component, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {NgbCalendar, NgbDate} from "@ng-bootstrap/ng-bootstrap";
 import {CarService} from "../../services/car/car.service";
-import {dataMock, tableConfigAdmin, tableConfigUser,} from "../data";
-import {MyTableConfig} from "../table/table.component";
+import {dataMock, tableConfigAdmin, tableConfigUser,} from "../../components/data";
+import {MyTableConfig} from "../../components/table/table.component";
 import {ReservationService} from "../../services/reservation/reservation.service";
 
 @Component({

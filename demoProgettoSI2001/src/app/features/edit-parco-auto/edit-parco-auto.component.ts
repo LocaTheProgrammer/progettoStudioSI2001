@@ -1,7 +1,7 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import {MyTableConfig} from "../table/table.component";
-import {dataMock, tableConfigAdmin} from "../data";
+import {MyTableConfig} from "../../components/table/table.component";
+import {dataMock, tableConfigAdmin} from "../../components/data";
 import {CarService} from "../../services/car/car.service";
 import {coerceStringArray} from "@angular/cdk/coercion";
 @Component({

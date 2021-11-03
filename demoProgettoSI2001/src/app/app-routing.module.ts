@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./components/login/login.component";
-import {HomeComponent} from "./components/home/home.component";
-import {ParcoAutoComponent} from "./components/parco-auto/parco-auto.component";
-import { EditParcoAutoComponent } from './components/edit-parco-auto/edit-parco-auto.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import {BookCarComponent} from "./components/book-car/book-car.component";
+import {LoginComponent} from "./features/login/login.component";
+import {HomeComponent} from "./features/home/home.component";
+import {ParcoAutoComponent} from "./features/parco-auto/parco-auto.component";
+import { EditParcoAutoComponent } from './features/edit-parco-auto/edit-parco-auto.component';
+import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
+import {BookCarComponent} from "./features/book-car/book-car.component";
 
 
 
