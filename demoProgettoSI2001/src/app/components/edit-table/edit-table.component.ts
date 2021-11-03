@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {CarServiceService} from "../../services/carService/car-service.service";
+import {CarService} from "../../services/ca/car.service";
 import {Router} from "@angular/router";
 
 
@@ -46,7 +46,7 @@ export class EditTableComponent implements OnChanges {
   @Input () tableConfig !: MyTableConfig;
   @Input () data : any []= [];
   @Output() btnEmitter = new EventEmitter<any>();
-  constructor(private fb: FormBuilder, private carService: CarServiceService, private router: Router) {
+  constructor(private fb: FormBuilder, private carService: CarService, private router: Router) {
 
    }
 

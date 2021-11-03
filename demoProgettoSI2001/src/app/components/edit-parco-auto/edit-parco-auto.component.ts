@@ -2,7 +2,7 @@ import {Component, OnChanges, OnInit} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {MyTableConfig} from "../table/table.component";
 import {dataMock, tableConfig} from "../data";
-import {CarServiceService} from "../../services/carService/car-service.service";
+import {CarService} from "../../services/ca/car.service";
 import {coerceStringArray} from "@angular/cdk/coercion";
 @Component({
   selector: 'app-edit-parco-auto',
@@ -11,7 +11,7 @@ import {coerceStringArray} from "@angular/cdk/coercion";
 })
 export class EditParcoAutoComponent implements OnInit{
 
-  constructor(private route: ActivatedRoute, private carService:CarServiceService) { }
+  constructor(private route: ActivatedRoute, private carService:CarService) { }
 
   itemToUpdate!:any
   data!:JSON[]

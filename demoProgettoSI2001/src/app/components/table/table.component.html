@@ -1,6 +1,6 @@
 
 <div class="searchDiv">
-  these are all the cars we have, click <a href="booking-car">here</a> to book a car
+
   <table>
     <tr>
       <td><input class="input-group" type="text" placeholder="Cerca..." [(ngModel)]="searchTerm"></td>
@@ -45,6 +45,11 @@
           <app-my-button-component  (newItemEvent)="click(action, record.id)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
         </td>
         </span>
+
+        <td *ngIf="isParcoAuto==='si' && role ==='user'" style="width: 15%;">
+          <app-my-button-component  (newItemEvent)="click('book', record.id)" [buttonConfig]="{text: 'prenota', customCssClass:'btn btn-primary', icon:'book'}"></app-my-button-component>
+        </td>
+
 
     </tr>
     </tbody>

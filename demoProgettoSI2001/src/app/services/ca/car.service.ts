@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CarServiceService {
+export class CarService {
 
   url:string="http://localhost:3000/cars"
 
@@ -26,4 +26,9 @@ export class CarServiceService {
   deleteCar(id:any){
     return this.HttpClient.delete(`${this.url}/${id}`).subscribe();
   }
+
+  getBusyCars(): Observable<any>{
+    return this.HttpClient.get('http://localhost:3000/reservation')
+  }
+
 }

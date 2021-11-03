@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
-import {CarServiceService} from "../../services/carService/car-service.service";
+import {CarService} from "../../services/ca/car.service";
 
 
 
@@ -12,7 +12,7 @@ import {CarServiceService} from "../../services/carService/car-service.service";
 export class HomeComponent implements OnInit {
 
 
-  constructor(private carService:CarServiceService) {
+  constructor(private carService:CarService) {
   }
 
 

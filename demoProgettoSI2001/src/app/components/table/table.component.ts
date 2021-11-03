@@ -53,7 +53,7 @@ export class TableComponent implements OnInit, OnChanges {
   isDataUndefined:boolean=true;
   campoDiRiecerca : string ="";
   role?:any=sessionStorage.getItem("ruolo")?.replace('"', '').replace('"','');
-
+  isParcoAuto?:any=sessionStorage.getItem("parcoAuto")?.replace('"', '').replace('"','');
 
 
 

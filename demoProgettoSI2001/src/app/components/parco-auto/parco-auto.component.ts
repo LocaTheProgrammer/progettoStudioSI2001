@@ -1,10 +1,10 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 
 import {MyTableConfig} from "../table/table.component";
 
 
 import {dataMock, tableConfig} from "../data";
-import {CarServiceService} from "../../services/carService/car-service.service";
+import {CarService} from "../../services/ca/car.service";
 import { Router } from '@angular/router';
 
 
@@ -13,11 +13,11 @@ import { Router } from '@angular/router';
   templateUrl: './parco-auto.component.html',
   styleUrls: ['./parco-auto.component.scss']
 })
-export class ParcoAutoComponent implements OnInit {
+export class ParcoAutoComponent implements OnInit{
 
   jsonDataCar!:any []
 
-  constructor(private carService:CarServiceService, private router:Router) {
+  constructor(private carService:CarService, private router:Router) {
   }
 
 
@@ -34,6 +34,8 @@ export class ParcoAutoComponent implements OnInit {
     })
 
   }
+
+
 
   output($event: any) {
     switch($event.action.action){

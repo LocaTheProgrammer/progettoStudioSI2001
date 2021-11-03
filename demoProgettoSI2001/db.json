@@ -26,7 +26,18 @@
     }
   ],
 
-  "reservation": [],
+  "reservation": [
+    {
+    "userId": 1,
+    "carId": 4,
+    "reservationDate" : "12/11/2021"
+    },
+    {
+      "userId": 1,
+      "carId": 4,
+      "reservationDate" : "13/11/2021"
+    }
+  ],
 
   "cars": [
     {
