@@ -3,8 +3,8 @@ import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@an
 import {MyTableConfig} from "../table/table.component";
 
 
-import {dataMock, tableConfig} from "../data";
-import {CarService} from "../../services/ca/car.service";
+import {dataMock, tableConfigAdmin, tableConfigUser} from "../data";
+import {CarService} from "../../services/car/car.service";
 import { Router } from '@angular/router';
 
 
@@ -26,7 +26,17 @@ export class ParcoAutoComponent implements OnInit{
 
   ngOnInit(): void {
 
-    this.tableConfig=tableConfig;
+    this.onInitMethod()
+  }
+
+
+  onInitMethod():void{
+    if(sessionStorage.getItem("role")==='admin'){
+      this.tableConfig=tableConfigAdmin;
+    }else{
+      this.tableConfig=tableConfigUser;
+    }
+
     this.carService.getCars().subscribe((result:any)=>{
       if(result!=null){
         this.jsonDataCar=result;
@@ -43,8 +53,8 @@ export class ParcoAutoComponent implements OnInit{
         this.router.navigate(['/edit-parco-auto'], {queryParams: {data: JSON.stringify($event.data)}})
         break;
         case 'DELETE':
-          this.carService.deleteCar($event.data)
-          this.ngOnInit()
+          this.carService.deleteCar($event.data).subscribe();
+          this.onInitMethod()
         break;
     }
   }

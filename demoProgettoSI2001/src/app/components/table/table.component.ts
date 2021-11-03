@@ -28,7 +28,7 @@ export interface MyPagination {
 }
 
 export enum MyTableActionEnum {
-  NEW_ROW= 'NEW_ROW' , EDIT='EDIT' , DELETE ='DELETE'
+  NEW_ROW= 'NEW_ROW' , EDIT='EDIT' , DELETE ='DELETE', PRENOTA='PRENOTA', APPROVA='APPROVA'
 }
 
 @Component({
@@ -59,6 +59,8 @@ export class TableComponent implements OnInit, OnChanges {
 
   @Input () tableConfig !: MyTableConfig;
   @Input () data : any []= [];
+  @Input () fromDate?:any
+  @Input () toDate?:any
   @Output() btnEmitter = new EventEmitter<any>();
 
 
@@ -117,6 +119,10 @@ export class TableComponent implements OnInit, OnChanges {
 
   click(action:any, record:any){
   this.btnEmitter.emit({action:action, data:record})
+  }
+
+  clickBook(action:any, record:any, fromDate:any, toDate:any){
+    this.btnEmitter.emit({action:action, data:record, fromDate, toDate})
   }
 
   setPageNumberModel(page:any){

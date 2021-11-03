@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
   erroreLogin = false;
   isLoginAttemptValid=true;
 
-  
-  constructor(private fb: FormBuilder, private utentiService:UtentiService) { }
+
+  constructor(private fb: FormBuilder, private utentiService:UtentiService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginUtenteForm = this.fb.group({
@@ -43,8 +43,20 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    
-    this.utentiService.loginUtente(this.loginUtenteForm.value.username, this.loginUtenteForm.value.password)
+    let user
+    this.utentiService.loginUtente().subscribe(res => {
+      user=res.find((a:any)=>{
+
+        sessionStorage.setItem("utente",a.email)
+        sessionStorage.setItem("ruolo", a.role)
+          sessionStorage.setItem("idUtente", a.id)
+        console.log(a.id)
+        this.router.navigate(['/home'])
+
+        return a.email === this.loginUtenteForm.value.username && a.password===this.loginUtenteForm.value.password;
+      })
+    })
+
 
   }
 

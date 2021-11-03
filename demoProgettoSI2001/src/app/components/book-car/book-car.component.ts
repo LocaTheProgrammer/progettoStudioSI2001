@@ -1,8 +1,9 @@
 import {Component, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {NgbCalendar, NgbDate} from "@ng-bootstrap/ng-bootstrap";
-import {CarService} from "../../services/ca/car.service";
-import {dataMock, tableConfig} from "../data";
+import {CarService} from "../../services/car/car.service";
+import {dataMock, tableConfigAdmin, tableConfigUser,} from "../data";
 import {MyTableConfig} from "../table/table.component";
+import {ReservationService} from "../../services/reservation/reservation.service";
 
 @Component({
   selector: 'app-book-car',
@@ -14,13 +15,20 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   tableConfig!:MyTableConfig;
 
   ngOnInit(): void {
-    sessionStorage.setItem("parcoAuto", "si")
-    this.tableConfig=tableConfig;
+
+    if(sessionStorage.getItem("role")==='admin'){
+      this.tableConfig=tableConfigAdmin;
+    }
+    else{
+      this.tableConfig=tableConfigUser;
+    }
+
 
   }
 
   ngOnChanges() {
-    this.prenota()
+    this.freeCarList()
+
   }
 
   ngOnDestroy() {
@@ -35,7 +43,7 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
 
   availableCars!:any[]
 
-  constructor(calendar: NgbCalendar, private carService:CarService) {
+  constructor(calendar: NgbCalendar, private carService:CarService, private reservationService:ReservationService) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
@@ -63,85 +71,47 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
     return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || this.isInside(date) || this.isHovered(date);
   }
 
-  output($event:any){
-    console.log($event)
+  book($event:any){
+
+
+    console.log($event,  this.fromDate, this.toDate)
+    let start=new Date(this.fromDate.year, this.fromDate.month-1, this.fromDate.day)
+
+  console.log("start:   ",start)
+
+    // @ts-ignore
+    let end=new Date(this.toDate.year, this.toDate.month-1, this.toDate.day)
+
+    console.log("end: ", end)
+    let day = 1000*60*60*24;
+
+  let lastId
+
+    this.reservationService.getReservations().subscribe((res:any)=>{
+      lastId=res.length.id+1
+    })
+
+    var diff = (end.getTime()- start.getTime())/day;
+    for(var i=0;i<=diff; i++)
+    {
+      var xx = start.getTime()+day*i;
+      var yy = new Date(xx);
+
+      // @ts-ignore
+      this.reservationService.insertReservation(lastId, +sessionStorage.getItem("idUtente"), $event.data, yy.getDate()+"/"+yy.getMonth()+"/"+yy.getFullYear()).subscribe()
+
+
+    }
+
+
   }
 
-  prenota(){
-    let busyCars:any[]=[];
-    let bookedCars:any[]=[] //avrà data, id auto e id utente
+
+
+  freeCarList(){
     this.isPrenotaClicked=true;
-    this.carService.getBusyCars().subscribe((res:any)=>{
-      if(res!=null&&res!=[]){
-        bookedCars=res;
-        let dateFromS:string=this.fromDate.day+"/"+this.fromDate.month+"/"+this.fromDate.year;
-        // @ts-ignore
-        let dateToS:string=this.toDate.day+"/"+this.toDate.month+"/"+this.toDate.year;
-
-
-        let d1 = dateFromS.split("/");
-        let d2 = dateToS.split("/");
-
-
-        let from = new Date(+d1[2], parseInt(d1[1])-1, +d1[0]);  // -1 because months are from 0 to 11
-        let to   = new Date(+d2[2], parseInt(d2[1])-1, +d2[0]);
-
-        let bookDateToCheck:any
-
-        for(let i=0; i<bookedCars.length;i++){
-          bookDateToCheck=bookedCars[i].reservationDate;
-          let splittedCheckDate=bookDateToCheck.split("/");
-          let check= new Date(+splittedCheckDate[2], parseInt(splittedCheckDate[1])-1, +splittedCheckDate[0])
-
-          if(check > from && check < to){ //carico id auto che in quel periodo sono prenotati
-            busyCars[i]=bookedCars[i].carId;
-          }
-        }
-
-        console.log("busy cars: "+busyCars.toString())
-        let carList!:any[]
-        this.carService.getCars().subscribe((res:any)=>{
-          carList=res;
-          let resAvailableCars:any[]=[]
-          let isCarBusy:boolean=false;
-
-          //removes duplicate
-          for (let j=0; j<carList.length;j++){
-            for (let k=0;k<busyCars.length;k++){
-              if(carList[j].id==busyCars[k]){
-                isCarBusy=true
-              }
-              if(!isCarBusy){
-                resAvailableCars[j]=carList[j].id;
-              }
-              isCarBusy=false;
-            }
-
-          }
-
-          let resAvailableCarsidS:any[]=[]
-          for (let i = 0; i < resAvailableCars.length; i++) {
-            if (resAvailableCars[i]) {
-              resAvailableCarsidS.push(resAvailableCars[i]);
-            }
-          }
-
-          let carAvailableList:any[]=[]
-          for (let i=0; i<resAvailableCarsidS.length;i++){
-            this.carService.getCarById(resAvailableCarsidS[i]).subscribe(res=>{
-              carAvailableList[i]=res;
-              console.log(carAvailableList.length)
-              if(carAvailableList.length==resAvailableCarsidS.length){
-                this.availableCars=carAvailableList
-                return carAvailableList;
-              }
-            })
-          }
-        })
-
-      }else{
-        return this.carService.getCars();
-      }
-    })
+   this.carService.getCars().subscribe((res:any)=>{
+     this.availableCars=res;
+   })
   }
 }

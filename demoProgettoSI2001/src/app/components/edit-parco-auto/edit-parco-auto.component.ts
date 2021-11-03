@@ -1,8 +1,8 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {MyTableConfig} from "../table/table.component";
-import {dataMock, tableConfig} from "../data";
-import {CarService} from "../../services/ca/car.service";
+import {dataMock, tableConfigAdmin} from "../data";
+import {CarService} from "../../services/car/car.service";
 import {coerceStringArray} from "@angular/cdk/coercion";
 @Component({
   selector: 'app-edit-parco-auto',
@@ -19,7 +19,7 @@ export class EditParcoAutoComponent implements OnInit{
 
 
   ngOnInit() {
-    this.tableConfig=tableConfig;
+    this.tableConfig=tableConfigAdmin;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
     this.carService.getCarById(this.itemToUpdate).subscribe((result:any)=>{
       this.data=new Array(1).fill(result);

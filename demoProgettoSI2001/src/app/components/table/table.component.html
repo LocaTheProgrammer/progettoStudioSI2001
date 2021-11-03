@@ -41,14 +41,11 @@
 
 
       <span *ngFor="let action of tableConfig.actions;">
-        <td *ngIf="role==='admin'" >
+       <!-- <td *ngIf="role==='admin'" >-->
           <app-my-button-component  (newItemEvent)="click(action, record.id)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
-        </td>
+       <!-- </td> -->
         </span>
 
-        <td *ngIf="isParcoAuto==='si' && role ==='user'" style="width: 15%;">
-          <app-my-button-component  (newItemEvent)="click('book', record.id)" [buttonConfig]="{text: 'prenota', customCssClass:'btn btn-primary', icon:'book'}"></app-my-button-component>
-        </td>
 
 
     </tr>

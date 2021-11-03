@@ -24,7 +24,7 @@ export class CarService {
   }
 
   deleteCar(id:any){
-    return this.HttpClient.delete(`${this.url}/${id}`).subscribe();
+    return this.HttpClient.delete(`${this.url}/${id}`)
   }
 
   getBusyCars(): Observable<any>{

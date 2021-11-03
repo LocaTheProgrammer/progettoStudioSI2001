@@ -18,12 +18,16 @@
   </div>
 <br>
   <div class="bookBtn">
-    <app-my-button-component (click)="prenota()" [buttonConfig]="{text: 'Prenota', customCssClass:'btn btn-primary', icon:'collections_bookmark'}"></app-my-button-component>
+    <app-my-button-component (click)="freeCarList()" [buttonConfig]="{text: 'Prenota', customCssClass:'btn btn-primary', icon:'collections_bookmark'}"></app-my-button-component>
   </div>
 
 
 </div>
 
 <div *ngIf="isPrenotaClicked">
-  <app-table [data]="availableCars" [tableConfig]="tableConfig" (btnEmitter)="output($event)"></app-table> <!-- -->
+  <app-table [data]="availableCars" [tableConfig]="tableConfig" (btnEmitter)="book($event)"></app-table> <!-- -->
 </div>
+
+
+{{fromDate|json}}
+{{toDate|json}}

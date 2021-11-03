@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
-import {CarService} from "../../services/ca/car.service";
+import {CarService} from "../../services/car/car.service";
 
 
 

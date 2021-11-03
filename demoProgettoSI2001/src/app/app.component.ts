@@ -1,9 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+
 import {MyButtonConfig} from "./components/my-button-component/my-button-component.component";
 
-import {MyTableConfig} from "./components/table/table.component";
-import {dataMock, tableConfig} from "./components/data";
+
 import {Router} from "@angular/router";
 @Component({
   selector: 'app-root',
