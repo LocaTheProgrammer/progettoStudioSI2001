@@ -154,7 +154,7 @@ export const tableConfigAdmin: MyTableConfig = {
 
 
 }
-export const tableConfigUserParcoAuto: MyTableConfig = {
+export const  tableConfigUserPrenotazioni: MyTableConfig = {
   headers: [{
     key: "Name",
     label: "Name"
@@ -221,7 +221,7 @@ export const tableConfigUserParcoAuto: MyTableConfig = {
 
 }
 
-export const tableConfigUserPrenotazioni: MyTableConfig = {
+export const tableConfigDettagli: MyTableConfig = {
   headers: [{
     key: "Name",
     label: "Name"
@@ -282,6 +282,63 @@ export const tableConfigUserPrenotazioni: MyTableConfig = {
       customCssId:"idTable"
     },
   ]
+
+
+}
+export const tableConfigUserParcoAuto: MyTableConfig = {
+  headers: [{
+    key: "Name",
+    label: "Name"
+  },
+    {
+      key: "Miles_per_Gallon",
+      label: "Miles_per_Gallon"
+    },
+    {
+      key: "Cylinders",
+      label: "Cylinders"
+    },
+    {
+      key: "Displacement",
+      label: "Displacement"
+    },
+    {
+      key: "Horsepower",
+      label: "Horsepower"
+    },
+    {
+      key: "Weight_in_lbs",
+      label: "Weight_in_lbs"
+    },
+    {
+      key: "Acceleration",
+      label: "Acceleration"
+    },
+    {
+      key: "Year",
+      label: "Year"
+    },
+    {
+      key: "Origin",
+      label: "Origin"
+    },
+  ],
+  myOrder: {
+    defaultColumn: "Name",
+    orderType: "asc"
+  },
+
+  search: {
+    columns: []
+  },
+
+  myPagination:{
+    itemPerPage : 5 ,
+    itemPerPageOptions: [5,10,15,20],
+    customCssClass:"form-select form-select-sm"
+
+  },
+  actions:[]
 
 
 }
