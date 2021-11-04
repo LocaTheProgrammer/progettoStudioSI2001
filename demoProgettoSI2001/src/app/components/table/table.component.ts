@@ -79,7 +79,7 @@ export class TableComponent implements OnInit, OnChanges {
 
   visualize(){
     this.headersLength=this.tableConfig.headers.length
-    this.pageNumber=Math.round(this.dataLength/+this.visibleElements)
+    this.pageNumber=Math.ceil(this.dataLength/+this.visibleElements)
     console.log(this.visibleElements)
     //this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
     this.numbers=new Array(this.pageNumber)
