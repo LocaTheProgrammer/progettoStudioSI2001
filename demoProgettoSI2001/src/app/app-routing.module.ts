@@ -9,6 +9,7 @@ import {BookCarComponent} from "./features/book-car/book-car.component";
 import {ReservationsComponent} from "./features/reservations/reservations.component";
 import {ReservationDetailsComponent} from "./features/reservation-details/reservation-details.component";
 import {GestioneUtentiComponent} from "./features/gestione-utenti/gestione-utenti.component";
+import {EditUserComponent} from "./features/edit-user/edit-user.component";
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'prenotazioni', component: ReservationsComponent},
   { path: 'dettaglio-prenotazione', component: ReservationDetailsComponent},
   { path: 'gestione-utenti', component: GestioneUtentiComponent},
+  { path: 'edit-user', component: EditUserComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

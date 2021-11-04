@@ -26,6 +26,10 @@ export class UtentiService {
     return this.HttpClient.get<any>(`${this.host}`)
   }
 
+  updateUtente(editUtenteForm:any, id:any) : Observable<any>{
+    return this.HttpClient.put(`${this.host}/${id}`, editUtenteForm);
+  }
+
 
 
 }

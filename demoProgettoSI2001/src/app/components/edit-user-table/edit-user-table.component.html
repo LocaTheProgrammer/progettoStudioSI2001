@@ -1,0 +1,19 @@
+
+<div class="tableEdit">
+  <form style="width:5%;" [formGroup]="editUtenteForm">
+
+    <table class="table table-dark">
+      <thead>
+      <tr *ngFor="let header of tableConfig.headers">
+        <th >
+          {{header.label}}
+        </th>
+        <td *ngFor="let record of data">
+          <input type="text" [(ngModel)]="record[header.key]" formControlName="{{header.key}}" >
+        </td>
+      </tr>
+      </thead>
+    </table>
+    <app-my-button-component (newItemEvent)="update()" [buttonConfig]="{text: txtSalva, customCssClass:'btn btn-primary', icon:'save'}"></app-my-button-component>
+  </form>
+</div>

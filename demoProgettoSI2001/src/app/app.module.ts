@@ -25,6 +25,8 @@ import { ReservationTableComponent } from './components/reservation-table/reserv
 import { ViewReservationTableComponent } from './components/view-reservation-table/view-reservation-table.component';
 import { ReservationDetailsComponent } from './features/reservation-details/reservation-details.component';
 import { GestioneUtentiComponent } from './features/gestione-utenti/gestione-utenti.component';
+import { EditUserTableComponent } from './components/edit-user-table/edit-user-table.component';
+import { EditUserComponent } from './features/edit-user/edit-user.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { GestioneUtentiComponent } from './features/gestione-utenti/gestione-ute
     ViewReservationTableComponent,
     ReservationDetailsComponent,
     GestioneUtentiComponent,
+    EditUserTableComponent,
+    EditUserComponent,
 
 
 

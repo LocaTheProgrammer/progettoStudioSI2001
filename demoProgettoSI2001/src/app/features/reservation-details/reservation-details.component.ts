@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CarService} from "../../services/car/car.service";
 import {MyTableConfig} from "../../components/table/table.component";
 import {tableConfigAdmin, tableConfigReservation} from "../../components/data";
@@ -14,7 +14,7 @@ import {MyReservationTableConfig} from "../../components/reservation-table/reser
 export class ReservationDetailsComponent implements OnInit {
 
 
-  constructor(private route: ActivatedRoute, private reservationService:ReservationService) { }
+  constructor(private route: ActivatedRoute,private router:Router, private reservationService:ReservationService) { }
 
   itemToUpdate!:any
   data!:JSON[]
@@ -32,7 +32,15 @@ export class ReservationDetailsComponent implements OnInit {
     );
   }
 
-  output($event:any){
-    console.log($event)
+  output($event: any) {
+    switch($event.action.action){
+      case 'EDIT':
+        this.router.navigate(['/edit-parco-auto'], {queryParams: {data: JSON.stringify($event.data.id)}})
+        break;
+      case 'DELETE':
+        /*this.carService.deleteCar($event.data.id).subscribe();
+        this.onInitMethod()*/
+        break;
+    }
   }
 }

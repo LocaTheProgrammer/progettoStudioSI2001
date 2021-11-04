@@ -501,7 +501,7 @@ export const tableConfigReservation: MyReservationTableConfig = {
 
 
 
-export const tableConfigUser: MyTableConfig = {
+export const tableConfigUtente: MyTableConfig = {
   headers: [
     {
       key: "firstName",
@@ -531,7 +531,21 @@ export const tableConfigUser: MyTableConfig = {
     customCssClass:"form-select form-select-sm"
 
   },
-  actions:[]
+  actions:[
+    {
+      action: MyTableActionEnum.DELETE,
+      icon: "delete_forever",
+      customCssClass:"btn btn-danger",
+      customCssId:"idTable"
+    },
+    {
+      action: MyTableActionEnum.EDIT,
+      icon: "border_color",
+      customCssClass:"btn btn-primary",
+      customCssId:"idTable"
+    },
+
+  ]
 
 
 }
