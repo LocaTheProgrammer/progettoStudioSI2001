@@ -54,20 +54,11 @@ export class ReservationsComponent implements OnInit, OnChanges {
 
 
   getUserBookedCars(){
-    let cars:any[]=[]
-    let dates:any[]=[]
+
     this.reservationService.getReservations().subscribe((res:any)=>{
-      for(let i=0; i<res.length;i++){
-        if(res[i].userId==sessionStorage.getItem("idUtente")){
 
-          cars.push(res[i].car);
-          dates.push(res[i].reservationDate);
-
-        }
-      }
-
-      this.bookedCarsDates=dates
-      return this.bookedCars=cars;
+      this.bookedCarsDates=res
+      return this.bookedCars=res;
     })
   }
 
@@ -101,13 +92,9 @@ export class ReservationsComponent implements OnInit, OnChanges {
   }
 
   getReservations(){
-    let cars:any[]=[]
-    let dates:any[]=[]
+
     this.reservationService.getReservations().subscribe((res:any)=>{
-      for(let i=0; i<res.length;i++) {
-        cars.push(res[i].car);
-        dates.push(res[i].reservationDate);
-      }
+
       this.bookedCarsDates=res
       return this.reservations=res;
     })

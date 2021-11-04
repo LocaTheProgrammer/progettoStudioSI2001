@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   templateUrl: './parco-auto.component.html',
   styleUrls: ['./parco-auto.component.scss']
 })
-export class ParcoAutoComponent implements OnInit{
+export class ParcoAutoComponent implements OnInit, OnChanges{
 
   jsonDataCar!:any []
 
@@ -29,6 +29,9 @@ export class ParcoAutoComponent implements OnInit{
     this.onInitMethod()
   }
 
+  ngOnChanges() {
+    this.onInitMethod()
+  }
 
   onInitMethod():void{
     if(sessionStorage.getItem("ruolo")==='admin'){
