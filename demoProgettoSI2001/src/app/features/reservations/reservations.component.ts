@@ -26,6 +26,10 @@ export class ReservationsComponent implements OnInit, OnChanges {
   constructor(private fb: FormBuilder, private  reservationService:ReservationService, private utentiService:UtentiService, private router: Router) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("ruolo"))
+    if(sessionStorage.getItem("ruolo")!='admin'&&sessionStorage.getItem("ruolo")!='user'){
+      this.router.navigate(['/login'])
+    }
     this.onChangesTemp()
   }
 

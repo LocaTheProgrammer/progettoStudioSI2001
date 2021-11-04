@@ -1,5 +1,6 @@
 
-<div class="login-form" id="start" *ngIf="role!=='admin'&&role!=='user'">
+<div class="login-form" id="start" *ngIf="!idDataLoaded">
+
   <form [formGroup]="loginUtenteForm" >
     <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
     <h4 class="modal-title">Login to Your Account</h4>
@@ -35,7 +36,7 @@
 
 
 
-<div *ngIf="utente&&(role=='admin'||role=='user') " class="login-form">
+<div *ngIf="idDataLoaded" class="login-form">
   <table class="table">
     <tr>
       <td>nome</td>
@@ -50,9 +51,10 @@
       <td>{{utente.email}}</td>
     </tr>
   </table>
-</div>
-<div class="buttonPrenotazioni">
-  <app-my-button-component (click)="linkToReservation()" [buttonConfig]="{text: 'Prenotazioni', customCssClass:'btn btn-primary', icon:'collections_bookmark'}"></app-my-button-component>
+  <div class="buttonPrenotazioni">
+    <app-my-button-component (click)="linkToReservation()" [buttonConfig]="{text: 'Prenotazioni', customCssClass:'btn btn-primary', icon:'collections_bookmark'}"></app-my-button-component>
+  </div>
+
 </div>
 
 

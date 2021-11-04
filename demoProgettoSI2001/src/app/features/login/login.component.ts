@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit, OnChanges {
   passwordType = 'password'
   tableConfig!:MyTableConfig;
   utente:any
+  idDataLoaded:boolean=false
   isUtenteLogged:boolean=false
 
   constructor(private fb: FormBuilder, private  reservationService:ReservationService, private utentiService:UtentiService, private router: Router) { }
@@ -39,7 +40,12 @@ export class LoginComponent implements OnInit, OnChanges {
     }
 
     if(this.isUtenteLogged){
-      this.getUtenteData()
+      this.utentiService.getUtenteById(sessionStorage.getItem("idUtente")).subscribe(res=>{
+
+        this.utente=res;
+        this.idDataLoaded=true
+      })
+
     }
     this.loginUtenteForm = this.fb.group({
       username: ['', Validators.required],
@@ -51,14 +57,7 @@ export class LoginComponent implements OnInit, OnChanges {
     this.onChangesTemp()
   }
 
-  getUtenteData(){
 
-    this.utentiService.getUtenteById(sessionStorage.getItem("idUtente")).subscribe(res=>{
-
-      this.utente=res;
-
-    })
-  }
 
 
   togglePassword() {
@@ -82,7 +81,7 @@ export class LoginComponent implements OnInit, OnChanges {
         sessionStorage.setItem("ruolo", a.role)
         sessionStorage.setItem("idUtente", a.id)
         this.role=sessionStorage.getItem("ruolo")
-         this.router.navigate(['/prenotazioni'])
+        this.router.navigate(['/prenotazioni'])
 
         return a.email === this.loginUtenteForm.value.username && a.password===this.loginUtenteForm.value.password;
       })

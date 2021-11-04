@@ -26,8 +26,7 @@ export class AppComponent implements OnInit {
 
   }
   redirectToProfilo(){
-    console.log("redirect to profile")
-    this.router.navigateByUrl("login");
+    this.router.navigate(['/login']);
   }
 
   redirectToParcoAuto(){
