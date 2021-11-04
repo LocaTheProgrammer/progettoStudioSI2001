@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {CarService} from "../../services/car/car.service";
-import {MyTableConfig} from "../../components/table/table.component";
-import {tableConfigAdmin, tableConfigReservation} from "../../components/data";
+import {tableConfigReservation} from "../../components/data";
 import {ReservationService} from "../../services/reservation/reservation.service";
 import {MyReservationTableConfig} from "../../components/reservation-table/reservation-table.component";
 
@@ -38,6 +36,7 @@ export class ReservationDetailsComponent implements OnInit {
         this.router.navigate(['/edit-parco-auto'], {queryParams: {data: JSON.stringify($event.data.id)}})
         break;
       case 'DELETE':
+
         /*this.carService.deleteCar($event.data.id).subscribe();
         this.onInitMethod()*/
         break;

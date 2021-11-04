@@ -1,4 +1,4 @@
-import {Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
 
 
 export interface MySearch {
@@ -52,7 +52,7 @@ export class TableComponent implements OnInit, OnChanges {
   headersLength!:number
   isDataUndefined:boolean=true;
   campoDiRiecerca : string ="";
-  role?:any=sessionStorage.getItem("ruolo")?.replace('"', '').replace('"','');
+
 
 
 

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CarService} from "../../services/car/car.service";
 import {Router} from "@angular/router";
 
@@ -68,9 +68,11 @@ export class EditTableComponent implements OnChanges {
   }
 
   update(){
-    this.carService.updateCar(this.editParcoAutoForm.value, this.data[0].id).subscribe()
+    this.carService.updateCar(this.editParcoAutoForm.value, this.data[0].id).subscribe(obs =>{
+      this.router.navigate(["/parco-auto"]);
+    })
 
-    this.router.navigate(["/parco-auto"]);
+
 
 
   }

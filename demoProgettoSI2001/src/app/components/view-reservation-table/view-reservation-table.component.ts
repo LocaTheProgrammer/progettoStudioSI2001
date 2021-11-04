@@ -1,8 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {CarService} from "../../services/car/car.service";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Router} from "@angular/router";
-import {MyTableConfig} from "../edit-table/edit-table.component";
 import {MyReservationTableConfig} from "../reservation-table/reservation-table.component";
 
 @Component({

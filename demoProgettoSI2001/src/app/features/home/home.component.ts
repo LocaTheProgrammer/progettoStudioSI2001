@@ -1,7 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-
-import {CarService} from "../../services/car/car.service";
-
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -12,7 +9,7 @@ import {CarService} from "../../services/car/car.service";
 export class HomeComponent implements OnInit {
 
 
-  constructor(private carService:CarService) {
+  constructor() {
   }
 
 

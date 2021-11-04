@@ -56,8 +56,10 @@ export class ParcoAutoComponent implements OnInit, OnChanges{
         this.router.navigate(['/edit-parco-auto'], {queryParams: {data: JSON.stringify($event.data.id)}})
         break;
         case 'DELETE':
-          this.carService.deleteCar($event.data.id).subscribe();
-          this.onInitMethod()
+          this.carService.deleteCar($event.data.id).subscribe(obs=>{
+            this.onInitMethod()
+          });
+
         break;
     }
   }

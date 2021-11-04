@@ -27,8 +27,10 @@ export class AddUserComponent implements OnInit {
 
   update() {
     console.log(this.addUserForm.value)
-    this.utentiService.addUser(this.addUserForm.value).subscribe()
-    this.router.navigate(['/gestione-utenti'])
+    this.utentiService.addUser(this.addUserForm.value).subscribe(obs=>{
+      this.router.navigate(['/gestione-utenti'])
+    })
+
   }
 
 }

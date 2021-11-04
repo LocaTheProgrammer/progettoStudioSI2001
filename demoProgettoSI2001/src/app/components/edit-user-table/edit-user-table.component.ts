@@ -1,6 +1,5 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {CarService} from "../../services/car/car.service";
 import {Router} from "@angular/router";
 import {MyTableConfig} from "../edit-table/edit-table.component";
 import {UtentiService} from "../../services/utenti/utenti.service";
@@ -35,8 +34,10 @@ export class EditUserTableComponent implements OnChanges  {
 
   update(){
 
-    this.utentiService.updateUtente(this.editUtenteForm.value, this.data[0].id).subscribe()
-    this.router.navigate(["/login"]);
+    this.utentiService.updateUtente(this.editUtenteForm.value, this.data[0].id).subscribe(obs=>{
+      this.router.navigate(["/login"]);
+    })
+
 
 
   }

@@ -23,10 +23,10 @@
     <tr>
       <th *ngFor="let header of tableConfig.headers">
         {{header.label}}
-        <span *ngIf="showButtonAsc"> <!--<app-my-button-component (newItemEvent)="ordinaAsc(header.key)" [buttonConfig]="buttonConfigAsc"> </app-my-button-component> -->
+        <span *ngIf="showButtonAsc">
           <mat-icon aria-hidden="false" (click)="ordinaAsc(header.key)" style="cursor: pointer">arrow_upward</mat-icon>
         </span>
-        <span *ngIf="showButtonDesc"><!-- <app-my-button-component (newItemEvent)="ordinaDesc(header.key)" [buttonConfig]="buttonConfigDesc"></app-my-button-component> -->
+        <span *ngIf="showButtonDesc">
           <mat-icon aria-hidden="false" (click)="ordinaDesc(header.key)" style="cursor: pointer">arrow_downward</mat-icon>
         </span>
       </th>

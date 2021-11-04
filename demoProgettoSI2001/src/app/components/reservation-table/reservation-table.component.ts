@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {MyTableConfig} from "../table/table.component";
 
 
 export interface MySearch {

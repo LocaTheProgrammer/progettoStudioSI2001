@@ -1,9 +1,9 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {MyTableConfig} from "../../components/table/table.component";
-import {dataMock, tableConfigAdmin} from "../../components/data";
+import {tableConfigAdmin} from "../../components/data";
 import {CarService} from "../../services/car/car.service";
-import {coerceStringArray} from "@angular/cdk/coercion";
+
 @Component({
   selector: 'app-edit-parco-auto',
   templateUrl: './edit-parco-auto.component.html',
