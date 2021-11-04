@@ -96,6 +96,12 @@ export class LoginComponent implements OnInit, OnChanges {
 
 
 
+  logout(){
+    sessionStorage.removeItem("idUtente")
+    sessionStorage.removeItem("utente")
+    sessionStorage.removeItem("ruolo")
+    this.router.navigate(['/home'])
+  }
 
 
 }

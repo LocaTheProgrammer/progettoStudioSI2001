@@ -37,6 +37,7 @@
 
 
 <div *ngIf="idDataLoaded" class="login-form">
+
   <table class="table">
     <tr>
       <td>nome</td>
@@ -53,8 +54,12 @@
   </table>
   <div class="buttonPrenotazioni">
     <app-my-button-component (click)="linkToReservation()" [buttonConfig]="{text: 'Prenotazioni', customCssClass:'btn btn-primary', icon:'collections_bookmark'}"></app-my-button-component>
-  </div>
 
+  </div>
+  <br>
+  <div class="buttonPrenotazioni">
+    <app-my-button-component (click)="logout()" [buttonConfig]="{text: 'Esci', customCssClass:'btn btn-primary', icon:'exit_to_app'}"></app-my-button-component>
+  </div>
 </div>
 
 

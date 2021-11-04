@@ -1,4 +1,4 @@
-<button (click)="logout()">Logout</button>
+
 
 <div *ngIf="role==='user'">
   <app-reservation-table [data]="bookedCars" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-reservation-table>
