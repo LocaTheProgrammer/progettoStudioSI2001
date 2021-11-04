@@ -34,7 +34,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let record of data  | pagination:+visibleElements:+pageNumberModel | filtering: searchTerm : searchField | sort : sortedColumn: columnOrder">
+    <tr *ngFor="let record of data  | filtering: searchTerm : searchField | pagination:+visibleElements:+pageNumberModel | sort : sortedColumn: columnOrder">
       <td *ngFor="let header of tableConfig.headers;" >
         {{record[header.key]}}
       </td>
@@ -64,7 +64,7 @@
   <table >
     <tr>
       <td *ngFor="let page of numbers; let i=index">
-        <app-my-button-component style="width: 50%" (newItemEvent)="setPageNumberModel(i+1)" [buttonConfig]="{text: (i+1).toString(), customCssClass:'btn btn-secondary btn-sm', icon:''}"></app-my-button-component>
+        <app-my-button-component style="width: 50%" (newItemEvent)="setPageNumberModel(i)" [buttonConfig]="{text: (i+1).toString(), customCssClass:'btn btn-secondary btn-sm', icon:''}"></app-my-button-component>
       </td>
     </tr>
   </table>

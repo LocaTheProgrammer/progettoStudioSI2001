@@ -14,11 +14,12 @@ import {tableConfigAdmin, tableConfigUserPrenotazioni} from "../../components/da
 export class LoginComponent implements OnInit, OnChanges {
 
   loginUtenteForm!: FormGroup
-  role?=sessionStorage.getItem("ruolo")
+  role:any
   toggled = true
   passwordType = 'password'
   tableConfig!:MyTableConfig;
   utente:any
+  isUtenteLogged:boolean=false
 
   constructor(private fb: FormBuilder, private  reservationService:ReservationService, private utentiService:UtentiService, private router: Router) { }
 
@@ -27,18 +28,23 @@ export class LoginComponent implements OnInit, OnChanges {
   }
 
   onChangesTemp():void{
-    if(sessionStorage.getItem("ruolo")=='admin'){
+
+    if(sessionStorage.getItem("ruolo")==='admin'){
       this.tableConfig=tableConfigAdmin;
-
-    }else{
+      this.isUtenteLogged=true
+    }
+    if(sessionStorage.getItem("ruolo")==='user'){
       this.tableConfig=tableConfigUserPrenotazioni;
+      this.isUtenteLogged=true
+    }
 
+    if(this.isUtenteLogged){
+      this.getUtenteData()
     }
     this.loginUtenteForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     })
-    this.getUtenteData()
   }
 
   ngOnChanges(): void {
@@ -46,6 +52,7 @@ export class LoginComponent implements OnInit, OnChanges {
   }
 
   getUtenteData(){
+
     this.utentiService.getUtenteById(sessionStorage.getItem("idUtente")).subscribe(res=>{
 
       this.utente=res;
@@ -74,8 +81,8 @@ export class LoginComponent implements OnInit, OnChanges {
         sessionStorage.setItem("utente",a.email)
         sessionStorage.setItem("ruolo", a.role)
         sessionStorage.setItem("idUtente", a.id)
-        console.log(a.id)
-        this.router.navigate(['/home'])
+        this.role=sessionStorage.getItem("ruolo")
+         this.router.navigate(['/prenotazioni'])
 
         return a.email === this.loginUtenteForm.value.username && a.password===this.loginUtenteForm.value.password;
       })

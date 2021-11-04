@@ -53,7 +53,7 @@ export class TableComponent implements OnInit, OnChanges {
   isDataUndefined:boolean=true;
   campoDiRiecerca : string ="";
   role?:any=sessionStorage.getItem("ruolo")?.replace('"', '').replace('"','');
-  isParcoAuto?:any=sessionStorage.getItem("parcoAuto")?.replace('"', '').replace('"','');
+
 
 
 
@@ -72,30 +72,30 @@ export class TableComponent implements OnInit, OnChanges {
     if((this.data!=undefined&&this.data!=null&&this.data!=[])){
       this.isDataUndefined=false
       this.dataLength=this.data.length
-      this.headersLength=this.tableConfig.headers.length
-      this.pageNumber=Math.ceil(this.dataLength/+this.visibleElements)
-
-      this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
+      this.visualize()
     }
   }
 
+
+  visualize(){
+    this.headersLength=this.tableConfig.headers.length
+    this.pageNumber=Math.round(this.dataLength/+this.visibleElements)
+    console.log(this.visibleElements)
+    //this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
+    this.numbers=new Array(this.pageNumber)
+
+    for(let i=0; i<this.pageNumber;i++){
+      this.numbers[i]=i;
+    }
+  }
 
 
   ngOnInit(): void {}
 
   onInputChange($event:any){
    this.visibleElements=$event;
-    this.headersLength=this.tableConfig.headers.length
-    this.pageNumber=Math.floor(this.dataLength/+this.visibleElements)
-
-    this.numbers=new Array(this.pageNumber).fill(null).map((_, i) => i + 1);
+    this.visualize();
   }
-
-
-
-
-
-
 
 
   ordinaAsc(value:string){
@@ -118,10 +118,6 @@ export class TableComponent implements OnInit, OnChanges {
 
   click(action:any, record:any){
   this.btnEmitter.emit({action:action, data:record})
-  }
-
-  clickBook(action:any, record:any, fromDate:any, toDate:any){
-    this.btnEmitter.emit({action:action, data:record, fromDate, toDate})
   }
 
   setPageNumberModel(page:any){
