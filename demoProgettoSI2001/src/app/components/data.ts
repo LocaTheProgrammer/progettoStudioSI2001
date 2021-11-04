@@ -416,6 +416,10 @@ export const tableConfigUserParcoAuto: MyTableConfig = {
 
 }
 
+
+
+
+
 export const tableConfigReservation: MyReservationTableConfig = {
   headersDate: [
     {
@@ -490,6 +494,44 @@ export const tableConfigReservation: MyReservationTableConfig = {
     },
 
   ]
+
+
+}
+
+
+
+
+export const tableConfigUser: MyTableConfig = {
+  headers: [
+    {
+      key: "firstName",
+      label: "name"
+    },
+    {
+      key: "lastName",
+      label: "surname"
+    },
+    {
+      key: "email",
+      label: "email"
+    },
+  ],
+  myOrder: {
+    defaultColumn: "Name",
+    orderType: "asc"
+  },
+
+  search: {
+    columns: []
+  },
+
+  myPagination:{
+    itemPerPage : 5 ,
+    itemPerPageOptions: [5,10,15,20],
+    customCssClass:"form-select form-select-sm"
+
+  },
+  actions:[]
 
 
 }

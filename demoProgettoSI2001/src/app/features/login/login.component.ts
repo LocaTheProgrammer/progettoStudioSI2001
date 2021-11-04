@@ -14,7 +14,7 @@ import {tableConfigAdmin, tableConfigUserPrenotazioni} from "../../components/da
 export class LoginComponent implements OnInit, OnChanges {
 
   loginUtenteForm!: FormGroup
-  role:any
+  role?:any
   toggled = true
   passwordType = 'password'
   tableConfig!:MyTableConfig;
@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.onChangesTemp()
+    this.role=sessionStorage.getItem("ruolo")
   }
 
   onChangesTemp():void{
@@ -55,6 +56,7 @@ export class LoginComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.onChangesTemp()
+
   }
 
 
@@ -80,7 +82,7 @@ export class LoginComponent implements OnInit, OnChanges {
         sessionStorage.setItem("utente",a.email)
         sessionStorage.setItem("ruolo", a.role)
         sessionStorage.setItem("idUtente", a.id)
-        this.role=sessionStorage.getItem("ruolo")
+        this.role=a.role
         this.router.navigate(['/prenotazioni'])
 
         return a.email === this.loginUtenteForm.value.username && a.password===this.loginUtenteForm.value.password;
@@ -103,5 +105,9 @@ export class LoginComponent implements OnInit, OnChanges {
     this.router.navigate(['/home'])
   }
 
+
+  gestisciUtenti(){
+    this.router.navigate(['/gestione-utenti'])
+  }
 
 }

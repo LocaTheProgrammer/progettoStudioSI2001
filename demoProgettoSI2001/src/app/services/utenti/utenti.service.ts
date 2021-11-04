@@ -22,6 +22,10 @@ export class UtentiService {
     return this.HttpClient.get<any>(`${this.host}/${id}`)
   }
 
+  getUtenti(): Observable<any>{
+    return this.HttpClient.get<any>(`${this.host}`)
+  }
+
 
 
 }

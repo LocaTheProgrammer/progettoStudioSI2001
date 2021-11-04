@@ -24,6 +24,7 @@ import { ReservationsComponent } from './features/reservations/reservations.comp
 import { ReservationTableComponent } from './components/reservation-table/reservation-table.component';
 import { ViewReservationTableComponent } from './components/view-reservation-table/view-reservation-table.component';
 import { ReservationDetailsComponent } from './features/reservation-details/reservation-details.component';
+import { GestioneUtentiComponent } from './features/gestione-utenti/gestione-utenti.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { ReservationDetailsComponent } from './features/reservation-details/rese
     ReservationTableComponent,
     ViewReservationTableComponent,
     ReservationDetailsComponent,
+    GestioneUtentiComponent,
 
 
 

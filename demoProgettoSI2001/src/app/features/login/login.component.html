@@ -54,15 +54,22 @@
   </table>
   <div class="buttonPrenotazioni">
     <app-my-button-component (click)="linkToReservation()" [buttonConfig]="{text: 'Prenotazioni', customCssClass:'btn btn-primary', icon:'collections_bookmark'}"></app-my-button-component>
-
   </div>
+
   <br>
+
+
+
   <div class="buttonPrenotazioni">
+    <br>
     <app-my-button-component (click)="logout()" [buttonConfig]="{text: 'Esci', customCssClass:'btn btn-primary', icon:'exit_to_app'}"></app-my-button-component>
   </div>
 </div>
 
 
+<div *ngIf="role=='admin'" class="buttonUtenti">
+  <app-my-button-component (click)="gestisciUtenti()" [buttonConfig]="{text: 'Gestione utenti', customCssClass:'btn btn-primary', icon:'supervised_user_circle'}"></app-my-button-component>
 
+</div>
 
 

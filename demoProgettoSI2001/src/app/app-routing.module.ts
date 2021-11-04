@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './features/page-not-found/page-not-found.
 import {BookCarComponent} from "./features/book-car/book-car.component";
 import {ReservationsComponent} from "./features/reservations/reservations.component";
 import {ReservationDetailsComponent} from "./features/reservation-details/reservation-details.component";
+import {GestioneUtentiComponent} from "./features/gestione-utenti/gestione-utenti.component";
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'booking-car', component: BookCarComponent},
   { path: 'prenotazioni', component: ReservationsComponent},
   { path: 'dettaglio-prenotazione', component: ReservationDetailsComponent},
+  { path: 'gestione-utenti', component: GestioneUtentiComponent},
   { path: '**', component: PageNotFoundComponent },
 ];
 
