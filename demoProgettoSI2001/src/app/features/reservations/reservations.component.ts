@@ -73,8 +73,17 @@ export class ReservationsComponent implements OnInit, OnChanges {
 
   event($event:any){
     console.log($event.data.id)
-    this.reservationService.deleteReservationById($event.data.id).subscribe()
-    this.onChangesTemp()
+    switch($event.action.action){
+      case 'DETTAGLI':
+        this.router.navigate(['/dettaglio-prenotazione'], {queryParams: {data: JSON.stringify($event.data.id)}})
+        break;
+      case 'DELETE':
+        this.reservationService.deleteReservationById($event.data.id).subscribe()
+        this.onChangesTemp()
+        break;
+    }
+
+
   }
 
   onChangesTemp():void{

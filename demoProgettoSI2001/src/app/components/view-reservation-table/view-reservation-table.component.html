@@ -1,0 +1,29 @@
+<div class="tableEdit">
+  <table class="table table-dark">
+    <thead>
+    <tr *ngFor="let header of tableConfig.carHeaders">
+      <th>
+        {{header.label}}
+      </th>
+      <td *ngFor="let record of data">
+        <input [disabled]="true" type="text" [(ngModel)]="record.car[header.key]">
+      </td>
+    </tr>
+    </thead>
+  </table>
+
+
+  <table class="table table-light" style="width: 28%">
+    <tr *ngFor="let header of tableConfig.headersDate">
+      <td class="table-warning">
+         <span *ngFor="let record of data">
+            This car has been booked for this date: {{record.reservationDate}}
+    </span>
+      </td>
+    </tr>
+    <br>
+    <app-my-button-component (click)="back()" [buttonConfig]="{text: 'Torna indietro', customCssClass:'btn btn-primary', icon:'settings_backup_restore'}"></app-my-button-component>
+  </table>
+
+
+</div>

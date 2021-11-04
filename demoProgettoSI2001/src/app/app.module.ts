@@ -22,6 +22,8 @@ import { PageNotFoundComponent } from './features/page-not-found/page-not-found.
 import { BookCarComponent } from './features/book-car/book-car.component';
 import { ReservationsComponent } from './features/reservations/reservations.component';
 import { ReservationTableComponent } from './components/reservation-table/reservation-table.component';
+import { ViewReservationTableComponent } from './components/view-reservation-table/view-reservation-table.component';
+import { ReservationDetailsComponent } from './features/reservation-details/reservation-details.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { ReservationTableComponent } from './components/reservation-table/reserv
     BookCarComponent,
     ReservationsComponent,
     ReservationTableComponent,
+    ViewReservationTableComponent,
+    ReservationDetailsComponent,
 
 
 

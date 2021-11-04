@@ -482,6 +482,12 @@ export const tableConfigReservation: MyReservationTableConfig = {
       customCssClass:"btn btn-danger",
       customCssId:"idTable"
     },
+    {
+      action: MyTableActionEnum.DETTAGLI,
+      icon: "info",
+      customCssClass:"btn btn-primary",
+      customCssId:"idTable"
+    },
 
   ]
 

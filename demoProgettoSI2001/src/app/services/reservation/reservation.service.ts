@@ -25,6 +25,10 @@ export class ReservationService {
     return this.HttpClient.delete(`${this.host}/${id}`)
   }
 
+  getReservationById(id:any){
+    return this.HttpClient.get(`${this.host}/${id}`)
+  }
+
 
 
 }
