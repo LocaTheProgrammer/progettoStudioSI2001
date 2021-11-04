@@ -1,10 +1,16 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
 import { Router } from "@angular/router";
-import {tableConfigAdmin, tableConfigUserPrenotazioni} from "../../components/data";
+import {
+  tableConfigAdmin,
+  tableConfigAdminDelete,
+  tableConfigReservation,
+  tableConfigUserPrenotazioni
+} from "../../components/data";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MyTableConfig} from "../../components/table/table.component";
 import {ReservationService} from "../../services/reservation/reservation.service";
 import {UtentiService} from "../../services/utenti/utenti.service";
+import {MyReservationTableConfig} from "../../components/reservation-table/reservation-table.component";
 
 @Component({
   selector: 'app-reservations',
@@ -16,8 +22,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
   loginUtenteForm!: FormGroup
   role?=sessionStorage.getItem("ruolo")
   toggled = true
-  passwordType = 'password'
-  tableConfig!:MyTableConfig;
+  tableConfig!:MyReservationTableConfig;
   bookedCars!:JSON[]
   bookedCarsDates!:JSON[]
   reservations!:JSON[]
@@ -67,15 +72,17 @@ export class ReservationsComponent implements OnInit, OnChanges {
   }
 
   event($event:any){
-    console.log($event)
+    console.log($event.data.id)
+    this.reservationService.deleteReservationById($event.data.id).subscribe()
+    this.onChangesTemp()
   }
 
   onChangesTemp():void{
     if(sessionStorage.getItem("ruolo")=='admin'){
-      this.tableConfig=tableConfigAdmin;
+      this.tableConfig=tableConfigReservation;
       this.getReservations()
     }else{
-      this.tableConfig=tableConfigUserPrenotazioni;
+      this.tableConfig=tableConfigReservation;
       this.getUserBookedCars()
     }
     this.loginUtenteForm = this.fb.group({
@@ -92,8 +99,8 @@ export class ReservationsComponent implements OnInit, OnChanges {
         cars.push(res[i].car);
         dates.push(res[i].reservationDate);
       }
-      this.bookedCarsDates=dates
-      return this.reservations=cars;
+      this.bookedCarsDates=res
+      return this.reservations=res;
     })
   }
 

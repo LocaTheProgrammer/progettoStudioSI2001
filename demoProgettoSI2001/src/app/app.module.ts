@@ -21,6 +21,7 @@ import { EditTableComponent } from './components/edit-table/edit-table.component
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 import { BookCarComponent } from './features/book-car/book-car.component';
 import { ReservationsComponent } from './features/reservations/reservations.component';
+import { ReservationTableComponent } from './components/reservation-table/reservation-table.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ReservationsComponent } from './features/reservations/reservations.comp
     PageNotFoundComponent,
     BookCarComponent,
     ReservationsComponent,
+    ReservationTableComponent,
 
 
 

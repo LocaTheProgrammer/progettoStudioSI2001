@@ -1,4 +1,5 @@
 import {MyTableActionEnum, MyTableConfig} from "./table/table.component";
+import {MyReservationTableConfig} from "./reservation-table/reservation-table.component";
 
 export const dataMock: any = [{
   "name": "pietro",
@@ -88,6 +89,78 @@ export const tableConfigAdminParcoAuto: MyTableConfig = {
 
 
 }
+
+
+
+export const tableConfigAdminDelete: MyTableConfig = {
+  headers: [{
+    key: "Name",
+    label: "Name"
+  },
+    {
+      key: "Miles_per_Gallon",
+      label: "Miles_per_Gallon"
+    },
+    {
+      key: "Cylinders",
+      label: "Cylinders"
+    },
+    {
+      key: "Displacement",
+      label: "Displacement"
+    },
+    {
+      key: "Horsepower",
+      label: "Horsepower"
+    },
+    {
+      key: "Weight_in_lbs",
+      label: "Weight_in_lbs"
+    },
+    {
+      key: "Acceleration",
+      label: "Acceleration"
+    },
+    {
+      key: "Year",
+      label: "Year"
+    },
+    {
+      key: "Origin",
+      label: "Origin"
+    },
+  ],
+  myOrder: {
+    defaultColumn: "Name",
+    orderType: "asc"
+  },
+
+  search: {
+    columns: []
+  },
+
+  myPagination:{
+    itemPerPage : 5 ,
+    itemPerPageOptions: [5,10,15,20],
+    customCssClass:"form-select form-select-sm"
+
+  },
+  actions:[
+    {
+      action: MyTableActionEnum.DELETE,
+      icon: "delete_forever",
+      customCssClass:"btn btn-danger",
+      customCssId:"idTable"
+    },
+
+
+  ]
+
+
+}
+
+
+
 export const tableConfigAdmin: MyTableConfig = {
   headers: [{
     key: "Name",
@@ -339,6 +412,78 @@ export const tableConfigUserParcoAuto: MyTableConfig = {
 
   },
   actions:[]
+
+
+}
+
+export const tableConfigReservation: MyReservationTableConfig = {
+  headersDate: [
+    {
+      key: "reservationDate",
+      label: "reservationDate"
+    },
+  ],
+
+  carHeaders: [ {
+    key: "Name",
+    label: "Name"
+  },
+    {
+      key: "Miles_per_Gallon",
+      label: "Miles_per_Gallon"
+    },
+    {
+      key: "Cylinders",
+      label: "Cylinders"
+    },
+    {
+      key: "Displacement",
+      label: "Displacement"
+    },
+    {
+      key: "Horsepower",
+      label: "Horsepower"
+    },
+    {
+      key: "Weight_in_lbs",
+      label: "Weight_in_lbs"
+    },
+    {
+      key: "Acceleration",
+      label: "Acceleration"
+    },
+    {
+      key: "Year",
+      label: "Year"
+    },
+  ],
+
+
+  myOrder: {
+    defaultColumn: "Name",
+    orderType: "asc"
+  },
+
+  search: {
+    columns: []
+  },
+
+  myPagination:{
+    itemPerPage : 5 ,
+    itemPerPageOptions: [5,10,15,20],
+    customCssClass:"form-select form-select-sm"
+
+  },
+  actions:[
+
+    {
+      action: MyTableActionEnum.DELETE,
+      icon: "delete_forever",
+      customCssClass:"btn btn-danger",
+      customCssId:"idTable"
+    },
+
+  ]
 
 
 }

@@ -1,0 +1,70 @@
+
+<div class="searchDiv">
+
+  <table>
+    <tr>
+      <td><input class="input-group" type="text" placeholder="Cerca..." [(ngModel)]="searchTerm"></td>
+      <td>
+
+        <select class="form-control" style="width: 100%; margin-left: 2%; height: 85%"  [(ngModel)]="searchField">
+          <option disabled="true" [ngValue]="campoDiRiecerca">select search field</option>
+          <option *ngFor="let header of tableConfig.carHeaders">
+            {{header.label}}
+          </option>
+        </select>
+      </td>
+    </tr>
+  </table>
+
+</div>
+<div style="width:97%; margin: auto">
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th *ngFor="let header of tableConfig.carHeaders">
+        {{header.label}}
+        <span *ngIf="showButtonAsc">
+          <mat-icon aria-hidden="false" (click)="ordinaAsc(header.key)" style="cursor: pointer">arrow_upward</mat-icon>
+        </span>
+        <span *ngIf="showButtonDesc">
+          <mat-icon aria-hidden="false" (click)="ordinaDesc(header.key)" style="cursor: pointer">arrow_downward</mat-icon>
+        </span>
+      </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let record of data  | filtering: searchTerm : searchField | pagination:+visibleElements:+pageNumberModel | sort : sortedColumn: columnOrder">
+      <td *ngFor="let header of tableConfig.carHeaders;" >
+        {{record.car[header.key]}}
+      </td>
+
+      <td style="width: 15%;" *ngIf="tableConfig.actions.length>0">
+        <span *ngFor="let action of tableConfig.actions;">
+          <app-my-button-component  (newItemEvent)="click(action, record)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
+      </span>
+      </td>
+
+
+
+
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <span style="font-weight: lighter">Item per page</span>
+    <select class="form-select form-select-sm" [(ngModel)]="visibleElements" (ngModelChange)="onInputChange($event)">
+      <option *ngFor="let element of tableConfig.myPagination.itemPerPageOptions">
+        {{element}}
+      </option>
+    </select>
+  </div>
+  <table >
+    <tr>
+      <td *ngFor="let page of numbers; let i=index">
+        <app-my-button-component style="width: 50%" (newItemEvent)="setPageNumberModel(i)" [buttonConfig]="{text: (i+1).toString(), customCssClass:'btn btn-secondary btn-sm', icon:''}"></app-my-button-component>
+      </td>
+    </tr>
+  </table>
+</div>
+

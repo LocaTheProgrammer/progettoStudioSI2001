@@ -27,57 +27,6 @@
   ],
   "reservation": [
     {
-      "id": 0,
-      "userId": 1,
-      "car": {
-        "id": 4,
-        "Name": "amc rebel sst",
-        "Miles_per_Gallon": 16,
-        "Cylinders": 8,
-        "Displacement": 304,
-        "Horsepower": 150,
-        "Weight_in_lbs": 3433,
-        "Acceleration": 12,
-        "Year": "1970-01-01",
-        "Origin": "USA"
-      },
-      "reservationDate": "12/11/2021"
-    },
-    {
-      "userId": 1,
-      "car": {
-        "id": 4,
-        "Name": "amc rebel sst",
-        "Miles_per_Gallon": 16,
-        "Cylinders": 8,
-        "Displacement": 304,
-        "Horsepower": 150,
-        "Weight_in_lbs": 3433,
-        "Acceleration": 12,
-        "Year": "1970-01-01",
-        "Origin": "USA"
-      },
-      "reservationDate": "5/10/2021",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "car": {
-        "id": 4,
-        "Name": "amc rebel sst",
-        "Miles_per_Gallon": 16,
-        "Cylinders": 8,
-        "Displacement": 304,
-        "Horsepower": 150,
-        "Weight_in_lbs": 3433,
-        "Acceleration": 12,
-        "Year": "1970-01-01",
-        "Origin": "USA"
-      },
-      "reservationDate": "6/10/2021",
-      "id": 2
-    },
-    {
       "userId": 1,
       "car": {
         "id": 4,
@@ -110,40 +59,6 @@
       },
       "reservationDate": "6/10/2021",
       "id": 4
-    },
-    {
-      "userId": 1,
-      "car": {
-        "id": 5,
-        "Name": "ford torino",
-        "Miles_per_Gallon": 17,
-        "Cylinders": 8,
-        "Displacement": 302,
-        "Horsepower": 140,
-        "Weight_in_lbs": 3449,
-        "Acceleration": 10.5,
-        "Year": "1970-01-01",
-        "Origin": "USA"
-      },
-      "reservationDate": "7/10/2021",
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "car": {
-        "id": 7,
-        "Name": "chevrolet impala",
-        "Miles_per_Gallon": 14,
-        "Cylinders": 8,
-        "Displacement": 454,
-        "Horsepower": 220,
-        "Weight_in_lbs": 4354,
-        "Acceleration": 9,
-        "Year": "1970-01-01",
-        "Origin": "USA"
-      },
-      "reservationDate": "6/10/2021",
-      "id": 6
     },
     {
       "userId": 2,

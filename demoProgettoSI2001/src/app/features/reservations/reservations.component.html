@@ -1,13 +1,13 @@
 <button (click)="logout()">Logout</button>
 
 <div *ngIf="role==='user'">
-  <app-table [data]="bookedCars" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-table>
+  <app-reservation-table [data]="bookedCars" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-reservation-table>
 </div>
 
 
 
 <div *ngIf="role==='admin'">
-  <app-table [data]="reservations" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-table>
+  <app-reservation-table [data]="reservations" [tableConfig]="tableConfig" (btnEmitter)="event($event)"></app-reservation-table>
 </div>
 
 
