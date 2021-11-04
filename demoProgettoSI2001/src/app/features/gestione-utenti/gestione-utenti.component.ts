@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {UtentiService} from "../../services/utenti/utenti.service";
 import {MyTableConfig} from "../../components/table/table.component";
 import {tableConfigUtente} from "../../components/data";
@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   templateUrl: './gestione-utenti.component.html',
   styleUrls: ['./gestione-utenti.component.scss']
 })
-export class GestioneUtentiComponent implements OnInit {
+export class GestioneUtentiComponent implements OnInit, OnChanges {
 
 
 
@@ -22,6 +22,14 @@ export class GestioneUtentiComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ngOnChanges()
+  }
+
+  onInitMethod(){
+    this.ngOnInit()
+  }
+
+  ngOnChanges() {
     this.tableConfig=tableConfigUtente;
     this.utentiService.getUtenti().subscribe((res:any)=>{
       this.data=res;
@@ -38,8 +46,8 @@ export class GestioneUtentiComponent implements OnInit {
         this.router.navigate(['/edit-user'], {queryParams: {data: JSON.stringify($event.data.id)}})
         break;
       case 'DELETE':
-       /* this.carService.deleteCar($event.data.id).subscribe();
-        this.onInitMethod()*/
+        this.utentiService.deleteUtenteById($event.data.id).subscribe()
+        this.onInitMethod()
         break;
     }
   }

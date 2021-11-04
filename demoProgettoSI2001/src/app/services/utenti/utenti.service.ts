@@ -30,6 +30,14 @@ export class UtentiService {
     return this.HttpClient.put(`${this.host}/${id}`, editUtenteForm);
   }
 
+  addUser(addUserForm:any):Observable<any>{
+    return this.HttpClient.post(`${this.host}`, addUserForm);
+  }
+
+  deleteUtenteById(id:any){
+    return this.HttpClient.delete(`${this.host}/${id}`)
+  }
+
 
 
 }

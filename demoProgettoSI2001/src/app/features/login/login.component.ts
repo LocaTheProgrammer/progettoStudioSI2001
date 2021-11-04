@@ -110,4 +110,8 @@ export class LoginComponent implements OnInit, OnChanges {
     this.router.navigate(['/gestione-utenti'])
   }
 
+  aggiungiUtente(){
+    this.router.navigate(['/aggiungi-utenti'])
+  }
+
 }

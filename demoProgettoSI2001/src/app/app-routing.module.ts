@@ -10,6 +10,7 @@ import {ReservationsComponent} from "./features/reservations/reservations.compon
 import {ReservationDetailsComponent} from "./features/reservation-details/reservation-details.component";
 import {GestioneUtentiComponent} from "./features/gestione-utenti/gestione-utenti.component";
 import {EditUserComponent} from "./features/edit-user/edit-user.component";
+import {AddUserComponent} from "./features/add-user/add-user.component";
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'dettaglio-prenotazione', component: ReservationDetailsComponent},
   { path: 'gestione-utenti', component: GestioneUtentiComponent},
   { path: 'edit-user', component: EditUserComponent },
+  { path: 'aggiungi-utenti', component: AddUserComponent},
   { path: '**', component: PageNotFoundComponent },
 ];
 

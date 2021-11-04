@@ -27,6 +27,7 @@ import { ReservationDetailsComponent } from './features/reservation-details/rese
 import { GestioneUtentiComponent } from './features/gestione-utenti/gestione-utenti.component';
 import { EditUserTableComponent } from './components/edit-user-table/edit-user-table.component';
 import { EditUserComponent } from './features/edit-user/edit-user.component';
+import { AddUserComponent } from './features/add-user/add-user.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { EditUserComponent } from './features/edit-user/edit-user.component';
     GestioneUtentiComponent,
     EditUserTableComponent,
     EditUserComponent,
+    AddUserComponent,
 
 
 
