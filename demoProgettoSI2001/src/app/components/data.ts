@@ -20,36 +20,36 @@ export const dataMock: any = [{
 
 export const tableConfigAdminParcoAuto: MyTableConfig = {
   headers: [{
-    key: "Name",
-    label: "Name"
+    key: "name",
+    label: "name"
   },
     {
-      key: "Miles_per_Gallon",
-      label: "Miles_per_Gallon"
+      key: "milesPerGallon",
+      label: "milesPerGallon"
     },
     {
-      key: "Cylinders",
-      label: "Cylinders"
+      key: "cylinders",
+      label: "cylinders"
     },
     {
-      key: "Displacement",
-      label: "Displacement"
+      key: "displacement",
+      label: "displacement"
     },
     {
-      key: "Horsepower",
-      label: "Horsepower"
+      key: "horsepower",
+      label: "horsepower"
     },
     {
-      key: "Weight_in_lbs",
-      label: "Weight_in_lbs"
+      key: "weightInLbs",
+      label: "weightInLbs"
     },
     {
-      key: "Acceleration",
-      label: "Acceleration"
+      key: "acceleration",
+      label: "acceleration"
     },
     {
-      key: "Year",
-      label: "Year"
+      key: "year",
+      label: "year"
     },
     {
       key: "Origin",
@@ -57,7 +57,7 @@ export const tableConfigAdminParcoAuto: MyTableConfig = {
     },
   ],
   myOrder: {
-    defaultColumn: "Name",
+    defaultColumn: "name",
     orderType: "asc"
   },
 
@@ -94,36 +94,36 @@ export const tableConfigAdminParcoAuto: MyTableConfig = {
 
 export const tableConfigAdminDelete: MyTableConfig = {
   headers: [{
-    key: "Name",
-    label: "Name"
+    key: "name",
+    label: "name"
   },
     {
-      key: "Miles_per_Gallon",
-      label: "Miles_per_Gallon"
+      key: "milesPerGallon",
+      label: "milesPerGallon"
     },
     {
-      key: "Cylinders",
-      label: "Cylinders"
+      key: "cylinders",
+      label: "cylinders"
     },
     {
-      key: "Displacement",
-      label: "Displacement"
+      key: "displacement",
+      label: "displacement"
     },
     {
-      key: "Horsepower",
-      label: "Horsepower"
+      key: "horsepower",
+      label: "horsepower"
     },
     {
-      key: "Weight_in_lbs",
-      label: "Weight_in_lbs"
+      key: "weightInLbs",
+      label: "weightInLbs"
     },
     {
-      key: "Acceleration",
-      label: "Acceleration"
+      key: "acceleration",
+      label: "acceleration"
     },
     {
-      key: "Year",
-      label: "Year"
+      key: "year",
+      label: "year"
     },
     {
       key: "Origin",
@@ -131,7 +131,7 @@ export const tableConfigAdminDelete: MyTableConfig = {
     },
   ],
   myOrder: {
-    defaultColumn: "Name",
+    defaultColumn: "name",
     orderType: "asc"
   },
 
@@ -163,36 +163,36 @@ export const tableConfigAdminDelete: MyTableConfig = {
 
 export const tableConfigAdmin: MyTableConfig = {
   headers: [{
-    key: "Name",
-    label: "Name"
+    key: "name",
+    label: "name"
   },
     {
-      key: "Miles_per_Gallon",
-      label: "Miles_per_Gallon"
+      key: "milesPerGallon",
+      label: "milesPerGallon"
     },
     {
-      key: "Cylinders",
-      label: "Cylinders"
+      key: "cylinders",
+      label: "cylinders"
     },
     {
-      key: "Displacement",
-      label: "Displacement"
+      key: "displacement",
+      label: "displacement"
     },
     {
-      key: "Horsepower",
-      label: "Horsepower"
+      key: "horsepower",
+      label: "horsepower"
     },
     {
-      key: "Weight_in_lbs",
-      label: "Weight_in_lbs"
+      key: "weightInLbs",
+      label: "weightInLbs"
     },
     {
-      key: "Acceleration",
-      label: "Acceleration"
+      key: "acceleration",
+      label: "acceleration"
     },
     {
-      key: "Year",
-      label: "Year"
+      key: "year",
+      label: "year"
     },
     {
       key: "Origin",
@@ -200,7 +200,7 @@ export const tableConfigAdmin: MyTableConfig = {
     },
   ],
   myOrder: {
-    defaultColumn: "Name",
+    defaultColumn: "name",
     orderType: "asc"
   },
 
@@ -229,36 +229,36 @@ export const tableConfigAdmin: MyTableConfig = {
 }
 export const  tableConfigUserPrenotazioni: MyTableConfig = {
   headers: [{
-    key: "Name",
-    label: "Name"
+    key: "name",
+    label: "name"
   },
     {
-      key: "Miles_per_Gallon",
-      label: "Miles_per_Gallon"
+      key: "milesPerGallon",
+      label: "milesPerGallon"
     },
     {
-      key: "Cylinders",
-      label: "Cylinders"
+      key: "cylinders",
+      label: "cylinders"
     },
     {
-      key: "Displacement",
-      label: "Displacement"
+      key: "displacement",
+      label: "displacement"
     },
     {
-      key: "Horsepower",
-      label: "Horsepower"
+      key: "horsepower",
+      label: "horsepower"
     },
     {
-      key: "Weight_in_lbs",
-      label: "Weight_in_lbs"
+      key: "weightInLbs",
+      label: "weightInLbs"
     },
     {
-      key: "Acceleration",
-      label: "Acceleration"
+      key: "acceleration",
+      label: "acceleration"
     },
     {
-      key: "Year",
-      label: "Year"
+      key: "year",
+      label: "year"
     },
     {
       key: "Origin",
@@ -266,7 +266,7 @@ export const  tableConfigUserPrenotazioni: MyTableConfig = {
     },
   ],
   myOrder: {
-    defaultColumn: "Name",
+    defaultColumn: "name",
     orderType: "asc"
   },
 
@@ -296,36 +296,36 @@ export const  tableConfigUserPrenotazioni: MyTableConfig = {
 
 export const tableConfigDettagli: MyTableConfig = {
   headers: [{
-    key: "Name",
-    label: "Name"
+    key: "name",
+    label: "name"
   },
     {
-      key: "Miles_per_Gallon",
-      label: "Miles_per_Gallon"
+      key: "milesPerGallon",
+      label: "milesPerGallon"
     },
     {
-      key: "Cylinders",
-      label: "Cylinders"
+      key: "cylinders",
+      label: "cylinders"
     },
     {
-      key: "Displacement",
-      label: "Displacement"
+      key: "displacement",
+      label: "displacement"
     },
     {
-      key: "Horsepower",
-      label: "Horsepower"
+      key: "horsepower",
+      label: "horsepower"
     },
     {
-      key: "Weight_in_lbs",
-      label: "Weight_in_lbs"
+      key: "weightInLbs",
+      label: "weightInLbs"
     },
     {
-      key: "Acceleration",
-      label: "Acceleration"
+      key: "acceleration",
+      label: "acceleration"
     },
     {
-      key: "Year",
-      label: "Year"
+      key: "year",
+      label: "year"
     },
     {
       key: "Origin",
@@ -333,7 +333,7 @@ export const tableConfigDettagli: MyTableConfig = {
     },
   ],
   myOrder: {
-    defaultColumn: "Name",
+    defaultColumn: "name",
     orderType: "asc"
   },
 
@@ -360,36 +360,36 @@ export const tableConfigDettagli: MyTableConfig = {
 }
 export const tableConfigUserParcoAuto: MyTableConfig = {
   headers: [{
-    key: "Name",
-    label: "Name"
+    key: "name",
+    label: "name"
   },
     {
-      key: "Miles_per_Gallon",
-      label: "Miles_per_Gallon"
+      key: "milesPerGallon",
+      label: "milesPerGallon"
     },
     {
-      key: "Cylinders",
-      label: "Cylinders"
+      key: "cylinders",
+      label: "cylinders"
     },
     {
-      key: "Displacement",
-      label: "Displacement"
+      key: "displacement",
+      label: "displacement"
     },
     {
-      key: "Horsepower",
-      label: "Horsepower"
+      key: "horsepower",
+      label: "horsepower"
     },
     {
-      key: "Weight_in_lbs",
-      label: "Weight_in_lbs"
+      key: "weightInLbs",
+      label: "weightInLbs"
     },
     {
-      key: "Acceleration",
-      label: "Acceleration"
+      key: "acceleration",
+      label: "acceleration"
     },
     {
-      key: "Year",
-      label: "Year"
+      key: "year",
+      label: "year"
     },
     {
       key: "Origin",
@@ -397,7 +397,7 @@ export const tableConfigUserParcoAuto: MyTableConfig = {
     },
   ],
   myOrder: {
-    defaultColumn: "Name",
+    defaultColumn: "name",
     orderType: "asc"
   },
 
@@ -429,42 +429,42 @@ export const tableConfigReservation: MyReservationTableConfig = {
   ],
 
   carHeaders: [ {
-    key: "Name",
-    label: "Name"
+    key: "name",
+    label: "name"
   },
     {
-      key: "Miles_per_Gallon",
-      label: "Miles_per_Gallon"
+      key: "milesPerGallon",
+      label: "milesPerGallon"
     },
     {
-      key: "Cylinders",
-      label: "Cylinders"
+      key: "cylinders",
+      label: "cylinders"
     },
     {
-      key: "Displacement",
-      label: "Displacement"
+      key: "displacement",
+      label: "displacement"
     },
     {
-      key: "Horsepower",
-      label: "Horsepower"
+      key: "horsepower",
+      label: "horsepower"
     },
     {
-      key: "Weight_in_lbs",
-      label: "Weight_in_lbs"
+      key: "weightInLbs",
+      label: "weightInLbs"
     },
     {
-      key: "Acceleration",
-      label: "Acceleration"
+      key: "acceleration",
+      label: "acceleration"
     },
     {
-      key: "Year",
-      label: "Year"
+      key: "year",
+      label: "year"
     },
   ],
 
 
   myOrder: {
-    defaultColumn: "Name",
+    defaultColumn: "name",
     orderType: "asc"
   },
 
@@ -525,7 +525,7 @@ export const tableConfigUtente: MyTableConfig = {
     },
   ],
   myOrder: {
-    defaultColumn: "Name",
+    defaultColumn: "name",
     orderType: "asc"
   },
 
