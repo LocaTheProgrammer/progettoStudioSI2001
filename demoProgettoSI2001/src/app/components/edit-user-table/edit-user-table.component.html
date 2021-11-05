@@ -1,19 +1,44 @@
-
 <div class="tableEdit">
   <form style="width:5%;" [formGroup]="editUtenteForm">
 
     <table class="table table-dark">
       <thead>
       <tr *ngFor="let header of tableConfig.headers">
-        <th >
+        <th>
           {{header.label}}
         </th>
         <td *ngFor="let record of data">
-          <input type="text" [(ngModel)]="record[header.key]" formControlName="{{header.key}}" >
+          <span *ngIf="header.label!='role'">
+            <input type="text" [(ngModel)]="record[header.key]" formControlName="{{header.key}}">
+          </span>
+          <span *ngIf="header.label=='role'">
+            <span *ngIf="data[0].role!='user'">
+              <select formControlName="role" ngModel="admin">
+              <option ngValue="admin">
+                admin
+              </option>
+               <option ngValue="user">
+                user
+              </option>
+            </select>
+            </span>
+            <span *ngIf="data[0].role=='user'">
+              <select formControlName="role" ngModel="user">
+               <option ngValue="user">
+                user
+              </option>
+                  <option ngValue="admin">
+                admin
+              </option>
+            </select>
+            </span>
+
+          </span>
         </td>
       </tr>
       </thead>
     </table>
-    <app-my-button-component (newItemEvent)="update()" [buttonConfig]="{text: txtSalva, customCssClass:'btn btn-primary', icon:'save'}"></app-my-button-component>
+    <app-my-button-component (newItemEvent)="update()"
+                             [buttonConfig]="{text: txtSalva, customCssClass:'btn btn-primary', icon:'save'}"></app-my-button-component>
   </form>
 </div>

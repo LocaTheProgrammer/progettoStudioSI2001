@@ -515,6 +515,14 @@ export const tableConfigUtente: MyTableConfig = {
       key: "email",
       label: "email"
     },
+    {
+      key: "password",
+      label: "password"
+    },
+    {
+      key: "role",
+      label: "role"
+    },
   ],
   myOrder: {
     defaultColumn: "Name",

@@ -27,18 +27,20 @@ export class EditUserTableComponent implements OnChanges  {
     this.editUtenteForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required]
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      role: ['', Validators.required]
     })
 
   }
 
   update(){
 
-    this.utentiService.updateUtente(this.editUtenteForm.value, this.data[0].id).subscribe(obs=>{
-      this.router.navigate(["/login"]);
-    })
+    // this.utentiService.updateUtente(this.editUtenteForm.value, this.data[0].id).subscribe(obs=>{
+    //   this.router.navigate(["/login"]);
+    // })
 
-
+    console.log(this.editUtenteForm.value)
 
   }
 
