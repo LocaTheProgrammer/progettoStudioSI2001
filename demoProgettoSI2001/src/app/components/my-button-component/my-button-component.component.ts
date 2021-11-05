@@ -22,8 +22,8 @@ export class MyButtonComponentComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  emitBtnFunct(value:string){
-    this.newItemEvent.emit(value);
+  emitBtnFunct($event:any){
+    this.newItemEvent.emit($event);
   }
 
 }

@@ -74,16 +74,16 @@
       "id": 0
     },
     {
-      "id": 12,
       "Name": "chevrolet chevelle concours (sw)",
-      "Miles_per_Gallon": null,
+      "Miles_per_Gallon": "11",
       "Cylinders": 8,
       "Displacement": 350,
       "Horsepower": 165,
       "Weight_in_lbs": 4142,
       "Acceleration": 11.5,
       "Year": "1970-01-01",
-      "Origin": "USA"
+      "Origin": "USA",
+      "id": 12
     },
     {
       "id": 13,
