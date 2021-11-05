@@ -34,7 +34,7 @@ export interface MyPagination {
 
 
 @Component({
-  selector: 'app-edit-table',
+  selector: 'app-edit-car-table',
   templateUrl: './edit-car-table.component.html',
   styleUrls: ['./edit-car-table.component.scss']
 })
@@ -68,9 +68,17 @@ export class EditCarTableComponent implements OnChanges {
   }
 
   update(){
-    this.carService.updateCar(this.editParcoAutoForm.value, this.data[0].id).subscribe(obs =>{
-      this.router.navigate(["/parco-auto"]);
-    })
+    if(this.data[0].id!=0){
+      this.carService.updateCar(this.editParcoAutoForm.value, this.data[0].id).subscribe(obs =>{
+        this.router.navigate(["/parco-auto"]);
+      })
+    }else{
+      console.log(this.editParcoAutoForm.value)
+      this.carService.addCar(this.editParcoAutoForm.value).subscribe(obs=>{
+        this.router.navigate(['/parco-auto'])
+      })
+    }
+
 
 
 

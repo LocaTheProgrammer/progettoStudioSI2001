@@ -41,6 +41,7 @@ export class EditUserTableComponent implements OnChanges  {
         this.router.navigate(["/login"]);
       })
     }else{
+      console.log(this.editUtenteForm)
       this.utentiService.addUser(this.editUtenteForm.value).subscribe(observable=>{
         this.router.navigate(['/gestione-utenti'])
       })

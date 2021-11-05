@@ -28,6 +28,7 @@ import { GestioneUtentiComponent } from './features/gestione-utenti/gestione-ute
 import { EditUserTableComponent } from './components/edit-user-table/edit-user-table.component';
 import { EditUserComponent } from './features/edit-user/edit-user.component';
 import { AddUserComponent } from './features/add-user/add-user.component';
+import { AddCarComponent } from './features/add-car/add-car.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { AddUserComponent } from './features/add-user/add-user.component';
     EditUserTableComponent,
     EditUserComponent,
     AddUserComponent,
+    AddCarComponent,
 
 
 

@@ -42,7 +42,7 @@ export class ParcoAutoComponent implements OnInit, OnChanges{
 
     this.carService.getCars().subscribe((result:any)=>{
       if(result!=null){
-        this.jsonDataCar=result;
+        this.jsonDataCar=result.slice(1);
       }
     })
 
@@ -58,6 +58,7 @@ export class ParcoAutoComponent implements OnInit, OnChanges{
         case 'DELETE':
           this.carService.deleteCar($event.data.id).subscribe(obs=>{
             this.onInitMethod()
+            this.router.navigate(['/login'])
           });
 
         break;

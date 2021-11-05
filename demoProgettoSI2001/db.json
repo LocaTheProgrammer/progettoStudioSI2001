@@ -31,6 +31,14 @@
       "email": "ann@codingthesmartway.com",
       "password": "1234",
       "role": "admin"
+    },
+    {
+      "firstName": "io",
+      "lastName": "io",
+      "email": "io",
+      "password": "io",
+      "role": "admin",
+      "id": 4
     }
   ],
   "reservation": [
@@ -53,6 +61,18 @@
     }
   ],
   "cars": [
+    {
+      "Name": "",
+      "Miles_per_Gallon": 0,
+      "Cylinders": 0,
+      "Displacement": 0,
+      "Horsepower": 0,
+      "Weight_in_lbs": 0,
+      "Acceleration": 0,
+      "Year": "",
+      "Origin": "",
+      "id": 0
+    },
     {
       "id": 12,
       "Name": "chevrolet chevelle concours (sw)",

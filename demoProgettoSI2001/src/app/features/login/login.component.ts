@@ -115,4 +115,8 @@ export class LoginComponent implements OnInit, OnChanges {
 
   }
 
+  aggiungiAuto() {
+    this.router.navigate(['/aggiungi-auto'], {queryParams: {data: 0}})
+  }
+
 }

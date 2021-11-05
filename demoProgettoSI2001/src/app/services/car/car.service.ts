@@ -27,6 +27,10 @@ export class CarService {
     return this.HttpClient.delete(`${this.url}/${id}`)
   }
 
+  addCar(editCarForm:any):Observable<any>{
+    return this.HttpClient.post(`${this.url}`, editCarForm);
+  }
+
   getBusyCars(): Observable<any>{
     return this.HttpClient.get('http://localhost:3000/reservation')
   }

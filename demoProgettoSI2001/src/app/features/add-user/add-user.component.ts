@@ -29,7 +29,7 @@ export class AddUserComponent implements OnInit {
     this.utentiService.getUtenteById(this.itemToUpdate).subscribe((result:any)=>{
 
         this.data=new Array(1).fill(result);
-        result.removeItem
+
         console.log(this.data)
       }
     );

@@ -11,6 +11,7 @@ import {ReservationDetailsComponent} from "./features/reservation-details/reserv
 import {GestioneUtentiComponent} from "./features/gestione-utenti/gestione-utenti.component";
 import {EditUserComponent} from "./features/edit-user/edit-user.component";
 import {AddUserComponent} from "./features/add-user/add-user.component";
+import {AddCarComponent} from "./features/add-car/add-car.component";
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'gestione-utenti', component: GestioneUtentiComponent},
   { path: 'edit-user', component: EditUserComponent },
   { path: 'aggiungi-utenti', component: AddUserComponent},
+  { path: 'aggiungi-auto', component: AddCarComponent},
   { path: '**', component: PageNotFoundComponent },
 ];
 
