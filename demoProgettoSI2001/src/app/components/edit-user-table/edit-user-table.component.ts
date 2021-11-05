@@ -36,9 +36,9 @@ export class EditUserTableComponent implements OnChanges  {
 
   update(){
 
-    // this.utentiService.updateUtente(this.editUtenteForm.value, this.data[0].id).subscribe(obs=>{
-    //   this.router.navigate(["/login"]);
-    // })
+    this.utentiService.updateUtente(this.editUtenteForm.value, this.data[0].id).subscribe(obs=>{
+      this.router.navigate(["/login"]);
+    })
 
     console.log(this.editUtenteForm.value)
 

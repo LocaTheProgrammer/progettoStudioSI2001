@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder} from "@angular/forms";
 import {UtentiService} from "../../services/utenti/utenti.service";
 import {Router} from "@angular/router";
+import {MyTableConfig} from "../../components/table/table.component";
+import {tableConfigUtente} from "../../components/data";
 
 @Component({
   selector: 'app-add-user',
@@ -10,27 +12,18 @@ import {Router} from "@angular/router";
 })
 export class AddUserComponent implements OnInit {
 
-  addUserForm!: FormGroup
+ 
+  itemToUpdate!:any
+  data:JSON[]=[]
+  tableConfig!:MyTableConfig;
 
   constructor(private fb: FormBuilder, private utentiService: UtentiService, private router:Router) {
   }
 
   ngOnInit(): void {
-    this.addUserForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      role: ['', Validators.required]
-    })
+    this.tableConfig=tableConfigUtente;
   }
 
-  update() {
-    console.log(this.addUserForm.value)
-    this.utentiService.addUser(this.addUserForm.value).subscribe(obs=>{
-      this.router.navigate(['/gestione-utenti'])
-    })
 
-  }
 
 }

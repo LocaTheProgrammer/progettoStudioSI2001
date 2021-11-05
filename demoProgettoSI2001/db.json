@@ -4,6 +4,8 @@
       "firstName": "Sebastiano",
       "lastName": "Eschweiler",
       "email": "sebastian@codingthesmartway.com",
+      "password": "123",
+      "role": "user",
       "id": 1
     },
     {
