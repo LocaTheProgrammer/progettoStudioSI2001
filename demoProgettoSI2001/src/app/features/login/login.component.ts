@@ -111,7 +111,8 @@ export class LoginComponent implements OnInit, OnChanges {
   }
 
   aggiungiUtente(){
-    this.router.navigate(['/aggiungi-utenti'])
+    this.router.navigate(['/aggiungi-utenti'], {queryParams: {data: 0}})
+
   }
 
 }

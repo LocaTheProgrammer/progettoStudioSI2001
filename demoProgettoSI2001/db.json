@@ -1,6 +1,14 @@
 {
   "utenti": [
     {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "role": "",
+      "id": 0
+    },
+    {
       "firstName": "Sebastiano",
       "lastName": "Eschweiler",
       "email": "sebastian@codingthesmartway.com",

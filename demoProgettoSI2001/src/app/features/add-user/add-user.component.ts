@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {UtentiService} from "../../services/utenti/utenti.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {MyTableConfig} from "../../components/table/table.component";
 import {tableConfigUtente} from "../../components/data";
 
@@ -12,17 +12,29 @@ import {tableConfigUtente} from "../../components/data";
 })
 export class AddUserComponent implements OnInit {
 
- 
+
   itemToUpdate!:any
-  data:JSON[]=[]
+
+
+  data!:JSON[]
   tableConfig!:MyTableConfig;
 
-  constructor(private fb: FormBuilder, private utentiService: UtentiService, private router:Router) {
+  constructor(private fb: FormBuilder, private utentiService: UtentiService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.tableConfig=tableConfigUtente;
+    this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
+    console.log(this.itemToUpdate)
+    this.utentiService.getUtenteById(this.itemToUpdate).subscribe((result:any)=>{
+
+        this.data=new Array(1).fill(result);
+        result.removeItem
+        console.log(this.data)
+      }
+    );
   }
+
 
 
 
