@@ -17,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ParcoAutoComponent } from './features/parco-auto/parco-auto.component';
 import { EditParcoAutoComponent } from './features/edit-parco-auto/edit-parco-auto.component';
-import { EditTableComponent } from './components/edit-car-table/edit-table.component';
+import { EditCarTableComponent } from './components/edit-car-table/edit-car-table.component';
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 import { BookCarComponent } from './features/book-car/book-car.component';
 import { ReservationsComponent } from './features/reservations/reservations.component';
@@ -42,7 +42,7 @@ import { AddUserComponent } from './features/add-user/add-user.component';
     HomeComponent,
     ParcoAutoComponent,
     EditParcoAutoComponent,
-    EditTableComponent,
+    EditCarTableComponent,
     PageNotFoundComponent,
     BookCarComponent,
     ReservationsComponent,

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditTableComponent } from './edit-table.component';
+import { EditCarTableComponent } from './edit-car-table.component';
 
 describe('EditTableComponent', () => {
-  let component: EditTableComponent;
-  let fixture: ComponentFixture<EditTableComponent>;
+  let component: EditCarTableComponent;
+  let fixture: ComponentFixture<EditCarTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditTableComponent ]
+      declarations: [ EditCarTableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditTableComponent);
+    fixture = TestBed.createComponent(EditCarTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

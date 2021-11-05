@@ -35,10 +35,10 @@ export interface MyPagination {
 
 @Component({
   selector: 'app-edit-table',
-  templateUrl: './edit-table.component.html',
-  styleUrls: ['./edit-table.component.scss']
+  templateUrl: './edit-car-table.component.html',
+  styleUrls: ['./edit-car-table.component.scss']
 })
-export class EditTableComponent implements OnChanges {
+export class EditCarTableComponent implements OnChanges {
 
   editParcoAutoForm!: FormGroup
   txtSalva:string="Salva"
