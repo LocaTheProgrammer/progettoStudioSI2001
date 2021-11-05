@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MyTableConfig} from "../../components/table/table.component";
 import {FormBuilder} from "@angular/forms";
-import {UtentiService} from "../../services/utenti/utenti.service";
 import {ActivatedRoute} from "@angular/router";
-import {tableConfigUserParcoAuto, tableConfigUtente} from "../../components/data";
+import {tableConfigUserParcoAuto} from "../../components/data";
 import {CarService} from "../../services/car/car.service";
 
 @Component({

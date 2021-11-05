@@ -29,7 +29,7 @@ export interface MyPagination {
 }
 
 export enum MyTableActionEnum {
-  NEW_ROW= 'NEW_ROW' , EDIT='EDIT' , DELETE ='DELETE', PRENOTA='PRENOTA', APPROVA='APPROVA', DETTAGLI='DETTAGLI'
+   EDIT='EDIT' , DELETE ='DELETE', DETTAGLI='DETTAGLI'
 }
 
 

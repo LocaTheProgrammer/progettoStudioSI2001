@@ -21,7 +21,6 @@ export class EditParcoAutoComponent implements OnInit{
   ngOnInit() {
     this.tableConfig=tableConfigAdmin;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
-    console.log(this.itemToUpdate)
     this.carService.getCarById(this.itemToUpdate).subscribe((result:any)=>{
       this.data=new Array(1).fill(result);
       }

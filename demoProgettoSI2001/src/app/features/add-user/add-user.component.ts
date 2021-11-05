@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {UtentiService} from "../../services/utenti/utenti.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {MyTableConfig} from "../../components/table/table.component";
 import {tableConfigUtente} from "../../components/data";
 
@@ -23,6 +23,7 @@ export class AddUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.tableConfig=tableConfigUtente;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
     console.log(this.itemToUpdate)

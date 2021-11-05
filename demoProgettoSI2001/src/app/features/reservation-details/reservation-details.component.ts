@@ -36,9 +36,6 @@ export class ReservationDetailsComponent implements OnInit {
         this.router.navigate(['/edit-parco-auto'], {queryParams: {data: JSON.stringify($event.data.id)}})
         break;
       case 'DELETE':
-
-        /*this.carService.deleteCar($event.data.id).subscribe();
-        this.onInitMethod()*/
         break;
     }
   }

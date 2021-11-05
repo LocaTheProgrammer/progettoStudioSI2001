@@ -21,10 +21,8 @@ export class EditUserComponent implements OnInit {
   ngOnInit() {
     this.tableConfig=tableConfigUtente;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
-    console.log(this.itemToUpdate)
     this.utentiService.getUtenteById(this.itemToUpdate).subscribe((result:any)=>{
         this.data=new Array(1).fill(result);
-        console.log(this.data)
       }
     );
   }
