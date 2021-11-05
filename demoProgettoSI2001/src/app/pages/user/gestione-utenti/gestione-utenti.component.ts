@@ -1,7 +1,7 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
-import {UtentiService} from "../../services/utenti/utenti.service";
-import {MyTableConfig} from "../../components/table/table.component";
-import {tableConfigUtente} from "../../components/data";
+import {UtentiService} from "../../../services/utenti/utenti.service";
+import {MyTableConfig} from "../../../components/other/table/table.component";
+import {tableConfigUtente} from "../../../components/data";
 import {Router} from "@angular/router";
 
 @Component({

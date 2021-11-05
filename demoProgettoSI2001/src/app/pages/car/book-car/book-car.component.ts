@@ -1,9 +1,9 @@
 import {Component, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {NgbCalendar, NgbDate, NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {CarService} from "../../services/car/car.service";
-import {tableConfigAdmin, tableConfigUserPrenotazioni,} from "../../components/data";
-import {MyTableConfig} from "../../components/table/table.component";
-import {ReservationService} from "../../services/reservation/reservation.service";
+import {CarService} from "../../../services/car/car.service";
+import {tableConfigAdmin, tableConfigUserPrenotazioni,} from "../../../components/data";
+import {MyTableConfig} from "../../../components/other/table/table.component";
+import {ReservationService} from "../../../services/reservation/reservation.service";
 
 @Component({
   selector: 'app-book-car',

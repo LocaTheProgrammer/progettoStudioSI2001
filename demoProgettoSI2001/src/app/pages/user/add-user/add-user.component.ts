@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
-import {UtentiService} from "../../services/utenti/utenti.service";
+import {UtentiService} from "../../../services/utenti/utenti.service";
 import {ActivatedRoute} from "@angular/router";
-import {MyTableConfig} from "../../components/table/table.component";
-import {tableConfigUtente} from "../../components/data";
+import {MyTableConfig} from "../../../components/other/table/table.component";
+import {tableConfigUtente} from "../../../components/data";
 
 @Component({
   selector: 'app-add-user',

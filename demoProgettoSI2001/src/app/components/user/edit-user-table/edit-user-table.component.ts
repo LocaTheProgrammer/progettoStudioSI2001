@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {MyTableConfig} from "../edit-car-table/edit-car-table.component";
-import {UtentiService} from "../../services/utenti/utenti.service";
+import {MyTableConfig} from "../../car/edit-car-table/edit-car-table.component";
+import {UtentiService} from "../../../services/utenti/utenti.service";
 
 @Component({
   selector: 'app-edit-user-table',

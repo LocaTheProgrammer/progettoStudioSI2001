@@ -1,10 +1,10 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { UtentiService } from 'src/app/services/utenti/utenti.service';
-import {ReservationService} from "../../services/reservation/reservation.service";
-import {MyTableConfig} from "../../components/table/table.component";
-import {tableConfigAdmin, tableConfigUserPrenotazioni} from "../../components/data";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {UtentiService} from 'src/app/services/utenti/utenti.service';
+import {ReservationService} from "../../../services/reservation/reservation.service";
+import {MyTableConfig} from "../../../components/other/table/table.component";
+import {tableConfigAdmin, tableConfigUserPrenotazioni} from "../../../components/data";
 
 @Component({
   selector: 'app-login',

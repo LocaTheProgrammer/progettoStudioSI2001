@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {MyTableConfig} from "../../components/table/table.component";
+import {MyTableConfig} from "../../../components/other/table/table.component";
 import {FormBuilder} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
-import {tableConfigUserParcoAuto} from "../../components/data";
-import {CarService} from "../../services/car/car.service";
+import {tableConfigUserParcoAuto} from "../../../components/data";
+import {CarService} from "../../../services/car/car.service";
 
 @Component({
   selector: 'app-add-car',

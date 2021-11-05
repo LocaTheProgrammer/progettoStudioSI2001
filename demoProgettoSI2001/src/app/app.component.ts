@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 
-import {MyButtonConfig} from "./components/my-button-component/my-button-component.component";
+import {MyButtonConfig} from "./components/other/my-button-component/my-button-component.component";
 
 
 import {Router} from "@angular/router";

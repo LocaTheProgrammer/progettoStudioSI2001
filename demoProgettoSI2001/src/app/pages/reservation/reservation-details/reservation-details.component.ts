@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {tableConfigReservation} from "../../components/data";
-import {ReservationService} from "../../services/reservation/reservation.service";
-import {MyReservationTableConfig} from "../../components/reservation-table/reservation-table.component";
+import {tableConfigReservation} from "../../../components/data";
+import {ReservationService} from "../../../services/reservation/reservation.service";
+import {MyReservationTableConfig} from "../../../components/reservation/reservation-table/reservation-table.component";
 
 @Component({
   selector: 'app-reservation-details',

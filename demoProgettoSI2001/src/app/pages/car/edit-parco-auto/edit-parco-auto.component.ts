@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {MyTableConfig} from "../../components/table/table.component";
-import {tableConfigAdmin} from "../../components/data";
-import {CarService} from "../../services/car/car.service";
+import {MyTableConfig} from "../../../components/other/table/table.component";
+import {tableConfigAdmin} from "../../../components/data";
+import {CarService} from "../../../services/car/car.service";
 
 @Component({
   selector: 'app-edit-parco-auto',

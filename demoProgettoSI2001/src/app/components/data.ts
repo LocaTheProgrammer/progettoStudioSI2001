@@ -1,5 +1,5 @@
-import {MyTableActionEnum, MyTableConfig} from "./table/table.component";
-import {MyReservationTableConfig} from "./reservation-table/reservation-table.component";
+import {MyTableActionEnum, MyTableConfig} from "./other/table/table.component";
+import {MyReservationTableConfig} from "./reservation/reservation-table/reservation-table.component";
 
 export const dataMock: any = [{
   "name": "pietro",

@@ -5,12 +5,12 @@ import {
   tableConfigAdminDelete,
   tableConfigReservation,
   tableConfigUserPrenotazioni
-} from "../../components/data";
+} from "../../../components/data";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {MyTableConfig} from "../../components/table/table.component";
-import {ReservationService} from "../../services/reservation/reservation.service";
-import {UtentiService} from "../../services/utenti/utenti.service";
-import {MyReservationTableConfig} from "../../components/reservation-table/reservation-table.component";
+import {MyTableConfig} from "../../../components/other/table/table.component";
+import {ReservationService} from "../../../services/reservation/reservation.service";
+import {UtentiService} from "../../../services/utenti/utenti.service";
+import {MyReservationTableConfig} from "../../../components/reservation/reservation-table/reservation-table.component";
 
 @Component({
   selector: 'app-reservations',

@@ -1,11 +1,11 @@
-import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 
-import {MyTableConfig} from "../../components/table/table.component";
+import {MyTableConfig} from "../../../components/other/table/table.component";
 
 
-import {dataMock, tableConfigAdmin, tableConfigAdminParcoAuto, tableConfigUserParcoAuto} from "../../components/data";
-import {CarService} from "../../services/car/car.service";
-import { Router } from '@angular/router';
+import {tableConfigAdminParcoAuto, tableConfigUserParcoAuto} from "../../../components/data";
+import {CarService} from "../../../services/car/car.service";
+import {Router} from '@angular/router';
 
 
 @Component({

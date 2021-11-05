@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./features/login/login.component";
-import {HomeComponent} from "./features/home/home.component";
-import {ParcoAutoComponent} from "./features/parco-auto/parco-auto.component";
-import { EditParcoAutoComponent } from './features/edit-parco-auto/edit-parco-auto.component';
-import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
-import {BookCarComponent} from "./features/book-car/book-car.component";
-import {ReservationsComponent} from "./features/reservations/reservations.component";
-import {ReservationDetailsComponent} from "./features/reservation-details/reservation-details.component";
-import {GestioneUtentiComponent} from "./features/gestione-utenti/gestione-utenti.component";
-import {EditUserComponent} from "./features/edit-user/edit-user.component";
-import {AddUserComponent} from "./features/add-user/add-user.component";
-import {AddCarComponent} from "./features/add-car/add-car.component";
+import {LoginComponent} from "./pages/user/login/login.component";
+import {HomeComponent} from "./pages/other/home/home.component";
+import {ParcoAutoComponent} from "./pages/car/parco-auto/parco-auto.component";
+import { EditParcoAutoComponent } from './pages/car/edit-parco-auto/edit-parco-auto.component';
+import { PageNotFoundComponent } from './pages/other/page-not-found/page-not-found.component';
+import {BookCarComponent} from "./pages/car/book-car/book-car.component";
+import {ReservationsComponent} from "./pages/reservation/reservations/reservations.component";
+import {ReservationDetailsComponent} from "./pages/reservation/reservation-details/reservation-details.component";
+import {GestioneUtentiComponent} from "./pages/user/gestione-utenti/gestione-utenti.component";
+import {EditUserComponent} from "./pages/user/edit-user/edit-user.component";
+import {AddUserComponent} from "./pages/user/add-user/add-user.component";
+import {AddCarComponent} from "./pages/car/add-car/add-car.component";
 
 
 
