@@ -25,12 +25,10 @@ export class AddCarComponent implements OnInit {
   ngOnInit(): void {
     this.tableConfig=tableConfigUserParcoAuto;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
-    console.log(this.itemToUpdate)
     this.carService.getCarById(this.itemToUpdate).subscribe((result:any)=>{
 
         this.data=new Array(1).fill(result);
 
-        console.log(this.data)
       }
     );
   }

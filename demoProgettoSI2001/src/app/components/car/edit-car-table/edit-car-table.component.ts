@@ -52,22 +52,22 @@ export class EditCarTableComponent implements OnChanges {
 
 
   ngOnChanges(): void {
-
     this.editParcoAutoForm = this.fb.group({
-      Name: ['', Validators.required],
-      Miles_per_Gallon: ['', Validators.required],
-      Cylinders: ['', Validators.required],
-      Displacement : ['', Validators.required],
-      Horsepower : ['', Validators.required],
-      Weight_in_lbs : ['', Validators.required],
-      Acceleration : ['', Validators.required],
-      Year : ['', Validators.required],
-      Origin : ['', Validators.required],
+      name: ['', Validators.required],
+      milesPerGallon: ['', Validators.required],
+      cylinders: ['', Validators.required],
+      displacement : ['', Validators.required],
+      horsePower : ['', Validators.required],
+      weightInLbs : ['', Validators.required],
+      acceleration : ['', Validators.required],
+      year : ['', Validators.required],
+      origin : ['', Validators.required],
     })
 
   }
 
   update(){
+
     if(this.data[0].id!=0){
       this.carService.updateCar(this.editParcoAutoForm.value, this.data[0].id).subscribe(obs =>{
         this.router.navigate(["/parco-auto"]);

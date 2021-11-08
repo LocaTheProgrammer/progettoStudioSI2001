@@ -42,7 +42,7 @@ export class ParcoAutoComponent implements OnInit, OnChanges{
 
     this.carService.getCars().subscribe((result:any)=>{
       if(result!=null){
-        this.jsonDataCar=result.slice(1);
+        this.jsonDataCar=result.result.slice(1);
       }
     })
 

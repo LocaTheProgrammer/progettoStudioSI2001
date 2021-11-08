@@ -22,7 +22,8 @@ export class EditParcoAutoComponent implements OnInit{
     this.tableConfig=tableConfigAdmin;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
     this.carService.getCarById(this.itemToUpdate).subscribe((result:any)=>{
-      this.data=new Array(1).fill(result);
+      console.log(result)
+      this.data=new Array(1).fill(result.result);
       }
     );
   }

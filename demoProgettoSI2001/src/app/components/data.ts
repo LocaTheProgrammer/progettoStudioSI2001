@@ -36,8 +36,8 @@ export const tableConfigAdminParcoAuto: MyTableConfig = {
       label: "displacement"
     },
     {
-      key: "horsepower",
-      label: "horsepower"
+      key: "horsePower",
+      label: "horsePower"
     },
     {
       key: "weightInLbs",
@@ -52,8 +52,8 @@ export const tableConfigAdminParcoAuto: MyTableConfig = {
       label: "year"
     },
     {
-      key: "Origin",
-      label: "Origin"
+      key: "origin",
+      label: "origin"
     },
   ],
   myOrder: {
@@ -179,8 +179,8 @@ export const tableConfigAdmin: MyTableConfig = {
       label: "displacement"
     },
     {
-      key: "horsepower",
-      label: "horsepower"
+      key: "horsePower",
+      label: "horsePower"
     },
     {
       key: "weightInLbs",
@@ -195,8 +195,8 @@ export const tableConfigAdmin: MyTableConfig = {
       label: "year"
     },
     {
-      key: "Origin",
-      label: "Origin"
+      key: "origin",
+      label: "origin"
     },
   ],
   myOrder: {
@@ -245,8 +245,8 @@ export const  tableConfigUserPrenotazioni: MyTableConfig = {
       label: "displacement"
     },
     {
-      key: "horsepower",
-      label: "horsepower"
+      key: "horsePower",
+      label: "horsePower"
     },
     {
       key: "weightInLbs",
@@ -261,8 +261,8 @@ export const  tableConfigUserPrenotazioni: MyTableConfig = {
       label: "year"
     },
     {
-      key: "Origin",
-      label: "Origin"
+      key: "origin",
+      label: "origin"
     },
   ],
   myOrder: {
@@ -312,8 +312,8 @@ export const tableConfigDettagli: MyTableConfig = {
       label: "displacement"
     },
     {
-      key: "horsepower",
-      label: "horsepower"
+      key: "horsePower",
+      label: "horsePower"
     },
     {
       key: "weightInLbs",
@@ -328,8 +328,8 @@ export const tableConfigDettagli: MyTableConfig = {
       label: "year"
     },
     {
-      key: "Origin",
-      label: "Origin"
+      key: "origin",
+      label: "origin"
     },
   ],
   myOrder: {
@@ -376,8 +376,8 @@ export const tableConfigUserParcoAuto: MyTableConfig = {
       label: "displacement"
     },
     {
-      key: "horsepower",
-      label: "horsepower"
+      key: "horsePower",
+      label: "horsePower"
     },
     {
       key: "weightInLbs",
@@ -392,8 +392,8 @@ export const tableConfigUserParcoAuto: MyTableConfig = {
       label: "year"
     },
     {
-      key: "Origin",
-      label: "Origin"
+      key: "origin",
+      label: "origin"
     },
   ],
   myOrder: {
@@ -445,8 +445,8 @@ export const tableConfigReservation: MyReservationTableConfig = {
       label: "displacement"
     },
     {
-      key: "horsepower",
-      label: "horsepower"
+      key: "horsePower",
+      label: "horsePower"
     },
     {
       key: "weightInLbs",
@@ -459,6 +459,10 @@ export const tableConfigReservation: MyReservationTableConfig = {
     {
       key: "year",
       label: "year"
+    },
+    {
+      key: "origin",
+      label: "origin"
     },
   ],
 
