@@ -111,7 +111,7 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   freeCarList(){
     this.isPrenotaClicked=true;
    this.carService.getCars().subscribe((res:any)=>{
-     this.availableCars=res;
+     this.availableCars=res.result.slice(1);
    })
   }
 
