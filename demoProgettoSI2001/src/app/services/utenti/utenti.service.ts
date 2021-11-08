@@ -14,8 +14,8 @@ export class UtentiService {
   constructor(private HttpClient: HttpClient) { }
 
 
-  loginUtente() :Observable<any> {
-    return this.HttpClient.get<any>(`${this.host}`)
+  loginUtente(loginForm:any) :Observable<any> {
+    return this.HttpClient.post<any>(`${this.url+'logIn'}`, loginForm)
   }
 
 

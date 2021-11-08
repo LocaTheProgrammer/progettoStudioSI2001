@@ -43,13 +43,13 @@ export class LoginComponent implements OnInit, OnChanges {
     if(this.isUtenteLogged){
       this.utentiService.getUtenteById(sessionStorage.getItem("idUtente")).subscribe(res=>{
 
-        this.utente=res;
+        this.utente=res.result;
         this.idDataLoaded=true
       })
 
     }
     this.loginUtenteForm = this.fb.group({
-      username: ['', Validators.required],
+      mail: ['', Validators.required],
       password: ['', Validators.required],
     })
   }
@@ -75,19 +75,15 @@ export class LoginComponent implements OnInit, OnChanges {
 
 
   login() {
-    let user
-    this.utentiService.loginUtente().subscribe(res => {
-      user=res.find((a:any)=>{
+    this.utentiService.loginUtente(this.loginUtenteForm.value).subscribe(res => {
+     if(res.result.firstName!=null){
+       sessionStorage.setItem("utente",res.result.email)
+       sessionStorage.setItem("ruolo", res.result.role)
+       sessionStorage.setItem("idUtente", res.result.id)
+       this.role=res.result.role
+       this.router.navigate(['/prenotazioni'])
 
-        sessionStorage.setItem("utente",a.email)
-        sessionStorage.setItem("ruolo", a.role)
-        sessionStorage.setItem("idUtente", a.id)
-        this.role=a.role
-        this.router.navigate(['/prenotazioni'])
-
-        return a.email === this.loginUtenteForm.value.username && a.password===this.loginUtenteForm.value.password;
-      })
-
+     }
     })
   }
 
