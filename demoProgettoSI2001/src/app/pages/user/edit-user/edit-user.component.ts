@@ -22,7 +22,7 @@ export class EditUserComponent implements OnInit {
     this.tableConfig=tableConfigUtente;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
     this.utentiService.getUtenteById(this.itemToUpdate).subscribe((result:any)=>{
-        this.data=new Array(1).fill(result);
+        this.data=new Array(1).fill(result.result);
       }
     );
   }

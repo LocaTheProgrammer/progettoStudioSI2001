@@ -32,7 +32,9 @@ export class GestioneUtentiComponent implements OnInit, OnChanges {
   ngOnChanges() {
     this.tableConfig=tableConfigUtente;
     this.utentiService.getUtenti().subscribe((res:any)=>{
-      this.data=res.slice(1);
+
+      this.data=res.result.slice(1);
+      console.log(this.data)
     })
   }
 
@@ -40,6 +42,7 @@ export class GestioneUtentiComponent implements OnInit, OnChanges {
 
 
   book($event:any){
+    console.log($event)
     switch($event.action.action){
       case 'EDIT':
         this.router.navigate(['/edit-user'], {queryParams: {data: JSON.stringify($event.data.id)}})

@@ -36,7 +36,7 @@ export class EditUserTableComponent implements OnChanges  {
 
   update(){
 
-    if(this.data[0].id!=0){
+    if(this.data[0].result.id!=0){
       this.utentiService.updateUtente(this.editUtenteForm.value, this.data[0].id).subscribe(obs=>{
         this.router.navigate(["/login"]);
       })

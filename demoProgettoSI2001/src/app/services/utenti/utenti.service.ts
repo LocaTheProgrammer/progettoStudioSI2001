@@ -10,6 +10,7 @@ export class UtentiService {
 
 
   host:String="http://localhost:3000/utenti"
+  url:string="http://localhost:8090/rentalCar/rest/user/"
   constructor(private HttpClient: HttpClient) { }
 
 
@@ -19,23 +20,23 @@ export class UtentiService {
 
 
   getUtenteById(id:any) : Observable<any>{
-    return this.HttpClient.get<any>(`${this.host}/${id}`)
+    return this.HttpClient.get<any>(`${this.url+'findById'}/${id}`)
   }
 
   getUtenti(): Observable<any>{
-    return this.HttpClient.get<any>(`${this.host}`)
+    return this.HttpClient.get<any>(`${this.url+'findAll'}`)
   }
 
   updateUtente(editUtenteForm:any, id:any) : Observable<any>{
-    return this.HttpClient.put(`${this.host}/${id}`, editUtenteForm);
+    return this.HttpClient.put(`${this.url+'update'}/${id}`, editUtenteForm);
   }
 
   addUser(addUserForm:any):Observable<any>{
-    return this.HttpClient.post(`${this.host}`, addUserForm);
+    return this.HttpClient.post(`${this.url+'create'}`, addUserForm);
   }
 
   deleteUtenteById(id:any){
-    return this.HttpClient.delete(`${this.host}/${id}`)
+    return this.HttpClient.delete(`${this.url+'delete'}/${id}`)
   }
 
 
