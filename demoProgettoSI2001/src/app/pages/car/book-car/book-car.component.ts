@@ -4,12 +4,26 @@ import {CarService} from "../../../services/car/car.service";
 import {tableConfigAdmin, tableConfigUserPrenotazioni,} from "../../../components/data";
 import {MyTableConfig} from "../../../components/other/table/table.component";
 import {ReservationService} from "../../../services/reservation/reservation.service";
+import {last} from "rxjs/operators";
+
+
+
+class NgbDateRange {
+  public end!: NgbDate;
+  public start!: NgbDate;
+
+}
+
+
+
 
 @Component({
   selector: 'app-book-car',
   templateUrl: './book-car.component.html',
   styleUrls: ['./book-car.component.scss']
 })
+
+
 export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
 
   tableConfig!:MyTableConfig;
@@ -41,6 +55,7 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   toDate: NgbDate | null = null;
   isPrenotaClicked=false;
   availableCars!:any[]
+  ngbDateRange= new NgbDateRange;
 
   constructor(calendar: NgbCalendar, private carService:CarService, private reservationService:ReservationService, private modalService: NgbModal) {
     this.fromDate = calendar.getToday();
@@ -73,7 +88,6 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   book($event:any){
 
 
-
     let start=new Date(this.fromDate.year, this.fromDate.month-1, this.fromDate.day)
 
 
@@ -84,23 +98,25 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
 
     let day = 1000*60*60*24;
 
-  let lastId
+  let lastId:any
 
     this.reservationService.getReservations().subscribe((res:any)=>{
-      lastId=res.result.length.id+1
+
+      lastId=res.result.length+1
+      var diff = (end.getTime()- start.getTime())/day;
+      for(var i=0;i<=diff; i++)
+      {
+        var xx = start.getTime()+day*i;
+        var yy = new Date(xx);
+
+        // @ts-ignore
+        this.reservationService.insertReservation(+lastId, +sessionStorage.getItem("idUtente"), $event.data.id, yy.getDate()+"/"+yy.getMonth()+"/"+yy.getFullYear()).subscribe()
+
+
+      }
     })
 
-    var diff = (end.getTime()- start.getTime())/day;
-    for(var i=0;i<=diff; i++)
-    {
-      var xx = start.getTime()+day*i;
-      var yy = new Date(xx);
 
-      // @ts-ignore
-      this.reservationService.insertReservation(lastId, +sessionStorage.getItem("idUtente"), $event.data.id, yy.getDate()+"/"+yy.getMonth()+"/"+yy.getFullYear()).subscribe()
-
-
-    }
 
 
   }
@@ -109,7 +125,12 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
 
   freeCarList(){
     this.isPrenotaClicked=true;
-   this.carService.getCars().subscribe((res:any)=>{
+   this.ngbDateRange.start=this.fromDate;
+   // @ts-ignore
+    this.ngbDateRange.end=this.toDate
+
+    this.carService.getFreeCarByReservationDate(this.ngbDateRange).subscribe((res:any)=>{
+      console.log(res)
      this.availableCars=res.result.slice(1);
    })
   }

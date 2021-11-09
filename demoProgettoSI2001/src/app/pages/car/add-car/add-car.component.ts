@@ -27,7 +27,7 @@ export class AddCarComponent implements OnInit {
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
     this.carService.getCarById(this.itemToUpdate).subscribe((result:any)=>{
 
-        this.data=new Array(1).fill(result);
+        this.data=new Array(1).fill(result.result);
 
       }
     );

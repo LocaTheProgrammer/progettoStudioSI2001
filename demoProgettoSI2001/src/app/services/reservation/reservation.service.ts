@@ -21,12 +21,21 @@ export class ReservationService {
     return this.HttpClient.get<any>(`${this.url+'findAllReservations'}`)
   }
 
+  getReservationsAdmin():Observable<any>{
+    return this.HttpClient.get<any>(`${this.url+'findAllReservationAdmin'}`)
+  }
+
+
+  getReservationsByUserID(id:any):Observable<any>{
+    return this.HttpClient.get(`${this.url+'getReservationTableByUserId'}/${id}`)
+  }
+
   deleteReservationById(id:any){
     return this.HttpClient.delete(`${this.url+'deleteReservationById'}/${id}`)
   }
 
   getReservationById(id:any){
-    return this.HttpClient.get(`${this.url+'getReservationById'}/${id}`)
+    return this.HttpClient.get(`${this.url+'getReservationDetailsByReservationId'}/${id}`)
   }
 
 

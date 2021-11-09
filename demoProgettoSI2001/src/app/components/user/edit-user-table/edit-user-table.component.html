@@ -9,7 +9,13 @@
         </th>
         <td *ngFor="let record of data">
           <span *ngIf="header.label!='role'">
-            <input type="text" [(ngModel)]="record[header.key]" formControlName="{{header.key}}">
+            <span *ngIf="header.key=='password'">
+               <input type="password" [(ngModel)]="record[header.key]" formControlName="{{header.key}}">
+            </span>
+
+            <span *ngIf="header.key!='password'">
+               <input type="text" [(ngModel)]="record[header.key]" formControlName="{{header.key}}">
+            </span>
           </span>
           <span *ngIf="header.label=='role'">
             <span *ngIf="data[0].role!='user'">

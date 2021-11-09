@@ -22,10 +22,8 @@ export class ReservationDetailsComponent implements OnInit {
   ngOnInit() {
     this.tableConfig=tableConfigReservation;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
-    console.log(this.itemToUpdate)
     this.reservationService.getReservationById(this.itemToUpdate).subscribe((result:any)=>{
-        this.data=new Array(1).fill(result);
-        console.log(this.data)
+        this.data=new Array(1).fill(result.result);
       }
     );
   }

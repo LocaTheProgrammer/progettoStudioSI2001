@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {NgbDate} from "@ng-bootstrap/ng-bootstrap";
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +32,8 @@ export class CarService {
     return this.HttpClient.post(`${this.url+'create'}`, editCarForm);
   }
 
-  getBusyCars(): Observable<any>{
-    return this.HttpClient.get('http://localhost:3000/reservation')
+  getFreeCarByReservationDate(ngbDateRange:any): Observable<any>{
+    return this.HttpClient.post<any>(`${this.url+'getFreeCarByReservationDate'}`, ngbDateRange)
   }
 
 }

@@ -22,21 +22,27 @@
     <thead>
     <tr>
       <th *ngFor="let header of tableConfig.headers">
-        {{header.label}}
-        <span *ngIf="showButtonAsc">
+        <span *ngIf="header.label!='password'">
+          {{header.label}}
+          <span *ngIf="showButtonAsc">
           <mat-icon aria-hidden="false" (click)="ordinaAsc(header.key)" style="cursor: pointer">arrow_upward</mat-icon>
         </span>
         <span *ngIf="showButtonDesc">
           <mat-icon aria-hidden="false" (click)="ordinaDesc(header.key)" style="cursor: pointer">arrow_downward</mat-icon>
         </span>
+        </span>
+
       </th>
 
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let record of data  | filtering: searchTerm : searchField | pagination:+visibleElements:+pageNumberModel | sort : sortedColumn: columnOrder">
+
       <td *ngFor="let header of tableConfig.headers;" >
+        <span *ngIf="header.key!='password'">
         {{record[header.key]}}
+      </span>
       </td>
 
       <td style="width: 15%;" *ngIf="tableConfig.actions.length>0">

@@ -55,7 +55,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
 
   getUserBookedCars(){
 
-    this.reservationService.getReservations().subscribe((res:any)=>{
+    this.reservationService.getReservationsByUserID(sessionStorage.getItem("idUtente")).subscribe((res:any)=>{
 
       this.bookedCarsDates=res.result
       return this.bookedCars=res.result;
@@ -63,14 +63,16 @@ export class ReservationsComponent implements OnInit, OnChanges {
   }
 
   event($event:any){
-    console.log($event.data.id)
+
     switch($event.action.action){
       case 'DETTAGLI':
         this.router.navigate(['/dettaglio-prenotazione'], {queryParams: {data: JSON.stringify($event.data.id)}})
         break;
       case 'DELETE':
-        this.reservationService.deleteReservationById($event.data.id).subscribe()
-        this.onChangesTemp()
+        this.reservationService.deleteReservationById($event.data.id).subscribe(obs=>{
+          this.onChangesTemp()
+        })
+
         break;
     }
 
@@ -93,7 +95,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
 
   getReservations(){
 
-    this.reservationService.getReservations().subscribe((res:any)=>{
+    this.reservationService.getReservationsAdmin().subscribe((res:any)=>{
 
       this.bookedCarsDates=res.result
       return this.reservations=res.result;
