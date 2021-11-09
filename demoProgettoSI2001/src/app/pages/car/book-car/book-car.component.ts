@@ -40,7 +40,6 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   fromDate: NgbDate;
   toDate: NgbDate | null = null;
   isPrenotaClicked=false;
-  closeModal!: string
   availableCars!:any[]
 
   constructor(calendar: NgbCalendar, private carService:CarService, private reservationService:ReservationService, private modalService: NgbModal) {
@@ -74,21 +73,21 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   book($event:any){
 
 
-    console.log($event)
+
     let start=new Date(this.fromDate.year, this.fromDate.month-1, this.fromDate.day)
 
-  console.log("start:   ",start)
+
 
     // @ts-ignore
     let end=new Date(this.toDate.year, this.toDate.month-1, this.toDate.day)
 
-    console.log("end: ", end)
+
     let day = 1000*60*60*24;
 
   let lastId
 
     this.reservationService.getReservations().subscribe((res:any)=>{
-      lastId=res.length.id+1
+      lastId=res.result.length.id+1
     })
 
     var diff = (end.getTime()- start.getTime())/day;
@@ -98,7 +97,7 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
       var yy = new Date(xx);
 
       // @ts-ignore
-      this.reservationService.insertReservation(lastId, +sessionStorage.getItem("idUtente"), $event.data, yy.getDate()+"/"+yy.getMonth()+"/"+yy.getFullYear()).subscribe()
+      this.reservationService.insertReservation(lastId, +sessionStorage.getItem("idUtente"), $event.data.id, yy.getDate()+"/"+yy.getMonth()+"/"+yy.getFullYear()).subscribe()
 
 
     }

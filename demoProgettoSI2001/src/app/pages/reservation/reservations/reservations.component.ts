@@ -57,8 +57,8 @@ export class ReservationsComponent implements OnInit, OnChanges {
 
     this.reservationService.getReservations().subscribe((res:any)=>{
 
-      this.bookedCarsDates=res
-      return this.bookedCars=res;
+      this.bookedCarsDates=res.result
+      return this.bookedCars=res.result;
     })
   }
 
@@ -95,8 +95,8 @@ export class ReservationsComponent implements OnInit, OnChanges {
 
     this.reservationService.getReservations().subscribe((res:any)=>{
 
-      this.bookedCarsDates=res
-      return this.reservations=res;
+      this.bookedCarsDates=res.result
+      return this.reservations=res.result;
     })
   }
 
