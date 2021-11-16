@@ -4,12 +4,16 @@ import {FormBuilder} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import {tableConfigUserParcoAuto} from "../../../components/data";
 import {CarService} from "../../../services/car/car.service";
+import {Utente} from "../../user/add-user/Utente";
 
 @Component({
   selector: 'app-add-car',
   templateUrl: './add-car.component.html',
   styleUrls: ['./add-car.component.scss']
 })
+
+
+
 export class AddCarComponent implements OnInit {
 
 
@@ -25,12 +29,19 @@ export class AddCarComponent implements OnInit {
   ngOnInit(): void {
     this.tableConfig=tableConfigUserParcoAuto;
     this.itemToUpdate= this.route.snapshot.queryParamMap.get('data');
-    this.carService.getCarById(this.itemToUpdate).subscribe((result:any)=>{
+    if (this.itemToUpdate==0){
+      let utente= new Utente(0,"","","","","")
 
-        this.data=new Array(1).fill(result.result);
+      this.data=new Array(1).fill(utente)
+    }else{
+      this.carService.getCarById(this.itemToUpdate).subscribe((result:any)=>{
 
-      }
-    );
+          this.data=new Array(1).fill(result.result);
+
+        }
+      );
+    }
+
   }
 
 

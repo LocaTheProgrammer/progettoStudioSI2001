@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import {
   tableConfigAdmin,
   tableConfigAdminDelete,
-  tableConfigReservation,
+  tableConfigReservation, tableConfigReservationAdmin,
   tableConfigUserPrenotazioni
 } from "../../../components/data";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -81,7 +81,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
 
   onChangesTemp():void{
     if(sessionStorage.getItem("ruolo")=='admin'){
-      this.tableConfig=tableConfigReservation;
+      this.tableConfig=tableConfigReservationAdmin;
       this.getReservations()
     }else{
       this.tableConfig=tableConfigReservation;

@@ -13,8 +13,8 @@ export class ReservationService {
 
   constructor(private HttpClient: HttpClient) { }
 
-  insertReservation(id:Number, userId:Number, carId:Number, reservationDate:string){
-    return this.HttpClient.post<any>(`${this.url+'create'}`, {id, userId, carId, reservationDate})
+  insertReservation(id:Number, userId:Number, carId:Number, fromDate:any, toDate:any){
+    return this.HttpClient.post<any>(`${this.url+'create'}`, {id, userId, carId, fromDate, toDate})
   }
 
   getReservations():Observable<any>{

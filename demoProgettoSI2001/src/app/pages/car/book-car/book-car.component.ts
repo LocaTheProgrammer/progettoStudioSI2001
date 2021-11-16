@@ -5,6 +5,7 @@ import {tableConfigAdmin, tableConfigUserPrenotazioni,} from "../../../component
 import {MyTableConfig} from "../../../components/other/table/table.component";
 import {ReservationService} from "../../../services/reservation/reservation.service";
 import {last} from "rxjs/operators";
+import {Router} from "@angular/router";
 
 
 
@@ -57,7 +58,7 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   availableCars!:any[]
   ngbDateRange= new NgbDateRange;
 
-  constructor(calendar: NgbCalendar, private carService:CarService, private reservationService:ReservationService, private modalService: NgbModal) {
+  constructor(private router: Router,calendar: NgbCalendar, private carService:CarService, private reservationService:ReservationService, private modalService: NgbModal) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
@@ -88,12 +89,12 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
   book($event:any){
 
 
-    let start=new Date(this.fromDate.year, this.fromDate.month-1, this.fromDate.day)
+    let start=new Date(this.fromDate.year, +this.fromDate.month-2, +this.fromDate.day+1)
 
 
 
     // @ts-ignore
-    let end=new Date(this.toDate.year, this.toDate.month-1, this.toDate.day)
+    let end=new Date(this.toDate.year, +this.toDate.month-2, +this.toDate.day+1)
 
 
     let day = 1000*60*60*24;
@@ -104,16 +105,15 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
 
       lastId=res.result.length+1
       var diff = (end.getTime()- start.getTime())/day;
-      for(var i=0;i<=diff; i++)
-      {
-        var xx = start.getTime()+day*i;
-        var yy = new Date(xx);
+
 
         // @ts-ignore
-        this.reservationService.insertReservation(+lastId, +sessionStorage.getItem("idUtente"), $event.data.id, yy.getDate()+"/"+yy.getMonth()+"/"+yy.getFullYear()).subscribe()
+        this.reservationService.insertReservation(+lastId, +sessionStorage.getItem("idUtente"), $event.data.id, start, end).subscribe( obs=>{
+          this.router.navigate(['/prenotazioni'])
+        })
 
 
-      }
+
     })
 
 
@@ -131,7 +131,7 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
 
     this.carService.getFreeCarByReservationDate(this.ngbDateRange).subscribe((res:any)=>{
       console.log(res)
-     this.availableCars=res.result.slice(1);
+     this.availableCars=res.result;
    })
   }
 

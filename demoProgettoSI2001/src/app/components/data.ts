@@ -485,12 +485,6 @@ export const tableConfigReservation: MyReservationTableConfig = {
   actions:[
 
     {
-      action: MyTableActionEnum.DELETE,
-      icon: "delete_forever",
-      customCssClass:"btn btn-danger",
-      customCssId:"idTable"
-    },
-    {
       action: MyTableActionEnum.DETTAGLI,
       icon: "info",
       customCssClass:"btn btn-primary",
@@ -501,6 +495,89 @@ export const tableConfigReservation: MyReservationTableConfig = {
 
 
 }
+
+
+
+export const tableConfigReservationAdmin: MyReservationTableConfig = {
+  headersDate: [
+    {
+      key: "reservationDate",
+      label: "reservationDate"
+    },
+  ],
+
+  carHeaders: [ {
+    key: "name",
+    label: "name"
+  },
+    {
+      key: "milesPerGallon",
+      label: "milesPerGallon"
+    },
+    {
+      key: "cylinders",
+      label: "cylinders"
+    },
+    {
+      key: "displacement",
+      label: "displacement"
+    },
+    {
+      key: "horsePower",
+      label: "horsePower"
+    },
+    {
+      key: "weightInLbs",
+      label: "weightInLbs"
+    },
+    {
+      key: "acceleration",
+      label: "acceleration"
+    },
+    {
+      key: "year",
+      label: "year"
+    },
+    {
+      key: "origin",
+      label: "origin"
+    },
+  ],
+
+
+  myOrder: {
+    defaultColumn: "name",
+    orderType: "asc"
+  },
+
+  search: {
+    columns: []
+  },
+
+  myPagination:{
+    itemPerPage : 5 ,
+    itemPerPageOptions: [5,10,15,20],
+    customCssClass:"form-select form-select-sm"
+
+  },
+  actions:[
+
+    {
+      action: MyTableActionEnum.DELETE,
+      icon: "delete_forever",
+      customCssClass:"btn btn-danger",
+      customCssId:"idTable"
+    },
+    {
+      action: MyTableActionEnum.APPROVA,
+      icon: "info",
+      customCssClass:"btn btn-primary",
+      customCssId:"idTable"
+    },
+
+  ]
+}
+
 
 
 

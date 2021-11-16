@@ -33,7 +33,7 @@ export class GestioneUtentiComponent implements OnInit, OnChanges {
     this.tableConfig=tableConfigUtente;
     this.utentiService.getUtenti().subscribe((res:any)=>{
 
-      this.data=res.result.slice(1);
+      this.data=res.result;
     })
   }
 
