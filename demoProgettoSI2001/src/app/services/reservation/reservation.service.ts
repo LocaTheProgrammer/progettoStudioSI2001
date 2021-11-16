@@ -38,6 +38,10 @@ export class ReservationService {
     return this.HttpClient.get(`${this.url+'getReservationDetailsByReservationId'}/${id}`)
   }
 
+  approveReservation(id:any){
+    return this.HttpClient.get(`${this.url+'approveReservation'}/${id}`)
+  }
+
 
 
 }

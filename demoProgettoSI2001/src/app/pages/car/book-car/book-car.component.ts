@@ -130,7 +130,6 @@ export class BookCarComponent implements OnInit , OnChanges, OnDestroy{
     this.ngbDateRange.end=this.toDate
 
     this.carService.getFreeCarByReservationDate(this.ngbDateRange).subscribe((res:any)=>{
-      console.log(res)
      this.availableCars=res.result;
    })
   }

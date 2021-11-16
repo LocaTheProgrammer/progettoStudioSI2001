@@ -63,7 +63,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
   }
 
   event($event:any){
-
+  console.log($event)
     switch($event.action.action){
       case 'DETTAGLI':
         this.router.navigate(['/dettaglio-prenotazione'], {queryParams: {data: JSON.stringify($event.data.id)}})
@@ -72,7 +72,11 @@ export class ReservationsComponent implements OnInit, OnChanges {
         this.reservationService.deleteReservationById($event.data.id).subscribe(obs=>{
           this.onChangesTemp()
         })
-
+        break;
+      case 'APPROVA':
+          this.reservationService.approveReservation($event.data.id).subscribe(obs=>{
+            this.onChangesTemp()
+          })
         break;
     }
 
