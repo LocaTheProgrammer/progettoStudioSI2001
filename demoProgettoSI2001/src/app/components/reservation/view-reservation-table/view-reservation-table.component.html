@@ -17,7 +17,7 @@
     <tr *ngFor="let header of tableConfig.headersDate">
       <td class="table-warning">
          <span *ngFor="let record of data">
-            This car has been booked for this date: {{record.reservationDate}}
+            This car has been booked from this date: {{record.fromDate.substring(0,10)}} to {{record.toDate.substring(0,10)}}
     </span>
       </td>
     </tr>
