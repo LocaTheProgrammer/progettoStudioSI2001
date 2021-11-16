@@ -10,13 +10,19 @@ export class UtentiService {
 
 
   host:String="http://localhost:3000/utenti"
+  auth:string="http://localhost:8090/rentalCar/authenticate"
   url:string="http://localhost:8090/rentalCar/rest/user/"
   constructor(private HttpClient: HttpClient) { }
 
 
-  loginUtente(loginForm:any) :Observable<any> {
-    return this.HttpClient.post<any>(`${this.url+'logIn'}`, loginForm)
+  getBearerToken(username:any, password:any) :Observable<any> {
+    return this.HttpClient.post<any>(`${this.auth}`, {username, password})
   }
+
+  loginUtente(username:any, password:any) :Observable<any> {
+    return this.HttpClient.post<any>(`${this.url+'logIn'}`, {username, password})
+  }
+
 
 
   getUtenteById(id:any) : Observable<any>{

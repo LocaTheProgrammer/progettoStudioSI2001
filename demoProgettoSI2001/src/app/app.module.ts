@@ -14,7 +14,7 @@ import {FormsModule} from "@angular/forms";
 import { PaginationPipe } from './shared/pipes/pagination.pipe';
 import { HomeComponent } from './pages/other/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ParcoAutoComponent } from './pages/car/parco-auto/parco-auto.component';
 import { EditParcoAutoComponent } from './pages/car/edit-parco-auto/edit-parco-auto.component';
 import { EditCarTableComponent } from './components/car/edit-car-table/edit-car-table.component';
@@ -29,6 +29,8 @@ import { EditUserTableComponent } from './components/user/edit-user-table/edit-u
 import { EditUserComponent } from './pages/user/edit-user/edit-user.component';
 import { AddUserComponent } from './pages/user/add-user/add-user.component';
 import { AddCarComponent } from './pages/car/add-car/add-car.component';
+import {AuthInterceptor} from "./services/auth.interceptor";
+import {UtentiService} from "./services/utenti/utenti.service";
 
 
 @NgModule({
@@ -74,7 +76,13 @@ import { AddCarComponent } from './pages/car/add-car/add-car.component';
 
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

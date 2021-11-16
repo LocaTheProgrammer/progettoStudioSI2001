@@ -75,16 +75,24 @@ export class LoginComponent implements OnInit, OnChanges {
 
 
   login() {
-    this.utentiService.loginUtente(this.loginUtenteForm.value).subscribe(res => {
-     if(res.result.firstName!=null){
-       sessionStorage.setItem("utente",res.result.email)
-       sessionStorage.setItem("ruolo", res.result.role)
-       sessionStorage.setItem("idUtente", res.result.id)
-       this.role=res.result.role
-       this.router.navigate(['/prenotazioni'])
-
-     }
+    this.utentiService.getBearerToken(this.loginUtenteForm.value.mail, this.loginUtenteForm.value.password).subscribe(res => {
+    localStorage.setItem("token", res.token)
+     this.userLogin()
     })
+  }
+
+  userLogin(){
+    this.utentiService.loginUtente(this.loginUtenteForm.value.mail, this.loginUtenteForm.value.password).subscribe(res => {
+    if(res.result.firstName!=null){
+      sessionStorage.setItem("utente",res.result.email)
+      sessionStorage.setItem("ruolo", res.result.role)
+      sessionStorage.setItem("idUtente", res.result.id)
+      this.role=res.result.role
+      this.router.navigate(['/prenotazioni'])
+
+    }
+  })
+
   }
 
   linkToReservation(){
@@ -98,6 +106,7 @@ export class LoginComponent implements OnInit, OnChanges {
     sessionStorage.removeItem("idUtente")
     sessionStorage.removeItem("utente")
     sessionStorage.removeItem("ruolo")
+    localStorage.removeItem("token")
     this.router.navigate(['/home'])
   }
 
