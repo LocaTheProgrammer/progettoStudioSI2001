@@ -64,7 +64,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
 
   event($event:any){
   console.log($event)
-    switch($event.action.action){
+    switch($event.action){
       case 'DETTAGLI':
         this.router.navigate(['/dettaglio-prenotazione'], {queryParams: {data: JSON.stringify($event.data.id)}})
         break;
@@ -95,6 +95,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
       username: ['', Validators.required],
       password: ['', Validators.required],
     })
+
   }
 
   getReservations(){
@@ -102,6 +103,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
     this.reservationService.getReservationsAdmin().subscribe((res:any)=>{
 
       this.bookedCarsDates=res.result
+      console.log(res.result)
       return this.reservations=res.result;
     })
   }

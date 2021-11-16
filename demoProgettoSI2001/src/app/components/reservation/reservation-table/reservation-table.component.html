@@ -30,19 +30,39 @@
           <mat-icon aria-hidden="false" (click)="ordinaDesc(header.key)" style="cursor: pointer">arrow_downward</mat-icon>
         </span>
       </th>
+      <th *ngFor="let header of tableConfig.headersDate">
+        {{header.label}}
+        <span *ngIf="showButtonAsc">
+          <mat-icon aria-hidden="false" (click)="ordinaAsc(header.key)" style="cursor: pointer">arrow_upward</mat-icon>
+        </span>
+        <span *ngIf="showButtonDesc">
+          <mat-icon aria-hidden="false" (click)="ordinaDesc(header.key)" style="cursor: pointer">arrow_downward</mat-icon>
+        </span>
+      </th>
 
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let record of data  | filtering: searchTerm : searchField | pagination:+visibleElements:+pageNumberModel | sort : sortedColumn: columnOrder">
-      <td *ngFor="let header of tableConfig.carHeaders;" >
+      <td *ngFor="let header of tableConfig.carHeaders;">
         {{record.car[header.key]}}
+      </td>
+      <td *ngFor="let header of tableConfig.headersDate;">
+        <span *ngIf="header.key=='fromDate'||header.key=='toDate'">
+           {{record[header.key].substring(0,10)}}
+        </span>
+        {{record[header.key]}}
       </td>
 
       <td style="width: 15%;" *ngIf="tableConfig.actions.length>0">
-        <span *ngFor="let action of tableConfig.actions;">
-          <app-my-button-component  (newItemEvent)="click(action, record)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
-      </span>
+<!--        <span *ngFor="let action of tableConfig.actions;">-->
+          <span *ngIf="record.isApproved==0&&role=='admin'">
+            <app-my-button-component  (newItemEvent)="click('APPROVA', record)" [buttonConfig]="{text:'APPROVA', customCssId: 'idTable', customCssClass:'btn btn-primary', icon:'book'}"></app-my-button-component>
+          </span>
+        <app-my-button-component  (newItemEvent)="click('DELETE', record)" [buttonConfig]="{text:'DELETE', customCssId: 'idTable', customCssClass:'btn btn-danger', icon:'delete_forever'}"></app-my-button-component>
+
+
+        <!--      </span>-->
       </td>
 
 

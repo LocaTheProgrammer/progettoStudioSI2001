@@ -422,48 +422,22 @@ export const tableConfigUserParcoAuto: MyTableConfig = {
 
 export const tableConfigReservation: MyReservationTableConfig = {
   headersDate: [
+
     {
-      key: "reservationDate",
-      label: "reservationDate"
+      key:"fromDate",
+      label:"data inizio prenotazione"
     },
+    {
+      key:"toDate",
+      label:"data fine prenotazione"
+    },
+
   ],
 
   carHeaders: [ {
     key: "name",
     label: "name"
   },
-    {
-      key: "milesPerGallon",
-      label: "milesPerGallon"
-    },
-    {
-      key: "cylinders",
-      label: "cylinders"
-    },
-    {
-      key: "displacement",
-      label: "displacement"
-    },
-    {
-      key: "horsePower",
-      label: "horsePower"
-    },
-    {
-      key: "weightInLbs",
-      label: "weightInLbs"
-    },
-    {
-      key: "acceleration",
-      label: "acceleration"
-    },
-    {
-      key: "year",
-      label: "year"
-    },
-    {
-      key: "origin",
-      label: "origin"
-    },
   ],
 
 
@@ -501,47 +475,25 @@ export const tableConfigReservation: MyReservationTableConfig = {
 export const tableConfigReservationAdmin: MyReservationTableConfig = {
   headersDate: [
     {
-      key: "reservationDate",
-      label: "reservationDate"
+      key:"fromDate",
+      label:"data inizio prenotazione"
     },
+    {
+      key:"toDate",
+      label:"data fine prenotazione"
+    },
+    {
+      key:"userId",
+      label:"userId"
+    }
   ],
 
   carHeaders: [ {
     key: "name",
     label: "name"
   },
-    {
-      key: "milesPerGallon",
-      label: "milesPerGallon"
-    },
-    {
-      key: "cylinders",
-      label: "cylinders"
-    },
-    {
-      key: "displacement",
-      label: "displacement"
-    },
-    {
-      key: "horsePower",
-      label: "horsePower"
-    },
-    {
-      key: "weightInLbs",
-      label: "weightInLbs"
-    },
-    {
-      key: "acceleration",
-      label: "acceleration"
-    },
-    {
-      key: "year",
-      label: "year"
-    },
-    {
-      key: "origin",
-      label: "origin"
-    },
+
+
   ],
 
 
