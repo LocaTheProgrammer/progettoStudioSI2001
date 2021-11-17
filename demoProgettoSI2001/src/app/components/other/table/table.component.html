@@ -46,10 +46,7 @@
 
       <td style="width: 15%;" *ngIf="tableConfig.actions.length>0">
         <span *ngFor="let action of tableConfig.actions;">
-          <span *ngIf="action.action=='DELETE'||record.isApproved!=1">
-            <app-my-button-component  (newItemEvent)="click(action, record)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
-          </span>
-
+            <app-my-button-component *ngIf="!action.isShown || action.isShown(record)" (newItemEvent)="click(action, record)" [buttonConfig]="{text: action.action, customCssId:action.customCssId, customCssClass:action.customCssClass, icon:action.icon}"></app-my-button-component>
       </span>
       </td>
 

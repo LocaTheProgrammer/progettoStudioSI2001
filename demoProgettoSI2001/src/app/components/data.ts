@@ -519,7 +519,10 @@ export const tableConfigReservationAdmin: MyTableConfig = {
       action: MyTableActionEnum.APPROVA,
       icon: "info",
       customCssClass:"btn btn-primary",
-      customCssId:"idTable"
+      customCssId:"idTable",
+      isShown: (row:any) =>{
+        return row.isApproved != 1;
+      }
     },
 
   ]
