@@ -1,16 +1,10 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
-import { Router } from "@angular/router";
-import {
-  tableConfigAdmin,
-  tableConfigAdminDelete,
-  tableConfigReservation, tableConfigReservationAdmin,
-  tableConfigUserPrenotazioni
-} from "../../../components/data";
+import {Router} from "@angular/router";
+import {tableConfigReservation, tableConfigReservationAdmin} from "../../../components/data";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {MyTableConfig} from "../../../components/other/table/table.component";
 import {ReservationService} from "../../../services/reservation/reservation.service";
 import {UtentiService} from "../../../services/utenti/utenti.service";
-import {MyReservationTableConfig} from "../../../components/reservation/reservation-table/reservation-table.component";
+import {MyTableConfig} from "../../../components/other/table/table.component";
 
 @Component({
   selector: 'app-reservations',
@@ -22,7 +16,7 @@ export class ReservationsComponent implements OnInit, OnChanges {
   loginUtenteForm!: FormGroup
   role?=sessionStorage.getItem("ruolo")
   toggled = true
-  tableConfig!:MyReservationTableConfig;
+  tableConfig!:MyTableConfig;
   bookedCars!:JSON[]
   bookedCarsDates!:JSON[]
   reservations!:JSON[]

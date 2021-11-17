@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Router} from "@angular/router";
-import {MyReservationTableConfig} from "../reservation-table/reservation-table.component";
+import {MyTableConfig} from "../../other/table/table.component";
 
 @Component({
   selector: 'app-view-reservation-table',
@@ -11,7 +11,7 @@ export class ViewReservationTableComponent   {
 
   txtSalva:string="Salva"
 
-  @Input () tableConfig !: MyReservationTableConfig;
+  @Input () tableConfig !: MyTableConfig;
   @Input () data : any []= [];
   @Output() btnEmitter = new EventEmitter<any>();
   constructor(private router: Router) {

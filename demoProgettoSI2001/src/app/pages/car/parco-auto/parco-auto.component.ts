@@ -41,7 +41,6 @@ export class ParcoAutoComponent implements OnInit, OnChanges{
     }
 
     this.carService.getCars().subscribe((result:any)=>{
-      console.log(result)
       if(result!=null){
         this.jsonDataCar=result.result
       }

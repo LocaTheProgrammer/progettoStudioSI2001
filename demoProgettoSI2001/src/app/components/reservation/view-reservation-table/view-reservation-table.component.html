@@ -1,7 +1,7 @@
 <div class="tableEdit">
   <table class="table table-dark">
     <thead>
-    <tr *ngFor="let header of tableConfig.carHeaders">
+    <tr *ngFor="let header of tableConfig.headers">
       <th>
         {{header.label}}
       </th>
@@ -14,7 +14,7 @@
 
 
   <table class="table table-light" style="width: 28%">
-    <tr *ngFor="let header of tableConfig.headersDate">
+    <tr *ngFor="let header of tableConfig.headers">
       <td class="table-warning">
          <span *ngFor="let record of data">
             This car has been booked from this date: {{record.fromDate.substring(0,10)}} to {{record.toDate.substring(0,10)}}

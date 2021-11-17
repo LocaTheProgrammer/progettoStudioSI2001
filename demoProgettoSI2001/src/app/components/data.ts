@@ -420,8 +420,8 @@ export const tableConfigUserParcoAuto: MyTableConfig = {
 
 
 
-export const tableConfigReservation: MyReservationTableConfig = {
-  headersDate: [
+export const tableConfigReservation: MyTableConfig = {
+  headers: [
 
     {
       key:"fromDate",
@@ -431,14 +431,12 @@ export const tableConfigReservation: MyReservationTableConfig = {
       key:"toDate",
       label:"data fine prenotazione"
     },
-
+    {
+      key: "name",
+      label: "name"
+    },
   ],
 
-  carHeaders: [ {
-    key: "name",
-    label: "name"
-  },
-  ],
 
 
   myOrder: {
@@ -472,8 +470,8 @@ export const tableConfigReservation: MyReservationTableConfig = {
 
 
 
-export const tableConfigReservationAdmin: MyReservationTableConfig = {
-  headersDate: [
+export const tableConfigReservationAdmin: MyTableConfig = {
+  headers: [
     {
       key:"fromDate",
       label:"data inizio prenotazione"
@@ -485,16 +483,13 @@ export const tableConfigReservationAdmin: MyReservationTableConfig = {
     {
       key:"userId",
       label:"userId"
-    }
+    },
+    {
+      key: "name",
+      label: "name"
+    },
   ],
 
-  carHeaders: [ {
-    key: "name",
-    label: "name"
-  },
-
-
-  ],
 
 
   myOrder: {

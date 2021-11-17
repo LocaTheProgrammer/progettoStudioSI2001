@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {tableConfigReservation} from "../../../components/data";
 import {ReservationService} from "../../../services/reservation/reservation.service";
 import {MyReservationTableConfig} from "../../../components/reservation/reservation-table/reservation-table.component";
+import {MyTableConfig} from "../../../components/other/table/table.component";
 
 @Component({
   selector: 'app-reservation-details',
@@ -16,7 +17,7 @@ export class ReservationDetailsComponent implements OnInit {
 
   itemToUpdate!:any
   data!:JSON[]
-  tableConfig!:MyReservationTableConfig;
+  tableConfig!:MyTableConfig;
 
 
   ngOnInit() {
