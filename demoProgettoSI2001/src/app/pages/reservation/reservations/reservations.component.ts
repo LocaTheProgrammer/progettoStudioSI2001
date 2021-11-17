@@ -57,8 +57,8 @@ export class ReservationsComponent implements OnInit, OnChanges {
   }
 
   event($event:any){
-
-    switch($event.action){
+  console.log($event)
+    switch($event.action.action){
       case 'DETTAGLI':
         this.router.navigate(['/dettaglio-prenotazione'], {queryParams: {data: JSON.stringify($event.data.id)}})
         break;

@@ -217,7 +217,7 @@ export const tableConfigAdmin: MyTableConfig = {
   actions:[
 
     {
-      action: MyTableActionEnum.APPROVA,
+      action: MyTableActionEnum.PRENOTA,
       icon: "book",
       customCssClass:"btn btn-primary",
       customCssId:"idTable"
