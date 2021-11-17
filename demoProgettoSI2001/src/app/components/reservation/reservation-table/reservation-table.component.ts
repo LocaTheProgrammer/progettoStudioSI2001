@@ -73,7 +73,6 @@ export class ReservationTableComponent implements OnInit {
   ngOnChanges() {
     this.visibleElements=this.tableConfig.myPagination.itemPerPage.toString()
     if((this.data!=undefined&&this.data!=null&&this.data!=[])){
-      console.log(this.data)
       this.isDataUndefined=false
       this.dataLength=this.data.length
       this.visualize()
